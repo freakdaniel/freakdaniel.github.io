@@ -63,7 +63,6 @@
     "intro": "أنا دائماً منفتح على عمل مثير، أو محادثات حول التقنية، أو توصيات لما أقرأه تالياً. تواصل عبر أي قناة تناسبك"
   },
   "footer": {
-    "copyright": "© {{year}} Daniel Freak",
     "builtWith": "مبني بـVite وReact وTailwind",
     "auto": "تلقائي",
     "language": "اللغة"

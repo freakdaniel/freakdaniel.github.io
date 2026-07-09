@@ -1,50 +1,50 @@
 {
   "hero": {
-    "greeting": "你好 (｡◕‿‿◕｡)",
-    "subtitle": "全栈开发者，致力于构建快速、易用、细节考究的网络产品",
-    "status": "接受新的工作机会",
+    "greeting": "你好 (｡◕‿‿◕｡)，我是",
+    "subtitle": "全栈开发者，致力于打造快速、易用且细节考究的数字产品",
+    "status": "欢迎新项目合作",
     "cta": "联系我"
   },
   "bio": {
-    "sectionLabel": "01 / 关于",
-    "title": "关于我",
-    "p1": "我是一名全栈开发者，喜欢干净的界面、快速的加载速度，以及半年后回头依然令人愉悦的代码。我的大部分工作使用 TypeScript、React 和 Node，不过凡是需要扎实而非花哨的项目，我总会回到 .NET 生态",
-    "p2": "离开键盘的时候，我通常在读一些太长的书、折腾自托管服务，或者在学习一门永远完不成项目的语言",
+    "sectionLabel": "01 / 关于我",
+    "title": "关于我的一两句话",
+    "p1": "我是一名全栈开发者，重视简洁的界面、运行速度，以及半年后重看仍觉得愉悦的代码。我的工作主要涉及 TypeScript、React 和 Node，但对于需要可靠性而非‘速度’的任务，我会回归 .NET 生态系统",
+    "p2": "离开键盘时，我通常会阅读一些极具深度的书籍，折腾自托管服务，或者研究设计模式和新技术",
     "stats": {
-      "years": "从业年限",
-      "projects": "已交付项目",
-      "tools": "工具箱"
+      "years": "开发经验（年）",
+      "projects": "商业项目",
+      "tools": "工具集"
     }
   },
   "projects": {
     "sectionLabel": "02 / 项目",
     "title": "精选作品",
-    "view": "查看",
-    "openLabel": "打开项目：{{title}}",
+    "view": "打开",
+    "openLabel": "打开项目：{{title}}" ,
     "items": {
       "kurisu": {
-        "tagline": "使用 Roslyn 生成 TypeScript IPC 的 AI 智能体平台",
-        "description": "一个存在于单个桌面应用中的开源 AI 智能体平台。.NET 10 承载智能体运行时（MCP、工具、会话、权限、钩子），并通过自定义桥接驱动 Electron 渲染器。IPC 层在编译时由 Roslyn 源生成器生成，从 C# 方法签名生成类型化的 TypeScript 包装器。渲染端使用 shadcn/ui 和 Vite"
+        "tagline": "基于 .NET 10 并采用 Electron 渲染器的 AI 代理平台",
+        "description": "集成于单一桌面应用程序中的开源 AI 代理平台。.NET 10 包含代理运行时（MCP、工具、会话、权限、钩子），并通过自定义桥接器管理 Electron 渲染器。IPC 层由 Roslyn 源代码生成器在编译时生成，该生成器会根据 C# 方法的签名创建类型化的 TypeScript 封装。渲染端采用 shadcn/ui 和 Vite"
       },
       "react-bits-vue-bits": {
-        "tagline": "4.7 万星组件库的贡献者",
-        "description": "最大的开源 React 和 Vue 组件库之一的贡献者，合计约 4.7 万星。重构了核心组件（Stack、FadeContent、AnimatedContent），添加了自定义滚动条支持、GSAP 迁移和更安全的清理逻辑。本网站的铁磁流体背景就是其中之一"
+        "tagline": "React 和 Vue 的热门开源组件库",
+        "description": "React 和 Vue 最大型开源组件库之一的贡献者。对关键组件（Stack、FadeContent、AnimatedContent）进行了重构：添加了对自定义滚动条的支持，迁移至 GSAP，并实现了更安全的清理机制。本网站的磁流体背景便是其中一个组件"
       },
       "infiniframe": {
-        "tagline": "面向 .NET 的跨平台原生窗口",
-        "description": "一个面向 .NET 的跨平台原生窗口框架的活跃贡献者。参与了 C++ 原生后端的工作：重构了非托管层，修复了内存泄漏和空值守卫问题，并为全部四个库编写了详尽的文档。还为项目交付了 AI 助手技能和智能体"
+        "tagline": "用于在 .NET 中创建跨平台原生窗口的库",
+        "description": ".NET 跨平台原生窗口框架的活跃贡献者。曾负责 C++ 原生后端开发：重构了非托管层，修复了内存泄漏和 null 保护问题，并为全部四个库编写了详细文档"
       },
       "mpovt": {
-        "tagline": "多语言企业网站，已交付",
-        "description": "为 OJSC「MPOVT」打造的多语言企业网站，作为付费项目交付。React/Vite 单页应用，使用 Chakra UI 和 Tailwind，GSAP 与 ogl/Three.js 制作首屏动画，通过 jose 实现 JWT 认证，TanStack Query 管理数据，并支持白俄罗斯语、英语、俄语和中文的完整国际化。明暗主题，版权信息见网站页脚"
+        "tagline": "某大型电子产品制造商的企业名片网站",
+        "description": "为‘MPOVT’股份公司开发的多语言企业网站，系有偿委托项目。采用 React/Vite 构建的单页应用（SPA），使用 Chakra UI 和 Tailwind 进行前端开发，GSAP 实现动画效果，TanStack Query 处理数据，并支持白俄罗斯语、英语、俄语和中文的完整国际化（i18n）。已集成浅色/深色主题切换系统"
       },
       "hyprism": {
-        "tagline": "Hytale 启动器，主线维护者",
-        "description": "一个基于 C#、.NET 和 Electron 编写的 Hytale 启动器的维护者之一。修复了 GPU/实例处理问题，负责 UI 工作，并在 20 多个 PR 中改进了构建系统"
+        "tagline": "带模组管理器和版本控制功能的 Hytale 自定义启动器",
+        "description": "作为基于 .NET 和 Electron 的 C# 语言开发的 Hytale 最受欢迎启动器之一的主维护者。负责修复 GPU 处理及游戏实例相关问题，推动版本控制系统迁移，负责界面设计与日志记录功能开发，并添加了对官方授权的支持"
       },
       "freaksite": {
-        "tagline": "本网站，字体、动效与细节的试验场",
-        "description": "你正在浏览的这个网站。用于字体、动效和微小交互细节的个人试验场。基于 Vite/React/TypeScript，部署在 GitHub Pages"
+        "tagline": "这是一个专注于排版、动态效果和细节设计的平台",
+        "description": "您现在所看到的这个网站。这是一个专注于排版、动态效果和交互细节的个人平台。采用 Vite/React/TypeScript 构建，部署在 GitHub Pages 上"
       }
     }
   },
@@ -58,13 +58,12 @@
     }
   },
   "contact": {
-    "sectionLabel": "04 / 联系",
+    "sectionLabel": "04 / 联系方式",
     "title": "联系我",
-    "intro": "我始终欢迎有趣的工作、技术交流，或下一本该读的书的推荐。通过任何你方便的渠道联系我吧"
+    "intro": "我始终乐于接触有趣的项目、技术相关的问题或学习建议。您可以通过以下任何一种方式联系我"
   },
   "footer": {
-    "copyright": "© {{year}} Daniel Freak",
-    "builtWith": "使用 Vite、React 与 Tailwind 构建",
+    "builtWith": "用心打造 ❤",
     "auto": "自动",
     "language": "语言"
   },
@@ -75,7 +74,7 @@
     "close": "关闭",
     "projects": "项目",
     "stack": "技术栈",
-    "source": "源码",
-    "live": "在线预览"
+    "source": "源代码",
+    "live": "演示"
   }
 }

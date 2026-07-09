@@ -1,81 +1,80 @@
 {
   "hero": {
-    "greeting": "Merhaba (｡◕‿‿◕｡)",
-    "subtitle": "Web üzerinde hızlı, erişilebilir ve incelikle düşünülmüş ürünler inşa eden Full-Stack Geliştirici",
-    "status": "Yeni fırsatlara açık",
-    "cta": "İletişime geç"
+    "greeting": "Merhaba (｡◕‿‿◕｡), ben",
+    "subtitle": "Full-Stack geliştiriciyim; hızlı, erişilebilir ve en ince ayrıntısına kadar düşünülmüş dijital ürünler yaratıyorum",
+    "status": "Yeni projelere açığım",
+    "cta": "İletişim"
   },
   "bio": {
     "sectionLabel": "01 / Hakkımda",
-    "title": "Hakkımda biraz",
-    "p1": "Temiz arayüzleri, hızlı yükleme sürelerini ve altı ay sonra geri dönüldüğünde keyif veren kodu seven bir full-stack geliştiriciyim. Çalışmalarımın çoğu TypeScript, React ve Node'da yaşar; ancak sağlamlığın gösterişten önemli olduğu her şeyde sürekli .NET ekosistemine geri dönerim",
-    "p2": "Klavyeden uzaktayken genellikle çok uzun bir şeyler okuyorum, kendi kendine barındırılan servislerle uğraşıyor ya da hiçbir zaman projesini bitirmeyeceğim bir dili daha öğreniyorum",
+    "title": "Hakkımda birkaç söz",
+    "p1": "Ben, temiz arayüzlere, yüksek performansa ve altı ay sonra tekrar bakmaktan keyif alacağınız kodlara değer veren bir full-stack geliştiriciyim. Çalışmalarımın büyük bir kısmı TypeScript, React ve Node ile ilgili, ancak \"hız\"dan ziyade güvenilirlik gerektiren görevler için .NET ekosistemine geri dönüyorum",
+    "p2": "Klavye başından uzak olduğum zamanlarda genellikle çok zekice yazılmış bir şeyler okurum, kendi barındırdığım hizmetlerle uğraşırım ya da desenleri ve yeni teknolojileri incelerim",
     "stats": {
-      "years": "Yılların tecrübesi",
-      "projects": "Teslim edilen proje",
-      "tools": "Çantadaki araçlar"
+      "years": "Yazılım geliştirme deneyimi (yıl)",
+      "projects": "Ticari projeler",
+      "tools": "Araç seti"
     }
   },
   "projects": {
     "sectionLabel": "02 / Projeler",
     "title": "Seçilmiş çalışmalar",
-    "view": "Görüntüle",
-    "openLabel": "Projeyi aç: {{title}}",
+    "view": "Aç",
+    "openLabel": "Projeyi aç: {{title}}" ,
     "items": {
       "kurisu": {
-        "tagline": "Roslyn üretimi TypeScript IPC'li AI ajan platformu",
-        "description": "Tek bir masaüstü uygulamasında yaşayan açık kaynaklı bir AI ajan platformu. .NET 10, ajan çalışma zamanını (MCP, araçlar, oturumlar, izinler, kancalar) barındırır ve özel bir köprü üzerinden bir Electron renderer'ını yönlendirir. IPC katmanı, derleme zamanında C# metot imzalarından türlenmiş TypeScript sarmalayıcılar üreten bir Roslyn kaynak üreteci tarafından oluşturulur. Renderer tarafında shadcn/ui ve Vite"
+        "tagline": "Electron renderer kullanan .NET 10 tabanlı AI ajan platformu",
+        "description": "Tek bir masaüstü uygulamasında yer alan açık kaynaklı AI ajan platformu. .NET 10, ajan çalışma zamanını (MCP, araçlar, oturumlar, izinler, kancalar) içerir ve özel bir köprü aracılığıyla Electron renderer'ını yönetir. IPC katmanı, derleme sırasında Roslyn kaynak oluşturucu tarafından üretilir; bu oluşturucu, C# yöntem imzalarından tiplendirilmiş TypeScript sarmalayıcıları oluşturur. Renderer tarafında ise shadcn/ui ve Vite"
       },
       "react-bits-vue-bits": {
-        "tagline": "47k yıldızlı bileşen kütüphanesine katkıda bulunan",
-        "description": "En büyük açık kaynak React ve Vue bileşen kütüphanelerinden birine katkıda bulunan, toplam yaklaşık 47k yıldız. Çekirdek bileşenleri (Stack, FadeContent, AnimatedContent) yeniden düzenledim; özel kaydırıcı desteği, GSAP geçişi ve daha güvenli temizlik ekledim. Bu sitenin ferrofluid arka planı o bileşenlerden biri"
+        "tagline": "React ve Vue için popüler açık kaynaklı bileşen kütüphaneleri",
+        "description": "React ve Vue için en büyük açık kaynaklı bileşen kütüphanelerinden birine katkıda bulunmuştur. Anahtar bileşenleri (Stack, FadeContent, AnimatedContent) yeniden düzenlemiştir: özel kaydırıcı desteği, GSAP'ye geçiş ve daha güvenli temizleme özellikleri eklemiştir. Bu sitenin ferrofluid arka planı, bu bileşenlerden biridir"
       },
       "infiniframe": {
-        "tagline": ".NET için platformlar arası yerel pencereler",
-        "description": ".NET için platformlar arası yerel pencere çerçevesine aktif katkıda bulunan. C++ yerel arka ucunda çalıştım: yönetilmeyen katmanı yeniden düzenledim, bellek sızıntılarını ve null-guard sorunlarını düzelttim ve dört kütüphanenin tamamı için kapsamlı belgeler yazdım. Proje için AI-asistan becerileri ve ajanları da teslim ettim"
+        "tagline": ".NET'te platformlar arası yerel pencereler oluşturmaya yönelik kütüphane",
+        "description": ".NET için platformlar arası yerel pencere çerçevesinin aktif katkıcısı. C++ yerel arka ucu üzerinde çalıştı: yönetilmeyen katmanı yeniden düzenledi, bellek sızıntılarını ve null-guard sorunlarını düzeltti, dört kütüphanenin tümü için ayrıntılı belgeler hazırladı"
       },
       "mpovt": {
-        "tagline": "Çok dilli kurumsal site, teslim edildi",
-        "description": "OJSC «MPOVT» için, ücretli bir iş olarak teslim edilen özel bir yapı olan çok dilli kurumsal web sitesi. Chakra UI ve Tailwind ile React/Vite SPA, hero animasyonları için GSAP ve ogl/Three.js, jose üzerinden JWT kimlik doğrulama, veriler için TanStack Query ve Belarusça, İngilizce, Rusça ve Çince için tam i18n. Açık/koyu tema, kredi site alt bilgisinde"
+        "tagline": "Büyük bir elektronik üreticisinin kurumsal tanıtım sitesi",
+        "description": "OAO «MPOVT» için ücretli bir sipariş olarak gerçekleştirilen çok dilli kurumsal web sitesi. Chakra UI ve Tailwind ile React/Vite SPA, animasyonlar için GSAP, veriler için TanStack Query ve Belarusça, İngilizce, Rusça ve Çince dillerinde tam i18n desteği. Açık/koyu tema sistemi entegre edilmiştir"
       },
       "hyprism": {
-        "tagline": "Hytale başlatıcısı, ana hat bakımcısı",
-        "description": "C# ile .NET ve Electron üzerine yazılmış bir Hytale başlatıcısının bakımcılarından biri. GPU/örnek işleme düzelttim, UI işlerini üstlendim ve 20+ PR'de derleme sistemi iyileştirmeleri teslim ettim"
+        "tagline": "Mod yöneticisi ve sürüm kontrolü içeren Hytale için özel bir başlatıcı",
+        "description": ".NET ve Electron üzerinde C# ile geliştirilmiş, Hytale için en popüler başlatıcılardan birinin bakımcılarından biri. GPU ve oyun örneklerinin işlenmesini düzeltti, sürüm sistemine geçişi gerçekleştirdi, tasarımı ve günlük kaydediciyi oluşturdu, resmi yetkilendirme desteğini ekledi"
       },
       "freaksite": {
-        "tagline": "Bu site, tipografi, hareket ve ayrıntı için oyun alanı",
-        "description": "Şu an baktığınız site. Tipografi, hareket ve küçük etkileşim ayrıntıları için kişisel oyun alanı. Vite/React/TypeScript, GitHub Pages'a dağıtıldı"
+        "tagline": "Bu site, tipografi, hareket ve detaylar için bir platformdur",
+        "description": "Şu anda gördüğünüz site. Tipografi, hareket ve etkileşimlerin küçük detayları için kişisel bir platform. Vite/React/TypeScript, GitHub Pages üzerinde barındırılıyor"
       }
     }
   },
   "tech": {
-    "sectionLabel": "03 / Teknoloji",
-    "title": "Stack ve araçlar",
+    "sectionLabel": "03 / Teknolojiler",
+    "title": "Teknoloji Yığını ve Araçlar",
     "groups": {
-      "frontend": "Frontend",
-      "backend": "Backend",
+      "frontend": "Ön Uç",
+      "backend": "Arka Uç",
       "tools": "Araçlar"
     }
   },
   "contact": {
     "sectionLabel": "04 / İletişim",
-    "title": "İletişime geç",
-    "intro": "İlginç işlere, teknoloji üzerine sohbetlere veya sırada ne okuyacağım önerilerine her zaman açığım. Size uygun hangi kanaldan ulaşabilirsem oradan ulaşın"
+    "title": "Bana Ulaşın",
+    "intro": "İlginç projelere, teknolojilerle ilgili sorulara veya öğrenilebilecek konularla ilgili önerilere her zaman açığım. Aşağıdaki hizmetlerden herhangi biri aracılığıyla benimle iletişime geçebilirsiniz"
   },
   "footer": {
-    "copyright": "© {{year}} Daniel Freak",
-    "builtWith": "Vite, React ve Tailwind ile yapıldı",
+    "builtWith": "Sevgiyle hazırlandı ❤",
     "auto": "Otomatik",
     "language": "Dil"
   },
   "modal": {
-    "dialogLabel": "Proje ayrıntıları",
+    "dialogLabel": "Proje detayları",
     "back": "Geri",
     "backLabel": "Ana sayfaya dön",
     "close": "Kapat",
     "projects": "Projeler",
-    "stack": "Stack",
-    "source": "Kaynak",
-    "live": "Canlı"
+    "stack": "Yığın",
+    "source": "Kaynak kodlar",
+    "live": "Demo"
   }
 }

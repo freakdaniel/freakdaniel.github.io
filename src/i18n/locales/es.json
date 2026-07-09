@@ -1,56 +1,56 @@
 {
   "hero": {
-    "greeting": "Hola (｡◕‿‿◕｡)",
-    "subtitle": "Desarrollador Full-Stack creando productos web rápidos, accesibles y sutilmente opiniones",
-    "status": "Disponible para nuevas oportunidades",
-    "cta": "Contáctame"
+    "greeting": "Hola (｡◕‿‿◕｡), soy",
+    "subtitle": "Desarrollador full-stack, creo productos digitales rápidos, accesibles y cuidados hasta el más mínimo detalle",
+    "status": "Abierto a nuevos proyectos",
+    "cta": "Contactar"
   },
   "bio": {
-    "sectionLabel": "01 / Acerca de",
-    "title": "Algo sobre mí",
-    "p1": "Soy un desarrollador full-stack al que le gustan las interfaces limpias, los tiempos de carga rápidos y el código agradable al que volver seis meses después. La mayor parte de mi trabajo vive en TypeScript, React y Node, aunque sigo volviendo al ecosistema .NET para todo lo que necesita ser sólido en lugar de vistoso",
-    "p2": "Fuera del teclado, suelo estar leyendo algo demasiado largo, trasteando con servicios autoalojados o aprendiendo otro lenguaje más en el que nunca terminaré un proyecto",
+    "sectionLabel": "01 / Sobre mí",
+    "title": "Unas palabras sobre mí",
+    "p1": "Soy un desarrollador full-stack que valora las interfaces limpias, la rapidez y el código al que da gusto volver al cabo de medio año. La mayor parte de mi trabajo se centra en TypeScript, React y Node, pero para tareas en las que se necesita fiabilidad, y no \"velocidad\", recurro al ecosistema .NET",
+    "p2": "Cuando no estoy delante del teclado, suelo leer algo muy inteligente, trastear con servicios autohospedados o estudiar patrones y nuevas tecnologías",
     "stats": {
-      "years": "Años programando",
-      "projects": "Proyectos entregados",
-      "tools": "Herramientas en el kit"
+      "years": "Años en el mundo del desarrollo",
+      "projects": "Proyectos comerciales",
+      "tools": "Herramientas en mi kit"
     }
   },
   "projects": {
     "sectionLabel": "02 / Proyectos",
-    "title": "Trabajo seleccionado",
-    "view": "Ver",
-    "openLabel": "Abrir proyecto: {{title}}",
+    "title": "Trabajos destacados",
+    "view": "Abrir",
+    "openLabel": "Abrir proyecto: {{title}}" ,
     "items": {
       "kurisu": {
-        "tagline": "Plataforma de agentes de IA con IPC en TypeScript generado por Roslyn",
-        "description": "Una plataforma de agentes de IA de código abierto que vive en una sola aplicación de escritorio. .NET 10 aloja el runtime del agente (MCP, herramientas, sesiones, permisos, hooks) y dirige un renderer de Electron a través de un puente personalizado. La capa IPC se genera en tiempo de compilación mediante un generador de código Roslyn que emite wrappers de TypeScript tipados a partir de firmas de métodos de C#. shadcn/ui y Vite en el lado del renderer"
+        "tagline": "Plataforma de agentes de IA en .NET 10 con renderizador Electron",
+        "description": "Plataforma de código abierto de agentes de IA en una única aplicación de escritorio. .NET 10 contiene el tiempo de ejecución del agente (MCP, herramientas, sesiones, permisos, hooks) y controla el renderizador de Electron a través de un puente personalizado. La capa de IPC se genera durante la compilación mediante el generador de código fuente Roslyn, que crea envoltorios tipados en TypeScript a partir de las firmas de los métodos de C#. En el lado del renderizador: shadcn/ui y Vite"
       },
       "react-bits-vue-bits": {
-        "tagline": "Colaborador de una biblioteca de componentes con 47k estrellas",
-        "description": "Colaborador de una de las mayores bibliotecas de componentes de código abierto para React y Vue, con unos 47k estrellas combinadas. Refactoricé componentes centrales (Stack, FadeContent, AnimatedContent) añadiendo soporte de scroller personalizado, migración a GSAP y una limpieza más segura. El fondo de ferrofluido de este sitio es uno de esos componentes"
+        "tagline": "Bibliotecas de componentes de código abierto populares para React y Vue",
+        "description": "Colaborador de una de las mayores bibliotecas de componentes de código abierto para React y Vue. He refactorizado componentes clave (Stack, FadeContent, AnimatedContent): he añadido compatibilidad con controladores de desplazamiento personalizados, la migración a GSAP y una limpieza más segura. El fondo de ferrofluido de este sitio web es uno de esos componentes"
       },
       "infiniframe": {
-        "tagline": "Ventanas nativas multiplataforma para .NET",
-        "description": "Colaborador activo de un framework de ventanas nativas multiplataforma para .NET. Trabajé en el backend nativo de C++: refactoricé la capa no administrada, corregí fugas de memoria y problemas de null-guard, y escribí documentación completa para las cuatro bibliotecas. También creé habilidades y agentes de asistente de IA para el proyecto"
+        "tagline": "Biblioteca para crear ventanas nativas multiplataforma en .NET",
+        "description": "Colaborador activo del marco de trabajo multiplataforma de ventanas nativas para .NET. Trabajó en el backend nativo de C++: refactorizó la capa no gestionada, corrigió fugas de memoria y problemas con null-guard, y redactó documentación detallada para las cuatro bibliotecas"
       },
       "mpovt": {
-        "tagline": "Sitio corporativo multilingüe, entregado",
-        "description": "Sitio web corporativo multilingüe para OJSC «MPOVT», una construcción personalizada entregada como encargo de pago. SPA React/Vite con Chakra UI y Tailwind, GSAP y ogl/Three.js para animaciones hero, autenticación JWT vía jose, TanStack Query para datos e i18n completa en bielorruso, inglés, ruso y chino. Temas claro/oscuro, crédito en el pie del sitio"
+        "tagline": "Página web corporativa de presentación de un importante fabricante de productos electrónicos",
+        "description": "Página web corporativa multilingüe para la SA «MPOVT», realizada como encargo de pago. SPA de React/Vite con Chakra UI y Tailwind, GSAP para las animaciones, TanStack Query para los datos e internacionalización completa al bielorruso, inglés, ruso y chino. Se ha implementado un sistema de temas claro/oscuro"
       },
       "hyprism": {
-        "tagline": "Launcher de Hytale, mantenedor principal",
-        "description": "Uno de los mantenedores de un launcher de Hytale escrito en C# sobre .NET y Electron. Corregí el manejo de GPU/instancias, me encargué del trabajo de UI y envié mejoras del sistema de construcción en más de 20 PR"
+        "tagline": "Lanzador personalizado para Hytale con gestor de mods y control de versiones",
+        "description": "Uno de los mantenedores del lanzador más popular para Hytale, escrito en C# para .NET y Electron. He corregido el procesamiento de la GPU y las instancias del juego, he llevado a cabo la transición al sistema de versiones, he creado el diseño y el registrador de errores, y he añadido compatibilidad con la autenticación oficial"
       },
       "freaksite": {
-        "tagline": "Este sitio, campo de juego para tipografía, movimiento y detalle",
-        "description": "El sitio que estás viendo. Campo de juego personal para tipografía, movimiento y pequeños detalles de interacción. Vite/React/TypeScript, desplegado en GitHub Pages"
+        "tagline": "Este sitio web, un espacio dedicado a la tipografía, el movimiento y los pequeños detalles",
+        "description": "El sitio web que estás viendo ahora mismo. Un espacio personal dedicado a la tipografía, el movimiento y los pequeños detalles de las interacciones. Vite/React/TypeScript, alojado en GitHub Pages"
       }
     }
   },
   "tech": {
-    "sectionLabel": "03 / Tecnología",
-    "title": "Stack y herramientas",
+    "sectionLabel": "03 / Tecnologías",
+    "title": "Pila tecnológica y herramientas",
     "groups": {
       "frontend": "Frontend",
       "backend": "Backend",
@@ -59,23 +59,22 @@
   },
   "contact": {
     "sectionLabel": "04 / Contacto",
-    "title": "Ponte en contacto",
-    "intro": "Siempre estoy abierto a trabajo interesante, conversaciones sobre tecnología o recomendaciones de qué leer a continuación. Escríbeme por el canal que prefieras"
+    "title": "Ponte en contacto conmigo",
+    "intro": "Siempre estoy abierto a proyectos interesantes, preguntas sobre tecnologías o recomendaciones sobre qué se puede aprender. Puedes ponerte en contacto conmigo a través de cualquiera de los servicios que aparecen a continuación"
   },
   "footer": {
-    "copyright": "© {{year}} Daniel Freak",
-    "builtWith": "Hecho con Vite, React y Tailwind",
-    "auto": "Automático",
+    "builtWith": "Hecho con amor ❤",
+    "auto": "Auto",
     "language": "Idioma"
   },
   "modal": {
     "dialogLabel": "Detalles del proyecto",
-    "back": "Volver",
-    "backLabel": "Volver al inicio",
+    "back": "Atrás",
+    "backLabel": "Volver a la página de inicio",
     "close": "Cerrar",
     "projects": "Proyectos",
-    "stack": "Stack",
+    "stack": "Pila",
     "source": "Código fuente",
-    "live": "Ver en vivo"
+    "live": "Demostración"
   }
 }

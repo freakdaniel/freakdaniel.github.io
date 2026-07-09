@@ -1,56 +1,56 @@
 {
   "hero": {
-    "greeting": "Hello there (｡◕‿‿◕｡)",
-    "subtitle": "Full-Stack Developer building fast, accessible, and quietly opinionated products on the web",
-    "status": "Available for new opportunities",
-    "cta": "Get in touch"
+    "greeting": "Hi (｡◕‿‿◕｡), I'm",
+    "subtitle": "A full-stack developer who creates fast, accessible, and meticulously designed digital products",
+    "status": "Open to new projects",
+    "cta": "Contact Me"
   },
   "bio": {
-    "sectionLabel": "01 / About",
-    "title": "A bit about me",
-    "p1": "I'm a full-stack developer who likes clean interfaces, fast load times, and code that's pleasant to come back to six months later. Most of my work lives in TypeScript, React and Node, though I keep coming back to the .NET ecosystem for anything that needs to be solid rather than shiny",
-    "p2": "Outside of the keyboard, I'm usually reading something too long, tinkering with self-hosted services, or learning yet another language I'll never finish a project in",
+    "sectionLabel": "01 / About Me",
+    "title": "A Few Words About Me",
+    "p1": "I’m a full-stack developer who values clean interfaces, performance, and code that’s a pleasure to revisit six months later. Most of my work involves TypeScript, React, and Node, but for tasks where reliability matters more than ‘speed,’ I turn to the .NET ecosystem",
+    "p2": "When I'm away from the keyboard, I usually read something very smart, tinker with self-hosted services, or study patterns and new technologies",
     "stats": {
-      "years": "Years building",
-      "projects": "Projects shipped",
-      "tools": "Tools in the kit"
+      "years": "Years in development",
+      "projects": "Commercial projects",
+      "tools": "Tools in my toolkit"
     }
   },
   "projects": {
     "sectionLabel": "02 / Projects",
-    "title": "Selected work",
-    "view": "View",
+    "title": "Selected works",
+    "view": "Open",
     "openLabel": "Open project: {{title}}",
     "items": {
       "kurisu": {
-        "tagline": "AI agent platform with Roslyn-generated TypeScript IPC",
-        "description": "An open-source AI agent platform that lives in a single desktop app. .NET 10 hosts the agent runtime (MCP, tools, sessions, permissions, hooks) and drives an Electron renderer through a custom bridge. The IPC layer is generated at compile time by a Roslyn source generator that emits typed TypeScript wrappers from C# method signatures. shadcn/ui & Vite on the renderer side"
+        "tagline": "AI agent platform on .NET 10 with an Electron renderer",
+        "description": "An open-source AI agent platform in a single desktop application. .NET 10 contains the agent runtime (MCP, tools, sessions, permissions, hooks) and controls the Electron renderer via a custom bridge. The IPC layer is generated at compile time by the Roslyn source generator, which creates typed TypeScript wrappers from C# method signatures. On the renderer side—shadcn/ui and Vite"
       },
       "react-bits-vue-bits": {
-        "tagline": "Contributor to a 47k-star component library",
-        "description": "Contributor to one of the largest open-source React & Vue component libraries, around 47k stars combined. Refactored core components (Stack, FadeContent, AnimatedContent) adding custom scroller support, GSAP migration, and safer cleanup. The Ferrofluid background on this site is one of those components"
+        "tagline": "Popular open-source component libraries for React and Vue",
+        "description": "Contributor to one of the largest open-source component libraries for React and Vue. Refactored key components (Stack, FadeContent, AnimatedContent): added support for custom scrollers, migrated to GSAP, and implemented safer cleanup. The ferrofluid background on this site is one such component"
       },
       "infiniframe": {
-        "tagline": "Cross-platform native windows for .NET",
-        "description": "Active contributor to a cross-platform native window framework for .NET. Worked on the C++ native backend: refactored the unmanaged layer, fixed memory leaks and null-guard issues, and wrote comprehensive documentation for all four libraries. Also shipped AI-assistant skills and agents for the project"
+        "tagline": "A library for creating cross-platform native windows in .NET",
+        "description": "Active contributor to a cross-platform native window framework for .NET. Worked on the C++ native backend: refactored the unmanaged layer, fixed memory leaks and null-guard issues, and wrote detailed documentation for all four libraries"
       },
       "mpovt": {
-        "tagline": "Multilingual corporate site, delivered",
-        "description": "Multilingual corporate website for OJSC \"MPOVT\", a custom build delivered as a paid engagement. React/Vite SPA with Chakra UI & Tailwind, GSAP & ogl/Three.js for hero animations, JWT auth via jose, TanStack Query for data, and full i18n across Belarusian, English, Russian, and Chinese. Light/dark theming, credit listed in the site footer"
+        "tagline": "Corporate showcase website for a major electronics manufacturer",
+        "description": "Multilingual corporate website for «MPOVT» OJSC, developed as a paid commission. A React/Vite SPA with Chakra UI and Tailwind, GSAP for animations, TanStack Query for data, and full i18n support for Belarusian, English, Russian, and Chinese. A light/dark theme system has been implemented"
       },
       "hyprism": {
-        "tagline": "Hytale launcher, mainline maintainer",
-        "description": "One of the maintainers of a Hytale launcher written in C# on .NET & Electron. Fixed GPU/instance handling, owned UI work, and shipped build-system improvements across 20+ PRs"
+        "tagline": "A custom launcher for Hytale with a mod manager and version control",
+        "description": "One of the maintainers of the most popular launcher for Hytale, written in C# for .NET and Electron. I fixed GPU and game instance handling, migrated to a versioning system, created the design and logger, and added support for official authentication."
       },
       "freaksite": {
-        "tagline": "This site, playground for type, motion, and detail",
-        "description": "The site you are looking at. Personal playground for typography, motion, and tiny interaction details. Vite/React/TypeScript, deployed to GitHub Pages"
+        "tagline": "This site is a platform for typography, motion, and details",
+        "description": "The site you’re currently viewing. A personal space for typography, motion, and small details of interactions. Vite/React/TypeScript, hosted on GitHub Pages"
       }
     }
   },
   "tech": {
-    "sectionLabel": "03 / Tech",
-    "title": "Stack & tools",
+    "sectionLabel": "03 / Technologies",
+    "title": "Stack and Tools",
     "groups": {
       "frontend": "Frontend",
       "backend": "Backend",
@@ -59,23 +59,22 @@
   },
   "contact": {
     "sectionLabel": "04 / Contact",
-    "title": "Get in touch",
-    "intro": "I'm always open to interesting work, conversations about tech, or recommendations on what to read next. Reach out on whichever channel suits you"
+    "title": "Contact Me",
+    "intro": "I’m always open to interesting projects, questions about technology, or recommendations on what to learn. You can contact me through any of the services below"
   },
   "footer": {
-    "copyright": "© {{year}} Daniel Freak",
-    "builtWith": "Built with Vite, React & Tailwind",
+    "builtWith": "Made with love ❤",
     "auto": "Auto",
     "language": "Language"
   },
   "modal": {
-    "dialogLabel": "Project details",
+    "dialogLabel": "Project Details",
     "back": "Back",
-    "backLabel": "Back to home",
+    "backLabel": "Return to Home",
     "close": "Close",
     "projects": "Projects",
     "stack": "Stack",
-    "source": "Source",
-    "live": "Live"
+    "source": "Source Code",
+    "live": "Demo"
   }
 }

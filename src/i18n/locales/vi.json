@@ -1,56 +1,56 @@
 {
   "hero": {
-    "greeting": "Xin chào (｡◕‿‿◕｡)",
-    "subtitle": "Lập trình viên Full-Stack xây dựng các sản phẩm web nhanh, dễ tiếp cận và tinh tế trong từng chi tiết",
-    "status": "Sẵn sàng cho cơ hội mới",
+    "greeting": "Xin chào (｡◕‿‿◕｡), tôi là",
+    "subtitle": "Lập trình viên Full-Stack, chuyên phát triển các sản phẩm số nhanh chóng, dễ tiếp cận và được thiết kế tỉ mỉ đến từng chi tiết",
+    "status": "Sẵn sàng nhận dự án mới",
     "cta": "Liên hệ"
   },
   "bio": {
-    "sectionLabel": "01 / Giới thiệu",
-    "title": "Vài điều về tôi",
-    "p1": "Tôi là lập trình viên full-stack thích các giao diện sạch sẽ, thời gian tải nhanh và mã lệnh mà sáu tháng sau quay lại vẫn thấy dễ chịu. Phần lớn công việc của tôi nằm ở TypeScript, React và Node, dù tôi luôn quay lại hệ sinh thái .NET cho bất cứ thứ gì cần sự vững chắc thay vì hào nhoáng",
-    "p2": "Khi rời xa bàn phím, tôi thường đang đọc thứ gì đó quá dài, mày mò các dịch vụ tự host, hoặc học thêm một ngôn ngữ mà tôi sẽ chẳng bao giờ hoàn thành dự án nào bằng nó",
+    "sectionLabel": "01 / Giới thiệu về tôi",
+    "title": "Vài lời về tôi",
+    "p1": "Tôi là một nhà phát triển Full-Stack, người coi trọng giao diện gọn gàng, hiệu suất cao và mã nguồn mà tôi vẫn cảm thấy thoải mái khi quay lại xem sau nửa năm. Phần lớn công việc của tôi tập trung vào TypeScript, React và Node, nhưng đối với những nhiệm vụ cần độ tin cậy hơn là \"tốc độ\", tôi quay trở lại hệ sinh thái .NET",
+    "p2": "Khi không ngồi trước bàn phím, tôi thường đọc những cuốn sách sâu sắc, mày mò các dịch vụ tự lưu trữ hoặc nghiên cứu các mẫu thiết kế và công nghệ mới",
     "stats": {
-      "years": "Năm kinh nghiệm",
-      "projects": "Dự án đã giao",
-      "tools": "Công cụ trong hộp"
+      "years": "Số năm làm việc trong lĩnh vực phát triển phần mềm",
+      "projects": "Dự án thương mại",
+      "tools": "Các công cụ trong bộ công cụ"
     }
   },
   "projects": {
     "sectionLabel": "02 / Dự án",
-    "title": "Dự án tiêu biểu",
-    "view": "Xem",
-    "openLabel": "Mở dự án: {{title}}",
+    "title": "Các tác phẩm tiêu biểu",
+    "view": "Mở",
+    "openLabel": "Mở dự án: {{title}}" ,
     "items": {
       "kurisu": {
-        "tagline": "Nền tảng tác tử AI với IPC TypeScript do Roslyn sinh",
-        "description": "Một nền tảng tác tử AI mã nguồn mở nằm gọn trong một ứng dụng desktop duy nhất. .NET 10 lưu trữ runtime của tác tử (MCP, công cụ, phiên, quyền, hook) và điều khiển một renderer Electron qua cầu nối riêng. Lớp IPC được sinh ra tại thời điểm biên dịch bởi một source generator Roslyn, phát ra các wrapper TypeScript có kiểu từ chữ ký phương thức C#. shadcn/ui và Vite ở phía renderer"
+        "tagline": "Nền tảng các tác nhân AI trên .NET 10 với trình hiển thị Electron",
+        "description": "Nền tảng mã nguồn mở cho các tác nhân AI trong một ứng dụng máy tính để bàn duy nhất. .NET 10 chứa môi trường chạy của tác nhân (MCP, công cụ, phiên làm việc, quyền truy cập, hook) và điều khiển trình hiển thị Electron thông qua cầu nối tùy chỉnh. Lớp IPC được tạo ra trong quá trình biên dịch bởi trình tạo mã nguồn Roslyn, giúp tạo các lớp bọc TypeScript có kiểu dữ liệu từ các chữ ký phương thức C#. Về phía trình hiển thị — shadcn/ui và Vite"
       },
       "react-bits-vue-bits": {
-        "tagline": "Người đóng góp cho thư viện component 47k sao",
-        "description": "Người đóng góp cho một trong những thư viện component mã nguồn mở lớn nhất cho React và Vue, khoảng 47k sao gộp lại. Đã tái cấu trúc các component lõi (Stack, FadeContent, AnimatedContent), bổ sung hỗ trợ scroller tùy chỉnh, di chuyển sang GSAP và dọn dẹp an toàn hơn. Nền ferrofluid của trang này là một trong các component đó"
+        "tagline": "Các thư viện thành phần mã nguồn mở phổ biến cho React và Vue",
+        "description": "Người đóng góp cho một trong những thư viện thành phần mã nguồn mở lớn nhất dành cho React và Vue. Đã tái cấu trúc các thành phần chính (Stack, FadeContent, AnimatedContent): thêm hỗ trợ cho thanh cuộn tùy chỉnh, chuyển đổi sang GSAP và cơ chế dọn dẹp an toàn hơn. Nền hiệu ứng ferrofluid của trang web này là một trong những thành phần đó"
       },
       "infiniframe": {
-        "tagline": "Cửa sổ native đa nền tảng cho .NET",
-        "description": "Người đóng góp tích cực cho một framework cửa sổ native đa nền tảng cho .NET. Đã làm việc ở backend native C++: tái cấu trúc lớp unmanaged, sửa rò rỉ bộ nhớ và vấn đề null-guard, và viết tài liệu toàn diện cho cả bốn thư viện. Cũng đã triển khai kỹ năng và tác tử trợ lý AI cho dự án"
+        "tagline": "Thư viện để tạo các cửa sổ gốc đa nền tảng trong .NET",
+        "description": "Người đóng góp tích cực cho khung làm việc cửa sổ gốc đa nền tảng dành cho .NET. Đã làm việc trên backend bản địa C++: tái cấu trúc lớp unmanaged, khắc phục rò rỉ bộ nhớ và các vấn đề liên quan đến null-guard, viết tài liệu chi tiết cho cả bốn thư viện"
       },
       "mpovt": {
-        "tagline": "Website doanh nghiệp đa ngôn ngữ, đã giao",
-        "description": "Website doanh nghiệp đa ngôn ngữ cho OJSC «MPOVT», một bản dựng tùy chỉnh được giao như một dự án trả phí. SPA React/Vite với Chakra UI và Tailwind, GSAP và ogl/Three.js cho hoạt ảnh hero, xác thực JWT qua jose, TanStack Query cho dữ liệu và i18n đầy đủ bằng tiếng Belarus, Anh, Nga và Trung. Chủ đề sáng/tối, ghi công ở chân trang"
+        "tagline": "Trang web giới thiệu doanh nghiệp của một nhà sản xuất điện tử lớn",
+        "description": "Trang web doanh nghiệp đa ngôn ngữ cho Công ty Cổ phần «MPOVT», được thực hiện theo đơn đặt hàng có trả phí. Ứng dụng SPA sử dụng React/Vite với Chakra UI và Tailwind, GSAP cho hiệu ứng động, TanStack Query cho dữ liệu và hỗ trợ i18n đầy đủ cho tiếng Belarus, tiếng Anh, tiếng Nga và tiếng Trung. Hệ thống chủ đề sáng/tối đã được tích hợp"
       },
       "hyprism": {
-        "tagline": "Trình khởi chạy Hytale, người bảo trì chính",
-        "description": "Một trong những người bảo trì một trình khởi chạy Hytale được viết bằng C# trên .NET và Electron. Đã sửa xử lý GPU/instance, phụ trách công việc UI và triển khai cải tiến hệ thống build qua hơn 20 PR"
+        "tagline": "Trình khởi chạy tùy chỉnh cho Hytale với trình quản lý mod và kiểm soát phiên bản",
+        "description": "Một trong những người duy trì trình khởi chạy phổ biến nhất cho Hytale, được viết bằng C# trên nền tảng .NET và Electron. Đã sửa lỗi xử lý GPU/các phiên bản trò chơi, chuyển sang hệ thống phiên bản, thiết kế giao diện, phát triển công cụ ghi nhật ký và thêm hỗ trợ xác thực chính thức"
       },
       "freaksite": {
-        "tagline": "Trang này, sân chơi cho kiểu chữ, chuyển động và chi tiết",
-        "description": "Trang mà bạn đang xem. Sân chơi cá nhân cho kiểu chữ, chuyển động và các chi tiết tương tác nhỏ. Vite/React/TypeScript, triển khai trên GitHub Pages"
+        "tagline": "Trang web này là không gian dành cho typography, chuyển động và các chi tiết",
+        "description": "Trang web mà bạn đang xem. Không gian cá nhân dành cho typography, chuyển động và các chi tiết nhỏ trong tương tác. Vite/React/TypeScript, được triển khai trên GitHub Pages"
       }
     }
   },
   "tech": {
     "sectionLabel": "03 / Công nghệ",
-    "title": "Stack và công cụ",
+    "title": "Công nghệ và công cụ",
     "groups": {
       "frontend": "Frontend",
       "backend": "Backend",
@@ -60,22 +60,21 @@
   "contact": {
     "sectionLabel": "04 / Liên hệ",
     "title": "Liên hệ với tôi",
-    "intro": "Tôi luôn sẵn sàng đón nhận công việc thú vị, những cuộc trò chuyện về công nghệ, hoặc gợi ý về sách nên đọc tiếp theo. Hãy liên hệ qua kênh nào bạn thấy tiện"
+    "intro": "Tôi luôn sẵn lòng đón nhận các dự án thú vị, câu hỏi về công nghệ hoặc gợi ý về những điều có thể tìm hiểu. Bạn có thể liên hệ với tôi qua bất kỳ dịch vụ nào dưới đây"
   },
   "footer": {
-    "copyright": "© {{year}} Daniel Freak",
-    "builtWith": "Xây dựng bằng Vite, React và Tailwind",
+    "builtWith": "Được tạo ra với tình yêu ❤",
     "auto": "Tự động",
     "language": "Ngôn ngữ"
   },
   "modal": {
     "dialogLabel": "Chi tiết dự án",
     "back": "Quay lại",
-    "backLabel": "Về trang chủ",
+    "backLabel": "Quay lại trang chủ",
     "close": "Đóng",
     "projects": "Dự án",
     "stack": "Stack",
     "source": "Mã nguồn",
-    "live": "Trực tiếp"
+    "live": "Demo"
   }
 }

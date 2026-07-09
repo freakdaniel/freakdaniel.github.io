@@ -1,55 +1,55 @@
 {
   "hero": {
-    "greeting": "Ciao (｡◕‿‿◕｡)",
-    "subtitle": "Sviluppatore Full-Stack che realizza prodotti web veloci, accessibili e discretamente curati",
-    "status": "Disponibile per nuove opportunità",
+    "greeting": "Ciao (｡◕‿‿◕｡), sono",
+    "subtitle": "Sviluppatore full-stack, realizzo prodotti digitali veloci, accessibili e curati nei minimi dettagli",
+    "status": "Disponibile per nuovi progetti",
     "cta": "Contattami"
   },
   "bio": {
-    "sectionLabel": "01 / Su di me",
-    "title": "Qualcosa su di me",
-    "p1": "Sono uno sviluppatore full-stack a cui piacciono le interfacce pulite, i tempi di caricamento rapidi e il codice a cui fa piacere tornare sei mesi dopo. Gran parte del mio lavoro vive in TypeScript, React e Node, anche se continuo a tornare all'ecosistema .NET per tutto ciò che deve essere solido anziché appariscente",
-    "p2": "Lontano dalla tastiera, di solito leggo qualcosa di troppo lungo, armeggio con servizi self-hosted o imparo un'altra lingua in cui non finirò mai un progetto",
+    "sectionLabel": "01 / Chi sono",
+    "title": "Qualche parola su di me",
+    "p1": "Sono uno sviluppatore full-stack che apprezza le interfacce pulite, le prestazioni elevate e un codice a cui sia piacevole tornare dopo sei mesi. La maggior parte del mio lavoro riguarda TypeScript, React e Node, ma per i compiti in cui è richiesta l’affidabilità piuttosto che la \"velocità\", torno all’ecosistema .NET",
+    "p2": "Quando non sono davanti alla tastiera, di solito leggo qualcosa di molto intelligente, mi diletto con servizi self-hosted o studio pattern e nuove tecnologie",
     "stats": {
-      "years": "Anni di esperienza",
-      "projects": "Progetti consegnati",
-      "tools": "Strumenti nel kit"
+      "years": "Anni di esperienza nello sviluppo",
+      "projects": "Progetti commerciali",
+      "tools": "Strumenti a disposizione"
     }
   },
   "projects": {
     "sectionLabel": "02 / Progetti",
     "title": "Lavori selezionati",
-    "view": "Vedi",
-    "openLabel": "Apri progetto: {{title}}",
+    "view": "Apri",
+    "openLabel": "Apri il progetto: {{title}}" ,
     "items": {
       "kurisu": {
-        "tagline": "Piattaforma di agenti IA con IPC TypeScript generato da Roslyn",
-        "description": "Una piattaforma di agenti IA open source che vive in una singola app desktop. .NET 10 ospita il runtime dell'agente (MCP, strumenti, sessioni, permessi, hook) e guida un renderer Electron tramite un bridge personalizzato. Il livello IPC è generato in fase di compilazione da un source generator Roslyn che emette wrapper TypeScript tipizzati a partire dalle firme dei metodi C#. shadcn/ui e Vite sul lato renderer"
+        "tagline": "Piattaforma di agenti AI su .NET 10 con renderer Electron",
+        "description": "Piattaforma open source di agenti AI in un'unica applicazione desktop. .NET 10 contiene il runtime dell'agente (MCP, strumenti, sessioni, autorizzazioni, hook) e gestisce il renderer Electron tramite un bridge personalizzato. Il livello IPC viene generato in fase di compilazione dal generatore di codice sorgente Roslyn, che crea wrapper TypeScript tipizzati dalle firme dei metodi C#. Sul lato del renderer: shadcn/ui e Vite"
       },
       "react-bits-vue-bits": {
-        "tagline": "Contributore di una libreria di componenti da 47k stelle",
-        "description": "Contributore di una delle più grandi librerie di componenti open source per React e Vue, circa 47k stelle in totale. Ho rifattorizzato i componenti principali (Stack, FadeContent, AnimatedContent) aggiungendo il supporto a scroller personalizzati, la migrazione a GSAP e una pulizia più sicura. Lo sfondo ferrofluido di questo sito è uno di quei componenti"
+        "tagline": "Popolari librerie open-source di componenti per React e Vue",
+        "description": "Collaboratore di una delle più grandi librerie open source di componenti per React e Vue. Ho rifattorizzato i componenti chiave (Stack, FadeContent, AnimatedContent): ho aggiunto il supporto per gli scroller personalizzati, la migrazione a GSAP e una pulizia più sicura. Lo sfondo a ferrofluido di questo sito è uno di questi componenti"
       },
       "infiniframe": {
-        "tagline": "Finestre native multipiattaforma per .NET",
-        "description": "Contributore attivo di un framework di finestre native multipiattaforma per .NET. Ho lavorato al backend nativo in C++: rifattorizzato il livello non gestito, corretto memory leak e problemi di null-guard e scritto documentazione completa per tutte e quattro le librerie. Ho inoltre realizzato skill e agenti di assistente IA per il progetto"
+        "tagline": "Libreria per la creazione di finestre native multipiattaforma in .NET",
+        "description": "Collaboratore attivo al framework multipiattaforma per finestre native in .NET. Ha lavorato al backend nativo in C++: ha rifattorizzato il livello unmanaged, ha corretto le perdite di memoria e i problemi con il null-guard, ha scritto una documentazione dettagliata per tutte e quattro le librerie"
       },
       "mpovt": {
-        "tagline": "Sito aziendale multilingue, consegnato",
-        "description": "Sito web aziendale multilingue per OJSC «MPOVT», una build personalizzata consegnata come incarico a pagamento. SPA React/Vite con Chakra UI e Tailwind, GSAP e ogl/Three.js per le animazioni hero, autenticazione JWT via jose, TanStack Query per i dati e i18n completa in bielorusso, inglese, russo e cinese. Temi chiaro/scuro, credito nel piè di pagina del sito"
+        "tagline": "Sito web aziendale di presentazione di un grande produttore di elettronica",
+        "description": "Sito web aziendale multilingue per la SA «MPOVT», realizzato su commissione. SPA React/Vite con Chakra UI e Tailwind, GSAP per le animazioni, TanStack Query per i dati e i18n completo in bielorusso, inglese, russo e cinese. È stato implementato il sistema di tema chiaro/scuro"
       },
       "hyprism": {
-        "tagline": "Launcher di Hytale, maintainer principale",
-        "description": "Uno dei maintainer di un launcher di Hytale scritto in C# su .NET ed Electron. Ho corretto la gestione di GPU/istanze, gestito il lavoro UI e pubblicato miglioramenti al sistema di build in oltre 20 PR"
+        "tagline": "Launcher personalizzato per Hytale con gestore di mod e controllo delle versioni",
+        "description": "Uno dei manutentori del launcher più popolare per Hytale, scritto in C# su .NET ed Electron. Ha corretto la gestione della GPU e delle istanze di gioco, ha effettuato il passaggio al sistema di versioni, ha creato il design e il logger, e ha aggiunto il supporto per l’autenticazione ufficiale"
       },
       "freaksite": {
-        "tagline": "Questo sito, parco giochi per tipografia, movimento e dettaglio",
-        "description": "Il sito che stai guardando. Parco giochi personale per tipografia, movimento e piccoli dettagli di interazione. Vite/React/TypeScript, distribuito su GitHub Pages"
+        "tagline": "Questo sito, uno spazio dedicato alla tipografia, al movimento e ai dettagli",
+        "description": "Il sito che state vedendo in questo momento. Uno spazio personale dedicato alla tipografia, al movimento e ai piccoli dettagli delle interazioni. Vite/React/TypeScript, ospitato su GitHub Pages"
       }
     }
   },
   "tech": {
-    "sectionLabel": "03 / Tecnologia",
+    "sectionLabel": "03 / Tecnologie",
     "title": "Stack e strumenti",
     "groups": {
       "frontend": "Frontend",
@@ -60,12 +60,11 @@
   "contact": {
     "sectionLabel": "04 / Contatti",
     "title": "Contattami",
-    "intro": "Sono sempre aperto a lavori interessanti, conversazioni sulla tecnologia o consigli su cosa leggere dopo. Scrivimi sul canale che preferisci"
+    "intro": "Sono sempre aperto a progetti interessanti, domande sulle tecnologie o consigli su cosa studiare. Puoi contattarmi tramite uno dei servizi qui sotto"
   },
   "footer": {
-    "copyright": "© {{year}} Daniel Freak",
-    "builtWith": "Realizzato con Vite, React e Tailwind",
-    "auto": "Automatico",
+    "builtWith": "Realizzato con amore ❤",
+    "auto": "Auto",
     "language": "Lingua"
   },
   "modal": {
@@ -75,7 +74,7 @@
     "close": "Chiudi",
     "projects": "Progetti",
     "stack": "Stack",
-    "source": "Sorgente",
-    "live": "Dal vivo"
+    "source": "Codice sorgente",
+    "live": "Demo"
   }
 }
