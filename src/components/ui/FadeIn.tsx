@@ -16,26 +16,16 @@ export interface FadeInProps {
   /** IntersectionObserver rootMargin. */
   rootMargin?: string;
   /**
-   * Unique id for this section. When provided, the reveal animation
-   * only runs the first time the user lands on the page. Subsequent
-   * mounts (e.g. after returning from a detail page) skip the
-   * animation and render visible immediately.
+   * When provided, the reveal runs only the first time per session;
+   * later mounts (e.g. returning from a detail page) render visible.
    */
   revealId?: string;
   /** Any additional props (id, aria-*, data-*, etc.). */
   [key: string]: unknown;
 }
 
-// Module-level cache: ids that have already been revealed in this
-// browser session. Cleared on full page reload, preserved across
-// client-side route changes.
 const revealedIds = new Set<string>();
 
-/**
- * Wraps children with a fade-up entrance that triggers when the element
- * enters the viewport. Uses IntersectionObserver and a CSS class
- * (`.is-visible`) toggled on a `.reveal` or `.reveal-stagger` element.
- */
 export default function FadeIn({
   children,
   as: Tag = 'div',
@@ -54,14 +44,11 @@ export default function FadeIn({
     const el = ref.current;
     if (!el) return;
 
-    // If this revealId has already been triggered in this session,
-    // mark the element visible immediately and skip the observer.
     if (revealId && revealedIds.has(revealId)) {
       el.classList.add('is-visible');
       return;
     }
 
-    // Respect user preference: skip the IO dance, just reveal.
     if (
       typeof window !== 'undefined' &&
       window.matchMedia('(prefers-reduced-motion: reduce)').matches

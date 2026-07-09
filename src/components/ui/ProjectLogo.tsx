@@ -4,31 +4,21 @@ export interface ProjectLogoProps {
   project: Project;
   /** Sizes the logo box, e.g. "h-14 w-14" (cards) or "h-20 w-20" (modal). */
   className?: string;
-  /**
-   * Accessible label for the logo. Pass the project title when the logo is
-   * meaningful on its own; omit to mark it decorative (e.g. when the title
-   * is rendered right beside it).
-   */
+  /** Accessible label; omit to mark the logo decorative. */
   label?: string;
+  /**
+   * For `dual` logos: swap to the dark variant on `.group` hover. Enable
+   * on project cards (where the card flips to a light fill); disable where
+   * hover should only change opacity, e.g. the overlay's project list.
+   */
+  swapOnGroupHover?: boolean;
 }
 
-/**
- * Renders a project logo in the right mode for its context:
- *
- * - `mono`  — a flat single-color SVG, recolored via a CSS mask so it
- *   follows the surrounding `currentColor` (stays visible on any
- *   background, and recolors with card hover).
- * - `dual`  — a light logo by default, swapped to a dark variant when the
- *   nearest `.group` ancestor is hovered (used by project cards).
- * - normal  — a plain raster logo.
- *
- * Shared by the project cards and the project overlay so the recoloring
- * logic lives in one place.
- */
 export default function ProjectLogo({
   project,
   className = '',
   label,
+  swapOnGroupHover = true,
 }: ProjectLogoProps) {
   const aria = label
     ? { role: 'img' as const, 'aria-label': label }
@@ -49,6 +39,18 @@ export default function ProjectLogo({
   }
 
   if (project.logoMode === 'dual' && project.logoHover) {
+    if (!swapOnGroupHover) {
+      return (
+        <span className={`relative block ${className}`} {...aria}>
+          <img
+            src={project.logo}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-contain"
+          />
+        </span>
+      );
+    }
     return (
       <span className={`relative block ${className}`}>
         <img

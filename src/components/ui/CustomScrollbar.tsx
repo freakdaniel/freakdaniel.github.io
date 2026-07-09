@@ -10,7 +10,7 @@ import { useScrollMetrics } from '../../hooks/useScrollMetrics';
 export interface CustomScrollbarProps {
   children: React.ReactNode;
   className?: string;
-  /** Classes for the outer relative wrapper (flex/min-height layout). */
+  /** Classes for the outer relative wrapper (flex/min-height layout) */
   containerClassName?: string;
   orientation?: 'vertical' | 'horizontal';
   hideNativeScrollbar?: boolean;
@@ -21,7 +21,7 @@ export interface CustomScrollbarProps {
 
 /**
  * Scroll container with a hidden native scrollbar, a custom thumb on
- * the right/bottom edge, and optional top/bottom fade masks.
+ * the right/bottom edge, and optional top/bottom fade masks
  */
 export default function CustomScrollbar({
   children,
@@ -37,7 +37,6 @@ export default function CustomScrollbar({
   const isVertical = orientation === 'vertical';
   const masks = showFadeMasks ?? isVertical;
 
-  // Thumb is visible only while the user interacts, then fades out.
   const [active, setActive] = useState(false);
   const idleTimerRef = useRef<number | null>(null);
 
@@ -97,7 +96,6 @@ export default function CustomScrollbar({
         {children}
       </div>
 
-      {/* Top fade mask: shown when scrolled down. */}
       {masks && isVertical && (
         <div
           aria-hidden="true"
@@ -113,7 +111,7 @@ export default function CustomScrollbar({
         />
       )}
 
-      {/* Bottom fade mask: shown when more content is below. */}
+      {/* Bottom fade mask. */}
       {masks && isVertical && (
         <div
           aria-hidden="true"
@@ -129,7 +127,6 @@ export default function CustomScrollbar({
         />
       )}
 
-      {/* Custom thumb. */}
       <div
         aria-hidden="true"
         className={`pointer-events-none absolute ${

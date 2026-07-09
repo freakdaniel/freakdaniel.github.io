@@ -184,20 +184,12 @@ export default function ProjectModal() {
       aria-modal="true"
       aria-label={t('modal.dialogLabel')}
     >
-      {/* The panel: full-screen black background that slides up from
-          the bottom on open and slides down on close. The container
-          does not animate opacity — the panel simply layers over the
-          page. */}
       <div
         className={`absolute inset-0 flex flex-col bg-bg ${
           closing ? 'modal-panel-exit' : 'modal-panel-enter'
         }`}
       >
-        {/* Mobile: the overlay itself scrolls. Desktop: fixed frame
-            with a pinned sidebar and the article as the scroll region. */}
         <div className="flex-1 min-h-0 overflow-y-auto lg:overflow-visible px-6 sm:px-10 lg:px-16 py-12 sm:py-20">
-          {/* On open, children fade up with a small stagger (--i).
-              Skip the reveal entirely during the close animation. */}
           <div
             className={`mx-auto flex w-full max-w-6xl flex-col lg:h-full lg:flex-row lg:gap-12 ${
               closing ? '' : 'modal-content-reveal'
@@ -208,7 +200,6 @@ export default function ProjectModal() {
               style={{ ['--i' as string]: 0 }}
             >
               <nav aria-label="Project navigation" className="flex flex-col lg:h-full lg:min-h-0">
-                {/* Back link sits above the PROJECTS label. */}
                 <div className="flex items-center justify-between gap-2 mb-6 ml-3">
                   <button
                     type="button"
@@ -220,7 +211,6 @@ export default function ProjectModal() {
                     <span>{t('modal.back')}</span>
                   </button>
                 </div>
-                {/* Desktop-only scroller for the project list. */}
                 <CustomScrollbar
                   orientation="vertical"
                   containerClassName="hidden lg:block lg:h-full lg:min-h-0 lg:flex-1"
@@ -243,6 +233,7 @@ export default function ProjectModal() {
                           >
                             <ProjectLogo
                               project={p}
+                              swapOnGroupHover={false}
                               className={`h-5 w-5 shrink-0 transition-opacity duration-200 ${
                                 isActive
                                   ? 'opacity-100'
@@ -261,8 +252,7 @@ export default function ProjectModal() {
               </nav>
             </aside>
 
-            {/* Mobile: article flows inline (overlay scrolls).
-                Desktop: article is the bounded scroll region. */}
+            {/* Mobile: article flows inline. Desktop: bounded scroll region. */}
             <div
               className="lg:hidden"
               style={{ ['--i' as string]: 1 }}

@@ -21,11 +21,6 @@ export interface Project {
   demo: string | null;
 }
 
-/**
- * Curated list of projects featured on the homepage and the
- * `/projects/:slug` detail page. Logos and previews are loaded
- * directly from raw.githubusercontent.com / local public/ assets.
- */
 export const projects: Project[] = [
   {
     slug: 'kurisu',
@@ -64,7 +59,7 @@ export const projects: Project[] = [
     fullStack: ['C++', 'C#', '.NET', 'P/Invoke'],
     logo: '/imgs/infiniframe.png',
     logoType: 'png',
-    repo: 'https://github.com/freakdaniel/InfiniFrame',
+    repo: 'https://github.com/InfiniLore/InfiniFrame',
     demo: null,
   },
   {
@@ -100,7 +95,7 @@ export const projects: Project[] = [
     fullStack: ['C#', 'Electron', '.NET'],
     logo: '/imgs/hyprism.png',
     logoType: 'png',
-    repo: 'https://github.com/freakdaniel/HyPrism',
+    repo: 'https://github.com/hyprismteam/HyPrism',
     demo: null,
   },
   {

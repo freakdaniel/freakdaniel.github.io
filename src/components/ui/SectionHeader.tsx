@@ -1,7 +1,3 @@
-/**
- * Minimal section header: small uppercase label, large title, thin divider.
- * Renders as a heading group. Use inside a FadeIn wrapper for entrance.
- */
 export interface SectionHeaderProps {
   label: string;
   title: string;

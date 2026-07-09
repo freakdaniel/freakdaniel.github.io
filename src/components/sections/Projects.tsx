@@ -44,11 +44,9 @@ export default function Projects() {
                   }}
                   aria-label={t('projects.openLabel', { title: p.title })}
                 >
-                  {/* White fill that wipes up from the bottom on hover. */}
                   <span aria-hidden="true" className="project-card-fill" />
 
                   <div className="project-card-content flex h-full w-full flex-col items-center justify-center gap-3">
-                    {/* Centered block: shifts up on hover to make room */}
                     <div className="project-card-headline flex flex-col items-center gap-3">
                       <ProjectLogo
                         project={p}
@@ -66,7 +64,6 @@ export default function Projects() {
                       </div>
                     </div>
 
-                    {/* Core stack + View, revealed on hover. */}
                     <div className="project-card-reveal flex flex-col items-center gap-2.5">
                       <ul className="flex flex-wrap items-center justify-center gap-1.5 text-xs">
                         {p.shortStack.map((tech) => {

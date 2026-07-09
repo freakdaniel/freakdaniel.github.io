@@ -9,10 +9,6 @@ export interface ScrollMetrics {
   canScrollDown: boolean;
 }
 
-/**
- * Tracks overflow + scroll position of a scrollable element,
- * recomputing on scroll, resize, and ResizeObserver events.
- */
 export function useScrollMetrics<T extends HTMLElement>(): {
   ref: RefObject<T | null>;
   metrics: ScrollMetrics;

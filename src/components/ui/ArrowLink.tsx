@@ -12,10 +12,6 @@ export interface ArrowLinkProps {
   disabled?: boolean;
 }
 
-/**
- * Inline text link with a trailing arrow that shifts on hover.
- * Renders an `<a>` when `href` is provided, otherwise a `<button>`.
- */
 export default function ArrowLink({
   href,
   children,

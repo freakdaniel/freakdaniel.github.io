@@ -25,27 +25,12 @@ function Flag({ Flag, label }: { Flag: FlagIcon; label: string }) {
   );
 }
 
-/**
- * Compact language switcher rendered in the footer. The trigger shows the
- * current flag + language code (or "Auto" when following the system),
- * with no border — a quiet, inline control. Clicking opens a monochrome
- * dropdown with animated enter/exit, a custom scrollbar, and every
- * supported language listed by its own name beside its flag.
- *
- * The top option is "Auto", which follows the browser/system language.
- * Selections are persisted via the i18n storage helpers; Auto never
- * caches a concrete language, so changing the OS language keeps working.
- *
- * Keyboard: ArrowUp/Down to move, Enter/Space to select, Escape to close.
- */
 export default function LanguageSwitcher() {
   const { i18n, t } = useTranslation();
   const [preference, setPreference] = useState<Preference>(
     getStoredPreference()
   );
   const [open, setOpen] = useState(false);
-  // `mounted`/`closing` mirror the ProjectModal pattern: the node stays
-  // mounted during the exit animation so it can fade out, then unmounts.
   const [mounted, setMounted] = useState(false);
   const [closing, setClosing] = useState(false);
   const exitTimer = useRef<number | null>(null);
@@ -54,11 +39,9 @@ export default function LanguageSwitcher() {
   const listRef = useRef<HTMLUListElement>(null);
   const listId = useId();
 
-  // The resolved concrete language, regardless of Auto vs explicit.
   const resolvedCode = i18n.language?.split('-')[0] ?? 'en';
   const isAuto = preference === AUTODETECT;
 
-  // Options: Auto first, then every language.
   const options: Preference[] = [AUTODETECT, ...LANGUAGES.map((l) => l.code)];
 
   const currentIndex = Math.max(
@@ -108,7 +91,6 @@ export default function LanguageSwitcher() {
     return () => document.removeEventListener('pointerdown', onPointerDown);
   }, [open]);
 
-  // Close on Escape and return focus to the trigger.
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
@@ -170,8 +152,6 @@ export default function LanguageSwitcher() {
   const label = t('footer.language', { defaultValue: 'Language' });
   const autoLabel = t('footer.auto', { defaultValue: 'Auto' });
 
-  // Trigger shows the resolved flag + code, prefixed with "Auto" when
-  // following the system.
   const triggerLang = getLanguage(resolvedCode);
 
   return (

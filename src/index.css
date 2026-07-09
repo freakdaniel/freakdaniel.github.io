@@ -3,9 +3,6 @@
 /* ---------- Theme tokens ---------- */
 @theme {
   --color-bg: #0a0a0a;
-  /* RGB channels of --color-bg, space-separated for the modern
-     `rgb(R G B / A)` syntax. Used to build soft fade-mask gradients
-     with alpha on top of the page background. */
   --color-bg-rgb: 10 10 10;
   --color-fg: #fafafa;
   --color-muted: #737373;
@@ -16,7 +13,6 @@
     "Helvetica Neue", Arial, sans-serif;
 }
 
-/* ---------- Base ---------- */
 @layer base {
   html {
     background-color: var(--color-bg);
@@ -25,13 +21,7 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     font-family: var(--font-sans);
-    /* Smoothly animate in-page anchor jumps (e.g. the Hero "Get in
-       touch" link). Overridden to auto under prefers-reduced-motion. */
     scroll-behavior: smooth;
-    /* Reserve space for the vertical scrollbar even when it isn't
-       visible. Prevents the layout from shifting when an overlay
-       (such as the project preview) toggles body overflow between
-       hidden and visible. */
     scrollbar-gutter: stable;
   }
 
@@ -53,7 +43,6 @@
   }
 }
 
-/* ---------- Utilities ---------- */
 @layer utilities {
   .text-muted {
     color: var(--color-muted);
@@ -75,7 +64,6 @@
     border-color: var(--color-line-strong);
   }
 
-  /* Fade-up entrance for any element entering the viewport. */
   .reveal {
     opacity: 0;
     transform: translate3d(0, 16px, 0);
@@ -90,7 +78,6 @@
     transform: translate3d(0, 0, 0);
   }
 
-  /* Staggered children. Apply --i to each child to delay its reveal. */
   .reveal-stagger > .reveal-child {
     opacity: 0;
     transform: translate3d(0, 12px, 0);
@@ -106,8 +93,6 @@
     transform: translate3d(0, 0, 0);
   }
 
-  /* Dark fade overlay for the Hero section: blends the Ferrofluid
-     background into the page background near the bottom edge. */
   .hero-fade {
     background: linear-gradient(
       to bottom,
@@ -116,50 +101,26 @@
     );
   }
 
-  /* Note: the View Transitions API (`@view-transition { navigation:
-     auto }`) was intentionally removed. It fired on every URL change
-     — including `?project=` toggles — and cross-faded the whole
-     page root on top of the overlay's own open/close animation,
-     producing a visible double-play glitch. The overlay now animates
-     itself (see `.modal-enter` / `.modal-exit`) and route changes
-     swap instantly. */
-
-
-  /* ProjectModal open: the full-screen panel rises from the bottom
-     (translateY 100% -> 0). The container does not animate opacity —
-     the panel simply slides up over the page and layers on top. */
+  /* ProjectModal: panel slides up on open, down on close. */
   .modal-panel-enter {
     animation: modal-panel-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
   @keyframes modal-panel-up {
-    from {
-      transform: translate3d(0, 100%, 0);
-    }
-    to {
-      transform: translate3d(0, 0, 0);
-    }
+    from { transform: translate3d(0, 100%, 0); }
+    to { transform: translate3d(0, 0, 0); }
   }
 
-  /* ProjectModal close: the panel slides back down and out of view.
-     Played on the same element as the enter, swapped via the
-     `.modal-exit` class. */
   .modal-panel-exit {
     animation: modal-panel-down 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
   }
 
   @keyframes modal-panel-down {
-    from {
-      transform: translate3d(0, 0, 0);
-    }
-    to {
-      transform: translate3d(0, 100%, 0);
-    }
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(0, 100%, 0); }
   }
 
-  /* Content reveal: children fade up with a small stagger that
-     begins partway through the panel rise, so the page feels alive
-     as the panel settles. Each child uses `--i` for its delay. */
+  /* ProjectModal content staggered fade-in as the panel settles. */
   .modal-content-reveal > * {
     opacity: 0;
     transform: translate3d(0, 14px, 0);
@@ -174,9 +135,8 @@
     }
   }
 
-  /* ProjectModal: project switch inside the overlay. The article is
-     keyed by slug so React mounts a fresh node on each switch, and
-     this keyframe replays. */
+  /* Project switch inside the overlay: article is keyed by slug so this
+     replays on each switch. */
   .article-fade-in {
     animation: article-fade-in 0.28s cubic-bezier(0.22, 1, 0.36, 1);
   }
@@ -192,19 +152,11 @@
     }
   }
 
-  /* Project card grid. Tiles are flush (no gaps) and alternate
-     between two near-black tones in a checkerboard. The
-     `.project-card` is `position: relative` + `overflow: hidden`
-     so the white hover layer (`.project-card-fill`) can wipe in
-     from the bottom without bleeding outside the card. */
   .project-card {
     position: relative;
     overflow: hidden;
   }
 
-  /* White fill that wipes up from the bottom on hover. Grows from
-     scaleY(0) -> 1 with origin at the bottom edge, so the fill
-     appears to rise into the card. */
   .project-card-fill {
     position: absolute;
     inset: 0;
@@ -219,10 +171,6 @@
     transform: scaleY(1);
   }
 
-  /* Card content sits above the fill. The content column is
-     centered vertically by default; on hover the reveal block
-     (stack + View) grows in below the headline, which pushes the
-     centered headline upward so everything fits — a smooth shift. */
   .project-card-content {
     position: relative;
     z-index: 1;
@@ -237,9 +185,6 @@
     color: #555;
   }
 
-  /* Reveal block: collapsed and transparent by default, expands on
-     hover. max-height transitions so the headline above shifts up
-     smoothly as this block takes up space. */
   .project-card-reveal {
     max-height: 0;
     opacity: 0;
@@ -254,10 +199,33 @@
     opacity: 1;
   }
 
+  .lang-menu {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-line);
+    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.8);
+    transform-origin: bottom right;
+  }
+
+  .lang-menu-enter {
+    animation: lang-menu-in 0.18s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .lang-menu-exit {
+    animation: lang-menu-out 0.14s cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  @keyframes lang-menu-in {
+    from { opacity: 0; transform: scale(0.94) translateY(6px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  @keyframes lang-menu-out {
+    from { opacity: 1; transform: scale(1) translateY(0); }
+    to { opacity: 0; transform: scale(0.94) translateY(6px); }
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
+    html { scroll-behavior: auto; }
 
     .reveal,
     .reveal-stagger > .reveal-child {
@@ -269,7 +237,9 @@
     .modal-panel-enter,
     .modal-panel-exit,
     .modal-content-reveal > *,
-    .article-fade-in {
+    .article-fade-in,
+    .lang-menu-enter,
+    .lang-menu-exit {
       animation: none !important;
     }
 
@@ -293,63 +263,8 @@
       opacity: 1 !important;
     }
   }
-
-  /* Language switcher dropdown: a thin, monochrome menu that opens
-     below the trigger. Mirrors the contact-list chrome
-     (bg-bg + border-line, rounded-2xl) so it reads as part of the
-     same design language. */
-  .lang-menu {
-    background-color: var(--color-bg);
-    border: 1px solid var(--color-line);
-    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.8);
-    transform-origin: bottom right;
-  }
-
-  /* Open: scale + fade in from the trigger corner. */
-  .lang-menu-enter {
-    animation: lang-menu-in 0.18s cubic-bezier(0.22, 1, 0.36, 1) both;
-  }
-
-  /* Close: reverse of the enter — scale down + fade out toward the
-     trigger. The node stays mounted for the duration of this animation
-     (handled in the component via a `closing` flag), then unmounts. */
-  .lang-menu-exit {
-    animation: lang-menu-out 0.14s cubic-bezier(0.4, 0, 0.2, 1) both;
-  }
-
-  @keyframes lang-menu-in {
-    from {
-      opacity: 0;
-      transform: scale(0.94) translateY(6px);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
-  }
-
-  @keyframes lang-menu-out {
-    from {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
-    to {
-      opacity: 0;
-      transform: scale(0.94) translateY(6px);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .lang-menu-enter,
-    .lang-menu-exit {
-      animation: none !important;
-    }
-  }
 }
 
-/* Custom scrollbar for the language menu: a thin muted thumb over a
-   transparent track, matching the overlay scrollbar aesthetic. The
-   native scrollbar is hidden everywhere except the WebKit thumb. */
 .lang-scroll {
   scrollbar-width: thin;
   scrollbar-color: var(--color-line-strong) transparent;
@@ -372,8 +287,6 @@
   background-color: var(--color-muted);
 }
 
-/* Custom scrollbar: hide native (Firefox + WebKit) so the overlay
-   thumb is the only visible chrome. */
 .custom-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
