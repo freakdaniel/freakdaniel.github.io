@@ -4,6 +4,7 @@ import Projects from '../components/sections/Projects';
 import Tech from '../components/sections/Tech';
 import Contact from '../components/sections/Contact';
 import Footer from '../components/sections/Footer';
+import ProjectModal from '../components/ProjectModal';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Tech />
       <Contact />
       <Footer />
+      <ProjectModal />
     </main>
   );
 }

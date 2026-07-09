@@ -62,11 +62,11 @@ export default function Tech() {
   return (
     <section id="tech" className="px-6 sm:px-10 lg:px-16 py-32">
       <div className="mx-auto w-full max-w-6xl space-y-16">
-        <FadeIn>
-          <SectionHeader label="03 — Tech" title="Stack & tools" />
+        <FadeIn revealId="tech-header">
+          <SectionHeader label="03 / Tech" title="Stack & tools" />
         </FadeIn>
 
-        <FadeIn stagger>
+        <FadeIn stagger revealId="tech-grid">
           <dl className="reveal-stagger grid gap-12 sm:grid-cols-3">
             {groups.map((g, gi) => (
               <div key={g.title} className="flex flex-col gap-4">

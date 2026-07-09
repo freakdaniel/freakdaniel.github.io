@@ -210,6 +210,9 @@ void main() {
 }
 `;
 
+/**
+ * Ferrofluid WebGL background with a few additions of original-ones react-bits
+ */
 const Ferrofluid: React.FC<FerrofluidProps> = ({
   className,
   dpr,
@@ -239,6 +242,8 @@ const Ferrofluid: React.FC<FerrofluidProps> = ({
   const rendererRef = useRef<Renderer | null>(null);
   const mouseTargetRef = useRef<[number, number]>([0, 0]);
   const lastTimeRef = useRef(0);
+  const pausedRef = useRef(paused);
+  pausedRef.current = paused;
 
   useEffect(() => {
     const container = containerRef.current;
@@ -321,7 +326,48 @@ const Ferrofluid: React.FC<FerrofluidProps> = ({
       canvas.addEventListener('pointermove', onPointerMove);
     }
 
+    let inView = true;
+    let tabVisible = !document.hidden;
+    const recomputePaused = () => {
+      pausedRef.current = paused || !inView || !tabVisible;
+    };
+    recomputePaused();
+
+    const visibilityObs = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          inView = entry.isIntersecting;
+          recomputePaused();
+          if (inView) {
+            // Reset time baseline so dt doesn't jump on resume.
+            lastTimeRef.current = 0;
+            if (rafRef.current == null) {
+              rafRef.current = requestAnimationFrame(loop);
+            }
+          }
+        }
+      },
+      { threshold: 0 }
+    );
+    visibilityObs.observe(container);
+
+    const onVisibilityChange = () => {
+      tabVisible = !document.hidden;
+      recomputePaused();
+      if (tabVisible) {
+        lastTimeRef.current = 0;
+        if (rafRef.current == null) {
+          rafRef.current = requestAnimationFrame(loop);
+        }
+      }
+    };
+    document.addEventListener('visibilitychange', onVisibilityChange);
+
     const loop = (t: number) => {
+      rafRef.current = null;
+      if (pausedRef.current) {
+        return;
+      }
       rafRef.current = requestAnimationFrame(loop);
       uniforms.iTime.value = t * 0.001;
       if (mouseDampening > 0) {
@@ -338,7 +384,7 @@ const Ferrofluid: React.FC<FerrofluidProps> = ({
       } else {
         lastTimeRef.current = t;
       }
-      if (!paused && programRef.current && meshRef.current) {
+      if (programRef.current && meshRef.current) {
         try {
           renderer.render({ scene: meshRef.current });
         } catch (e) {
@@ -346,12 +392,19 @@ const Ferrofluid: React.FC<FerrofluidProps> = ({
         }
       }
     };
-    rafRef.current = requestAnimationFrame(loop);
+    if (inView && tabVisible) {
+      rafRef.current = requestAnimationFrame(loop);
+    }
 
     return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      if (rafRef.current != null) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
       if (mouseInteraction) canvas.removeEventListener('pointermove', onPointerMove);
       ro.disconnect();
+      visibilityObs.disconnect();
+      document.removeEventListener('visibilitychange', onVisibilityChange);
       if (canvas.parentElement === container) {
         container.removeChild(canvas);
       }
@@ -369,6 +422,8 @@ const Ferrofluid: React.FC<FerrofluidProps> = ({
       geometryRef.current = null;
       meshRef.current = null;
       rendererRef.current = null;
+      lastTimeRef.current = 0;
+      mouseTargetRef.current = [0, 0];
     };
   }, [
     dpr,

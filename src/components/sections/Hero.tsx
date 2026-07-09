@@ -8,26 +8,22 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex flex-col justify-center px-6 sm:px-10 lg:px-16 overflow-hidden"
     >
-      {/* Layer 1: animated Ferrofluid background (z-0) */}
       <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
         <HeroBackdrop />
       </div>
 
-      {/* Layer 2: dark fade overlay (z-10) — blends the WebGL into the
-          page background so the section transition is seamless. */}
       <div
         className="absolute inset-x-0 bottom-0 z-10 h-[30vh] hero-fade pointer-events-none"
         aria-hidden="true"
       />
 
-      {/* Layer 3: hero content (z-20) */}
       <div className="relative z-20 mx-auto w-full max-w-6xl">
-        <FadeIn stagger>
+        <FadeIn stagger revealId="hero">
           <span
             className="reveal-child text-xs uppercase tracking-[0.25em] text-muted"
             style={{ '--i': 0 } as CSSProperties}
           >
-            Portfolio · 2026
+            Hello there (｡◕‿‿◕｡)
           </span>
           <h1
             className="reveal-child mt-6 font-medium leading-[0.95] tracking-tight"
@@ -45,7 +41,7 @@ export default function Hero() {
             style={{ '--i': 2 } as CSSProperties}
           >
             Full-Stack Developer building fast, accessible, and quietly
-            opinionated products on the web.
+            opinionated products on the web
           </p>
           <div
             className="reveal-child mt-10 flex flex-wrap items-center gap-3"

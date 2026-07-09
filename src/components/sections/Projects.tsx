@@ -1,113 +1,144 @@
+import { useSearchParams } from 'react-router-dom';
 import FadeIn from '../ui/FadeIn';
 import SectionHeader from '../ui/SectionHeader';
-import ArrowLink from '../ui/ArrowLink';
-import type { CSSProperties } from 'react';
+import { projects, type Project } from '../../data/projects';
 
-interface Project {
-  title: string;
-  description: string;
-  stack: string[];
-  repo: string | null;
-  demo: string | null;
+/**
+ * Project tiles for the homepage. Cards are flush tiles in a
+ * checkerboard of two near-black tones. Content is centered by
+ * default; on hover a white fill wipes up from the bottom, content
+ * shifts up to make room for the core stack + "View" label, colors
+ * invert, and logos recolor. Clicking opens `<ProjectModal />` via
+ * the `?project=<slug>` query.
+ */
+
+/** Logo that recolors via a CSS mask, so it animates with the hover. */
+function MonoLogo({ src }: { src: string }) {
+  return (
+    <span
+      aria-hidden="true"
+      className="project-card-logo block h-14 w-14 transition-colors duration-300"
+      style={{
+        backgroundColor: 'currentcolor',
+        WebkitMask: `url(${src}) center / contain no-repeat`,
+        mask: `url(${src}) center / contain no-repeat`,
+      }}
+    />
+  );
 }
 
-interface Contribution {
-  name: string;
-  url: string;
+/** Dual-state logo: `src` (light) by default, `hover` (dark) on hover. */
+function DualLogo({ src, hover }: { src: string; hover: string }) {
+  return (
+    <span aria-hidden="true" className="project-card-logo relative block h-14 w-14">
+      <img
+        src={src}
+        alt=""
+        className="absolute inset-0 h-full w-full object-contain transition-opacity duration-300 group-hover:opacity-0"
+      />
+      <img
+        src={hover}
+        alt=""
+        className="absolute inset-0 h-full w-full object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+      />
+    </span>
+  );
 }
 
-const projects: Project[] = [
-  {
-    title: 'MPOVT CORP',
-    description:
-      'Corporate web platform — services, team, and a content pipeline. Built with React, .NET, and a small design system I had a lot of fun arguing with myself about.',
-    stack: ['React', 'TypeScript', '.NET', 'MySQL'],
-    repo: 'https://github.com/freakdaniel',
-    demo: null,
-  },
-  {
-    title: 'FREAKSITE',
-    description:
-      'The site you are looking at. Personal playground for typography, motion, and tiny interaction details. Vite + React, deployed to GitHub Pages.',
-    stack: ['Vite', 'React', 'Tailwind'],
-    repo: 'https://github.com/freakdaniel/freakdaniel.github.io',
-    demo: 'https://freakdaniel.github.io',
-  },
-];
-
-const contributions: Contribution[] = [
-  { name: 'React Bits', url: 'https://github.com/DavidHDev/react-bits' },
-  { name: 'Vue Bits', url: 'https://github.com/DavidHDev/vue-bits' },
-];
+function CardLogo({ project }: { project: Project }) {
+  if (project.logoMode === 'mono') return <MonoLogo src={project.logo} />;
+  if (project.logoMode === 'dual' && project.logoHover) {
+    return <DualLogo src={project.logo} hover={project.logoHover} />;
+  }
+  return (
+    <img
+      src={project.logo}
+      alt=""
+      aria-hidden="true"
+      className="project-card-logo h-14 w-14 object-contain transition-transform duration-300 group-hover:scale-110"
+    />
+  );
+}
 
 export default function Projects() {
+  const [, setSearchParams] = useSearchParams();
+
+  const openProject = (slug: string) => {
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev);
+        next.set('project', slug);
+        return next;
+      },
+      { replace: false }
+    );
+  };
+
   return (
     <section id="projects" className="px-6 sm:px-10 lg:px-16 py-32">
       <div className="mx-auto w-full max-w-6xl space-y-16">
-        <FadeIn>
-          <SectionHeader label="02 — Projects" title="Selected work" />
+        <FadeIn revealId="projects-header">
+          <SectionHeader label="02 / Projects" title="Selected work" />
         </FadeIn>
 
-        <FadeIn stagger>
-          <ul className="reveal-stagger grid gap-px bg-line border border-line rounded-2xl overflow-hidden">
+        <FadeIn>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-line border border-line rounded-2xl overflow-hidden">
             {projects.map((p, i) => (
-              <li
-                key={p.title}
-                className="reveal-child bg-bg p-8 sm:p-10 transition-colors hover:bg-[#0f0f0f]"
-                style={{ '--i': i } as CSSProperties}
-              >
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                  <div className="space-y-3">
-                    <h3 className="text-xl sm:text-2xl font-medium tracking-tight">
-                      {p.title}
-                    </h3>
-                    <p className="max-w-2xl text-muted leading-relaxed">
-                      {p.description}
-                    </p>
-                    <ul className="flex flex-wrap gap-2 pt-2">
-                      {p.stack.map((tech) => (
-                        <li
-                          key={tech}
-                          className="text-xs uppercase tracking-wider text-muted border border-line-strong rounded-full px-2.5 py-1"
-                        >
-                          {tech}
-                        </li>
-                      ))}
-                    </ul>
+              <li key={p.slug}>
+                <button
+                  type="button"
+                  onClick={() => openProject(p.slug)}
+                  className="project-card group flex aspect-[4/3] w-full flex-col items-center justify-center p-8 text-center focus-visible:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-fg/40"
+                  style={{
+                    backgroundColor: i % 2 === 0 ? '#0a0a0a' : '#111111',
+                  }}
+                  aria-label={`Open project: ${p.title}`}
+                >
+                  {/* White fill that wipes up from the bottom on hover. */}
+                  <span aria-hidden="true" className="project-card-fill" />
+
+                  <div className="project-card-content flex h-full w-full flex-col items-center justify-center gap-3">
+                    {/* Centered block: shifts up on hover to make room
+                        for the stack + View label below it. */}
+                    <div className="project-card-headline flex flex-col items-center gap-3">
+                      <CardLogo project={p} />
+                      <div className="space-y-1">
+                        <h3 className="text-lg font-medium tracking-tight">
+                          {p.title}
+                        </h3>
+                        <p className="project-card-muted text-sm leading-snug transition-colors duration-300">
+                          {p.tagline}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Core stack + View, revealed on hover. */}
+                    <div className="project-card-reveal flex flex-col items-center gap-2.5">
+                      <ul className="flex flex-wrap items-center justify-center gap-1.5 text-xs">
+                        {p.shortStack.map((tech) => (
+                          <li
+                            key={tech}
+                            className="rounded-full border border-current/20 px-2 py-0.5"
+                          >
+                            {tech}
+                          </li>
+                        ))}
+                      </ul>
+                      <span
+                        aria-hidden="true"
+                        className="inline-flex items-center gap-1 text-xs font-medium"
+                      >
+                        View
+                        <span className="inline-block transition-transform duration-300 group-hover:translate-x-0.5">
+                          →
+                        </span>
+                      </span>
+                    </div>
                   </div>
-                  <div className="flex flex-wrap gap-x-6 gap-y-2 sm:flex-col sm:items-end sm:text-right shrink-0">
-                    {p.repo && (
-                      <ArrowLink href={p.repo}>Source</ArrowLink>
-                    )}
-                    {p.demo && <ArrowLink href={p.demo}>Live</ArrowLink>}
-                  </div>
-                </div>
+                </button>
               </li>
             ))}
           </ul>
-        </FadeIn>
-
-        <FadeIn delay={120}>
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted">
-            <span className="text-fg">Contributed at</span>
-            {contributions.map((c, i) => (
-              <span key={c.name} className="inline-flex items-center gap-3">
-                <a
-                  href={c.url}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="underline-offset-4 hover:underline hover:text-fg transition-colors"
-                >
-                  {c.name}
-                </a>
-                {i < contributions.length - 1 && (
-                  <span aria-hidden="true" className="text-line-strong">
-                    ·
-                  </span>
-                )}
-              </span>
-            ))}
-          </div>
         </FadeIn>
       </div>
     </section>

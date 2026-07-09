@@ -3,6 +3,10 @@
 /* ---------- Theme tokens ---------- */
 @theme {
   --color-bg: #0a0a0a;
+  /* RGB channels of --color-bg, space-separated for the modern
+     `rgb(R G B / A)` syntax. Used to build soft fade-mask gradients
+     with alpha on top of the page background. */
+  --color-bg-rgb: 10 10 10;
   --color-fg: #fafafa;
   --color-muted: #737373;
   --color-line: #1f1f1f;
@@ -21,6 +25,11 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     font-family: var(--font-sans);
+    /* Reserve space for the vertical scrollbar even when it isn't
+       visible. Prevents the layout from shifting when an overlay
+       (such as the project preview) toggles body overflow between
+       hidden and visible. */
+    scrollbar-gutter: stable;
   }
 
   body {
@@ -104,6 +113,144 @@
     );
   }
 
+  /* Note: the View Transitions API (`@view-transition { navigation:
+     auto }`) was intentionally removed. It fired on every URL change
+     — including `?project=` toggles — and cross-faded the whole
+     page root on top of the overlay's own open/close animation,
+     producing a visible double-play glitch. The overlay now animates
+     itself (see `.modal-enter` / `.modal-exit`) and route changes
+     swap instantly. */
+
+
+  /* ProjectModal open: the full-screen panel rises from the bottom
+     (translateY 100% -> 0). The container does not animate opacity —
+     the panel simply slides up over the page and layers on top. */
+  .modal-panel-enter {
+    animation: modal-panel-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes modal-panel-up {
+    from {
+      transform: translate3d(0, 100%, 0);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  /* ProjectModal close: the panel slides back down and out of view.
+     Played on the same element as the enter, swapped via the
+     `.modal-exit` class. */
+  .modal-panel-exit {
+    animation: modal-panel-down 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  @keyframes modal-panel-down {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(0, 100%, 0);
+    }
+  }
+
+  /* Content reveal: children fade up with a small stagger that
+     begins partway through the panel rise, so the page feels alive
+     as the panel settles. Each child uses `--i` for its delay. */
+  .modal-content-reveal > * {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+    animation: modal-content-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(0.18s + var(--i, 0) * 0.06s);
+  }
+
+  @keyframes modal-content-in {
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  /* ProjectModal: project switch inside the overlay. The article is
+     keyed by slug so React mounts a fresh node on each switch, and
+     this keyframe replays. */
+  .article-fade-in {
+    animation: article-fade-in 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  @keyframes article-fade-in {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 8px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  /* Project card grid. Tiles are flush (no gaps) and alternate
+     between two near-black tones in a checkerboard. The
+     `.project-card` is `position: relative` + `overflow: hidden`
+     so the white hover layer (`.project-card-fill`) can wipe in
+     from the bottom without bleeding outside the card. */
+  .project-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* White fill that wipes up from the bottom on hover. Grows from
+     scaleY(0) -> 1 with origin at the bottom edge, so the fill
+     appears to rise into the card. */
+  .project-card-fill {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: var(--color-fg);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .project-card:hover .project-card-fill {
+    transform: scaleY(1);
+  }
+
+  /* Card content sits above the fill. The content column is
+     centered vertically by default; on hover the reveal block
+     (stack + View) grows in below the headline, which pushes the
+     centered headline upward so everything fits — a smooth shift. */
+  .project-card-content {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+  }
+
+  .project-card:hover .project-card-content {
+    color: var(--color-bg);
+  }
+
+  .project-card:hover .project-card-muted {
+    color: #555;
+  }
+
+  /* Reveal block: collapsed and transparent by default, expands on
+     hover. max-height transitions so the headline above shifts up
+     smoothly as this block takes up space. */
+  .project-card-reveal {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition:
+      max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.3s ease;
+  }
+
+  .project-card:hover .project-card-reveal {
+    max-height: 120px;
+    opacity: 1;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .reveal,
     .reveal-stagger > .reveal-child {
@@ -111,5 +258,52 @@
       transform: none !important;
       opacity: 1 !important;
     }
+
+    .modal-panel-enter,
+    .modal-panel-exit,
+    .modal-content-reveal > *,
+    .article-fade-in {
+      animation: none !important;
+    }
+
+    .modal-content-reveal > * {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    .project-card-fill,
+    .project-card-reveal {
+      transition: none !important;
+      transform: none !important;
+    }
+
+    .project-card-fill {
+      display: none;
+    }
+
+    .project-card-reveal {
+      max-height: none !important;
+      opacity: 1 !important;
+    }
   }
+}
+
+/* Custom scrollbar: hide native (Firefox + WebKit) so the overlay
+   thumb is the only visible chrome. */
+.custom-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
 }

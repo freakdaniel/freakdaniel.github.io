@@ -15,9 +15,21 @@ export interface FadeInProps {
   threshold?: number;
   /** IntersectionObserver rootMargin. */
   rootMargin?: string;
+  /**
+   * Unique id for this section. When provided, the reveal animation
+   * only runs the first time the user lands on the page. Subsequent
+   * mounts (e.g. after returning from a detail page) skip the
+   * animation and render visible immediately.
+   */
+  revealId?: string;
   /** Any additional props (id, aria-*, data-*, etc.). */
   [key: string]: unknown;
 }
+
+// Module-level cache: ids that have already been revealed in this
+// browser session. Cleared on full page reload, preserved across
+// client-side route changes.
+const revealedIds = new Set<string>();
 
 /**
  * Wraps children with a fade-up entrance that triggers when the element
@@ -33,6 +45,7 @@ export default function FadeIn({
   once = true,
   threshold = 0.15,
   rootMargin = '0px 0px -10% 0px',
+  revealId,
   ...rest
 }: FadeInProps) {
   const ref = useRef<HTMLElement | null>(null);
@@ -41,12 +54,20 @@ export default function FadeIn({
     const el = ref.current;
     if (!el) return;
 
+    // If this revealId has already been triggered in this session,
+    // mark the element visible immediately and skip the observer.
+    if (revealId && revealedIds.has(revealId)) {
+      el.classList.add('is-visible');
+      return;
+    }
+
     // Respect user preference: skip the IO dance, just reveal.
     if (
       typeof window !== 'undefined' &&
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
     ) {
       el.classList.add('is-visible');
+      if (revealId) revealedIds.add(revealId);
       return;
     }
 
@@ -55,9 +76,13 @@ export default function FadeIn({
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             if (delay > 0) {
-              window.setTimeout(() => el.classList.add('is-visible'), delay);
+              window.setTimeout(() => {
+                el.classList.add('is-visible');
+                if (revealId) revealedIds.add(revealId);
+              }, delay);
             } else {
               el.classList.add('is-visible');
+              if (revealId) revealedIds.add(revealId);
             }
             if (once) observer.unobserve(el);
           } else if (!once) {
@@ -70,7 +95,7 @@ export default function FadeIn({
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [delay, once, threshold, rootMargin]);
+  }, [delay, once, threshold, rootMargin, revealId]);
 
   const base = stagger ? 'reveal-stagger' : 'reveal';
 

@@ -37,16 +37,16 @@ export default function Contact() {
   return (
     <section id="contact" className="px-6 sm:px-10 lg:px-16 py-32">
       <div className="mx-auto w-full max-w-6xl space-y-16">
-        <FadeIn>
-          <SectionHeader label="04 — Contact" title="Get in touch" />
+        <FadeIn revealId="contact-header">
+          <SectionHeader label="04 / Contact" title="Get in touch" />
           <p className="mt-6 max-w-2xl text-lg text-muted leading-relaxed">
             I'm always open to interesting work, conversations about tech,
             or recommendations on what to read next. Reach out on whichever
-            channel suits you.
+            channel suits you
           </p>
         </FadeIn>
 
-        <FadeIn stagger>
+        <FadeIn stagger revealId="contact-list">
           <ul className="reveal-stagger grid gap-px bg-line border border-line rounded-2xl overflow-hidden">
             {channels.map((c, i) => (
               <li key={c.name} className="bg-bg" style={{ '--i': i } as CSSProperties}>
