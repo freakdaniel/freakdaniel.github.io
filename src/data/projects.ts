@@ -114,7 +114,7 @@ export const projects: Project[] = [
     logo: '/icon.svg',
     logoType: 'svg',
     repo: 'https://github.com/freakdaniel/freakdaniel.github.io',
-    demo: 'https://freakdaniel.github.io',
+    demo: null,
   },
 ];
 
