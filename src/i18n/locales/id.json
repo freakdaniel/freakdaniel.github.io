@@ -1,0 +1,81 @@
+{
+  "hero": {
+    "greeting": "Halo (｡◕‿‿◕｡)",
+    "subtitle": "Pengembang Full-Stack yang membangun produk web yang cepat, mudah diakses, dan teliti pada detailnya",
+    "status": "Tersedia untuk peluang baru",
+    "cta": "Hubungi saya"
+  },
+  "bio": {
+    "sectionLabel": "01 / Tentang",
+    "title": "Sedikit tentang saya",
+    "p1": "Saya pengembang full-stack yang menyukai antarmuka yang bersih, waktu muat yang cepat, dan kode yang enak dilihat lagi enam bulan kemudian. Sebagian besar pekerjaan saya ada di TypeScript, React, dan Node, walau saya selalu kembali ke ekosistem .NET untuk hal apa pun yang harus kokoh, bukan sekadar tampak keren",
+    "p2": "Jauh dari keyboard, saya biasanya sedang membaca sesuatu yang terlalu panjang, mengutak-atik layanan yang di-host sendiri, atau mempelajari bahasa lain yang tak akan pernah saya selesaikan proyeknya",
+    "stats": {
+      "years": "Tahun membangun",
+      "projects": "Proyek dirilis",
+      "tools": "Alat di kotak"
+    }
+  },
+  "projects": {
+    "sectionLabel": "02 / Proyek",
+    "title": "Karya pilihan",
+    "view": "Lihat",
+    "openLabel": "Buka proyek: {{title}}",
+    "items": {
+      "kurisu": {
+        "tagline": "Platform agen AI dengan IPC TypeScript yang dihasilkan Roslyn",
+        "description": "Platform agen AI sumber terbuka yang berada dalam satu aplikasi desktop. .NET 10 menjadi host runtime agen (MCP, alat, sesi, izin, hook) dan menggerakkan renderer Electron melalui jembatan khusus. Lapisan IPC dihasilkan saat kompilasi oleh generator sumber Roslyn yang memancarkan pembungkus TypeScript bertipe dari tanda tangan metode C#. shadcn/ui dan Vite di sisi renderer"
+      },
+      "react-bits-vue-bits": {
+        "tagline": "Kontributor pustaka komponen bintang-47k",
+        "description": "Kontributor pada salah satu pustaka komponen sumber terbuka React dan Vue terbesar, sekitar 47k bintang gabungan. Me-refaktor komponen inti (Stack, FadeContent, AnimatedContent) dengan menambahkan dukungan scroller khusus, migrasi GSAP, dan pembersihan yang lebih aman. Latar ferrofluid situs ini adalah salah satu komponen tersebut"
+      },
+      "infiniframe": {
+        "tagline": "Jendela native lintas platform untuk .NET",
+        "description": "Kontributor aktif pada framework jendela native lintas platform untuk .NET. Bekerja di backend native C++: me-refaktor lapisan tak terkelola, memperbaiki kebocoran memori dan masalah null-guard, serta menulis dokumentasi komprehensif untuk keempat pustaka. Juga mengirimkan skill dan agen asisten AI untuk proyek tersebut"
+      },
+      "mpovt": {
+        "tagline": "Situs korporat multibahasa, selesai",
+        "description": "Situs web korporat multibahasa untuk OJSC «MPOVT», bangunan khusus yang dikirimkan sebagai pekerjaan berbayar. SPA React/Vite dengan Chakra UI dan Tailwind, GSAP dan ogl/Three.js untuk animasi hero, autentikasi JWT via jose, TanStack Query untuk data, dan i18n penuh dalam Belarusia, Inggris, Rusia, dan Tionghoa. Tema terang/gelap, kredit tercantum di footer situs"
+      },
+      "hyprism": {
+        "tagline": "Launcher Hytale, pengelola utama",
+        "description": "Salah satu pengelola launcher Hytale yang ditulis dalam C# di .NET dan Electron. Memperbaiki penanganan GPU/instance, memimpin pekerjaan UI, dan mengirimkan peningkatan sistem build di lebih dari 20 PR"
+      },
+      "freaksite": {
+        "tagline": "Situs ini, taman bermain untuk tipografi, gerak, dan detail",
+        "description": "Situs yang sedang Anda lihat. Taman bermain pribadi untuk tipografi, gerak, dan detail interaksi kecil. Vite/React/TypeScript, di-deploy ke GitHub Pages"
+      }
+    }
+  },
+  "tech": {
+    "sectionLabel": "03 / Teknologi",
+    "title": "Stack & alat",
+    "groups": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Alat"
+    }
+  },
+  "contact": {
+    "sectionLabel": "04 / Kontak",
+    "title": "Hubungi saya",
+    "intro": "Saya selalu terbuka untuk pekerjaan menarik, percakapan soal teknologi, atau rekomendasi bacaan selanjutnya. Hubungi melalui saluran mana pun yang Anda suka"
+  },
+  "footer": {
+    "copyright": "© {{year}} Daniel Freak",
+    "builtWith": "Dibuat dengan Vite, React, dan Tailwind",
+    "auto": "Otomatis",
+    "language": "Bahasa"
+  },
+  "modal": {
+    "dialogLabel": "Detail proyek",
+    "back": "Kembali",
+    "backLabel": "Kembali ke beranda",
+    "close": "Tutup",
+    "projects": "Proyek",
+    "stack": "Stack",
+    "source": "Sumber",
+    "live": "Langsung"
+  }
+}

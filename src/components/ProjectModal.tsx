@@ -1,38 +1,25 @@
 import { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { ArrowLeft, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { ArrowLeft } from 'lucide-react';
 import TechChip from './ui/TechChip';
 import ArrowLink from './ui/ArrowLink';
 import CustomScrollbar from './ui/CustomScrollbar';
+import ProjectLogo from './ui/ProjectLogo';
 import { projects, getProjectBySlug } from '../data/projects';
 
 const EXIT_DURATION_MS = 400;
 
 /**
- * Fullscreen project preview overlay, driven by `?project=<slug>`.
- *
- * Open: a full-screen panel rises from the bottom (translateY
- * 100% -> 0), and the content inside fades up with a small stagger
- * as the panel settles. The container itself does not fade — the
- * panel simply layers over the page.
- * Close: the panel slides back down out of view; the overlay stays
- * mounted long enough for that exit animation to play.
- *
- * The article is keyed by slug so switching projects retriggers its
- * own fade-in.
+ * Fullscreen project preview overlay, driven by `?project=<slug>`
  */
 export default function ProjectModal() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const { t } = useTranslation();
   const activeSlug = searchParams.get('project');
   const activeProject = activeSlug ? getProjectBySlug(activeSlug) : undefined;
   const isOpen = Boolean(activeProject);
 
-  // `mounted` keeps the overlay in the DOM during the exit animation;
-  // `closing` toggles the .modal-exit class. `lastProject` holds the
-  // most recently opened project so the overlay can keep rendering it
-  // (and play the fade-out) after the URL is already cleared —
-  // otherwise `activeProject` becomes undefined instantly and the
-  // exit animation never plays.
   const [mounted, setMounted] = useState(isOpen);
   const [closing, setClosing] = useState(false);
   const [lastProject, setLastProject] = useState(activeProject);
@@ -69,12 +56,6 @@ export default function ProjectModal() {
     };
   }, [isOpen, mounted]);
 
-  // Lock page scroll while the overlay is open. Only `overflow:
-  // hidden` — we deliberately do NOT hide the native scrollbar, so
-  // the `scrollbar-gutter: stable` on <html> keeps reserving its
-  // width and the page does not shift when the overlay opens/closes.
-  // The article has its own scroll region, so long content isn't
-  // stranded. Released when the close path starts.
   useEffect(() => {
     if (!isOpen) return;
     const originalHtml = document.documentElement.style.overflow;
@@ -87,7 +68,6 @@ export default function ProjectModal() {
     };
   }, [isOpen]);
 
-  // Close on Escape. Skips during the exit animation.
   useEffect(() => {
     if (!mounted) return;
     const onKey = (e: KeyboardEvent) => {
@@ -106,8 +86,6 @@ export default function ProjectModal() {
     return () => window.removeEventListener('keydown', onKey);
   }, [mounted, closing, setSearchParams]);
 
-  // Render while open, or while closing (using the last project so
-  // the exit animation has something to fade out).
   const shownProject = activeProject ?? (closing ? lastProject : undefined);
   if (!mounted || !shownProject) return null;
   const activeProjectResolved = shownProject;
@@ -134,22 +112,22 @@ export default function ProjectModal() {
     );
   };
 
-  // Rendered in two wrappers (plain div on mobile, CustomScrollbar
-  // on >= lg); extracted once to keep both copies in sync.
   const articleBody = (
     <>
       <header className="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-8">
-        <img
-          src={activeProjectResolved.logo}
-          alt={`${activeProjectResolved.title} logo`}
-          className="h-20 w-20 shrink-0 object-contain"
+        <ProjectLogo
+          project={activeProjectResolved}
+          label={`${activeProjectResolved.title} logo`}
+          className="h-20 w-20 shrink-0"
         />
         <div>
           <h1 className="text-4xl sm:text-5xl font-medium tracking-tight">
             {activeProjectResolved.title}
           </h1>
           <p className="mt-3 text-lg text-muted">
-            {activeProjectResolved.tagline}
+            {t(`projects.items.${activeProjectResolved.slug}.tagline`, {
+              defaultValue: activeProjectResolved.tagline,
+            })}
           </p>
         </div>
       </header>
@@ -167,13 +145,15 @@ export default function ProjectModal() {
 
       <section className="mt-12 max-w-3xl">
         <p className="text-lg leading-relaxed text-muted">
-          {activeProjectResolved.description}
+          {t(`projects.items.${activeProjectResolved.slug}.description`, {
+            defaultValue: activeProjectResolved.description,
+          })}
         </p>
       </section>
 
       <section className="mt-12">
         <h2 className="text-sm uppercase tracking-[0.2em] text-muted border-b border-line pb-3">
-          Stack
+          {t('modal.stack')}
         </h2>
         <ul className="mt-6 flex flex-wrap gap-2">
           {activeProjectResolved.fullStack.map((tech) => (
@@ -184,10 +164,14 @@ export default function ProjectModal() {
 
       <section className="mt-12 flex flex-wrap gap-x-8 gap-y-3">
         {activeProjectResolved.repo && (
-          <ArrowLink href={activeProjectResolved.repo}>Source</ArrowLink>
+          <ArrowLink href={activeProjectResolved.repo}>
+            {t('modal.source')}
+          </ArrowLink>
         )}
         {activeProjectResolved.demo && (
-          <ArrowLink href={activeProjectResolved.demo}>Live</ArrowLink>
+          <ArrowLink href={activeProjectResolved.demo}>
+            {t('modal.live')}
+          </ArrowLink>
         )}
       </section>
     </>
@@ -198,7 +182,7 @@ export default function ProjectModal() {
       className="fixed inset-0 z-50 overflow-hidden"
       role="dialog"
       aria-modal="true"
-      aria-label="Project details"
+      aria-label={t('modal.dialogLabel')}
     >
       {/* The panel: full-screen black background that slides up from
           the bottom on open and slides down on close. The container
@@ -225,28 +209,17 @@ export default function ProjectModal() {
             >
               <nav aria-label="Project navigation" className="flex flex-col lg:h-full lg:min-h-0">
                 {/* Back link sits above the PROJECTS label. */}
-                <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center justify-between gap-2 mb-6 ml-3">
                   <button
                     type="button"
                     onClick={close}
                     className="inline-flex items-center gap-2 text-xs text-muted hover:text-fg transition-colors"
-                    aria-label="Back to home"
+                    aria-label={t('modal.backLabel')}
                   >
                     <ArrowLeft className="h-3.5 w-3.5" />
-                    <span>Back</span>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={close}
-                    className="lg:hidden inline-flex items-center justify-center h-7 w-7 rounded-md text-muted hover:text-fg hover:bg-[#111] transition-colors"
-                    aria-label="Close"
-                  >
-                    <X className="h-3.5 w-3.5" />
+                    <span>{t('modal.back')}</span>
                   </button>
                 </div>
-                <span className="hidden lg:block mt-5 mb-4 text-xs uppercase tracking-[0.2em] text-muted">
-                  Projects
-                </span>
                 {/* Desktop-only scroller for the project list. */}
                 <CustomScrollbar
                   orientation="vertical"
@@ -268,11 +241,9 @@ export default function ProjectModal() {
                             }`}
                             aria-current={isActive ? 'true' : undefined}
                           >
-                            <img
-                              src={p.logo}
-                              alt=""
-                              aria-hidden="true"
-                              className={`h-5 w-5 shrink-0 object-contain transition-opacity duration-200 ${
+                            <ProjectLogo
+                              project={p}
+                              className={`h-5 w-5 shrink-0 transition-opacity duration-200 ${
                                 isActive
                                   ? 'opacity-100'
                                   : 'opacity-60 group-hover:opacity-100'

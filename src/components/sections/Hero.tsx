@@ -1,8 +1,10 @@
 import type { CSSProperties } from 'react';
+import { useTranslation } from 'react-i18next';
 import FadeIn from '../ui/FadeIn';
 import HeroBackdrop from '../background/HeroBackdrop';
 
 export default function Hero() {
+  const { t } = useTranslation();
   return (
     <section
       id="hero"
@@ -23,7 +25,7 @@ export default function Hero() {
             className="reveal-child text-xs uppercase tracking-[0.25em] text-muted"
             style={{ '--i': 0 } as CSSProperties}
           >
-            Hello there (｡◕‿‿◕｡)
+            {t('hero.greeting')}
           </span>
           <h1
             className="reveal-child mt-6 font-medium leading-[0.95] tracking-tight"
@@ -40,8 +42,7 @@ export default function Hero() {
             className="reveal-child mt-6 max-w-2xl text-lg sm:text-xl text-muted leading-relaxed"
             style={{ '--i': 2 } as CSSProperties}
           >
-            Full-Stack Developer building fast, accessible, and quietly
-            opinionated products on the web
+            {t('hero.subtitle')}
           </p>
           <div
             className="reveal-child mt-10 flex flex-wrap items-center gap-3"
@@ -52,13 +53,13 @@ export default function Hero() {
                 aria-hidden="true"
                 className="h-1.5 w-1.5 rounded-full bg-fg animate-pulse"
               />
-              Available for new opportunities
+              {t('hero.status')}
             </span>
             <a
               href="#contact"
               className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm text-muted hover:text-fg transition-colors"
             >
-              Get in touch <span aria-hidden="true">→</span>
+              {t('hero.cta')} <span aria-hidden="true">→</span>
             </a>
           </div>
         </FadeIn>

@@ -1,4 +1,5 @@
 import type { ComponentType, CSSProperties, SVGProps } from 'react';
+import { useTranslation } from 'react-i18next';
 import { SiGithub, SiTelegram, SiX } from '@icons-pack/react-simple-icons';
 import FadeIn from '../ui/FadeIn';
 import SectionHeader from '../ui/SectionHeader';
@@ -34,15 +35,17 @@ const channels: Channel[] = [
 ];
 
 export default function Contact() {
+  const { t } = useTranslation();
   return (
     <section id="contact" className="px-6 sm:px-10 lg:px-16 py-32">
       <div className="mx-auto w-full max-w-6xl space-y-16">
         <FadeIn revealId="contact-header">
-          <SectionHeader label="04 / Contact" title="Get in touch" />
+          <SectionHeader
+            label={t('contact.sectionLabel')}
+            title={t('contact.title')}
+          />
           <p className="mt-6 max-w-2xl text-lg text-muted leading-relaxed">
-            I'm always open to interesting work, conversations about tech,
-            or recommendations on what to read next. Reach out on whichever
-            channel suits you
+            {t('contact.intro')}
           </p>
         </FadeIn>
 

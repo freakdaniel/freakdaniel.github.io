@@ -1,39 +1,30 @@
+import { useTranslation } from 'react-i18next';
 import FadeIn from '../ui/FadeIn';
 import SectionHeader from '../ui/SectionHeader';
 
-interface Stat {
-  value: string;
-  label: string;
-}
-
-const stats: Stat[] = [
-  { value: '4+', label: 'Years building' },
-  { value: '15+', label: 'Projects shipped' },
-  { value: '12+', label: 'Tools in the kit' },
-];
-
 export default function Bio() {
+  const { t } = useTranslation();
+
+  const stats = [
+    { value: '5+', label: t('bio.stats.years') },
+    { value: '15+', label: t('bio.stats.projects') },
+    { value: '12+', label: t('bio.stats.tools') },
+  ];
+
   return (
     <section id="about" className="px-6 sm:px-10 lg:px-16 py-32">
       <div className="mx-auto w-full max-w-6xl grid gap-16 lg:grid-cols-[1fr_1.4fr]">
         <FadeIn revealId="bio-header">
-          <SectionHeader label="01 / About" title="A bit about me" />
+          <SectionHeader
+            label={t('bio.sectionLabel')}
+            title={t('bio.title')}
+          />
         </FadeIn>
 
         <FadeIn delay={120} revealId="bio-body">
           <div className="space-y-6 text-lg leading-relaxed text-muted">
-            <p>
-              I'm a full-stack developer who likes clean interfaces, fast
-              load times, and code that's pleasant to come back to six
-              months later. Most of my work lives in TypeScript, React and
-              Node, though I keep coming back to the .NET ecosystem for
-              anything that needs to be solid rather than shiny
-            </p>
-            <p>
-              Outside of the keyboard, I'm usually reading something too
-              long, tinkering with self-hosted services, or learning yet
-              another language I'll never finish a project in
-            </p>
+            <p>{t('bio.p1')}</p>
+            <p>{t('bio.p2')}</p>
           </div>
 
           <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-line pt-8">

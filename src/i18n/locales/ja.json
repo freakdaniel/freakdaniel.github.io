@@ -1,0 +1,81 @@
+{
+  "hero": {
+    "greeting": "こんにちは (｡◕‿‿◕｡)",
+    "subtitle": "Web上で高速・アクセシブル・細部までこだわったプロダクトを作るフルスタック開発者",
+    "status": "新しい機会を募集しています",
+    "cta": "お問い合わせ"
+  },
+  "bio": {
+    "sectionLabel": "01 / About",
+    "title": "私について",
+    "p1": "クリーンなUI、速い読み込み時間、半年後に戻ってきても嬉しいコードを好むフルスタック開発者です。仕事の多くはTypeScript・React・Nodeですが、見栄えより堅実さが必要な場面では、いつも.NETのエコシステムに戻ってきます",
+    "p2": "キーボードから離れている時は、長すぎる本を読んだり、セルフホストのサービスをいじったり、結局プロジェクトを完成させない言語をまた一つ学んだりしています",
+    "stats": {
+      "years": "開発歴（年）",
+      "projects": "公開したプロジェクト",
+      "tools": "道具箱"
+    }
+  },
+  "projects": {
+    "sectionLabel": "02 / Projects",
+    "title": "セレクテッド・ワーク",
+    "view": "見る",
+    "openLabel": "プロジェクトを開く：{{title}}",
+    "items": {
+      "kurisu": {
+        "tagline": "Roslyn生成のTypeScript IPCを備えたAIエージェントプラットフォーム",
+        "description": "単一のデスクトップアプリに収まるオープンソースのAIエージェントプラットフォームです。.NET 10がエージェントランタイム（MCP・ツール・セッション・権限・フック）をホストし、独自ブリッジでElectronレンダラーを駆動します。IPCレイヤーはコンパイル時にRoslynソースジェネレーターが生成し、C#メソッドシグネチャから型付きTypeScriptラッパーを出力します。レンダラー側はshadcn/uiとVite"
+      },
+      "react-bits-vue-bits": {
+        "tagline": "47kスターのコンポーネントライブラリへの貢献者",
+        "description": "ReactとVueの最大級のオープンソースコンポーネントライブラリの1つ（合計約47kスター）への貢献者です。コアコンポーネント（Stack・FadeContent・AnimatedContent）をリファクタリングし、カスタムスクローラー対応・GSAP移行・より安全なクリーンアップを追加しました。このサイトのフェロフルイド背景もその一つです"
+      },
+      "infiniframe": {
+        "tagline": ".NET向けクロスプラットフォームネイティブウィンドウ",
+        "description": ".NET向けクロスプラットフォームネイティブウィンドウフレームワークの活発な貢献者です。C++ネイティブバックエンドに取り組み、アンマネージ層をリファクタリングし、メモリリークやnullガードの問題を修正し、4つのライブラリすべてに包括的なドキュメントを執筆しました。プロジェクト向けのAIアシスタントスキルやエージェントも提供しました"
+      },
+      "mpovt": {
+        "tagline": "多言語コーポレートサイト、納品済み",
+        "description": "OJSC「MPOVT」向けの多言語コーポレートサイトで、有償案件として納品したカスタムビルドです。React/ViteのSPAでChakra UIとTailwind、ヒーローアニメーションにGSAPとogl/Three.js、joseによるJWT認証、データにTanStack Queryを使用し、ベラルーシ語・英語・ロシア語・中国語の完全なi18nに対応。ライト/ダークテーマ、クレジットはサイトフッターに記載"
+      },
+      "hyprism": {
+        "tagline": "Hytaleランチャー、メインラインメンテナー",
+        "description": "C#・.NET・Electronで書かれたHytaleランチャーのメンテナーの1人です。GPU/インスタンス処理を修正し、UI作業を担当し、20以上のPRでビルドシステムの改善を届けました"
+      },
+      "freaksite": {
+        "tagline": "このサイト、タイポ・モーション・細部の遊び場",
+        "description": "あなたが見ているこのサイト。タイポグラフィ・モーション・小さなインタラクションの細部のための個人的な遊び場です。Vite/React/TypeScript、GitHub Pagesにデプロイ"
+      }
+    }
+  },
+  "tech": {
+    "sectionLabel": "03 / Tech",
+    "title": "スタックとツール",
+    "groups": {
+      "frontend": "フロントエンド",
+      "backend": "バックエンド",
+      "tools": "ツール"
+    }
+  },
+  "contact": {
+    "sectionLabel": "04 / Contact",
+    "title": "お問い合わせ",
+    "intro": "面白い仕事、技術の話、あるいは次に読む本のおすすめ、いつでも歓迎です。都合の良いチャンネルからご連絡ください"
+  },
+  "footer": {
+    "copyright": "© {{year}} Daniel Freak",
+    "builtWith": "Vite・React・Tailwindで構築",
+    "auto": "自動",
+    "language": "言語"
+  },
+  "modal": {
+    "dialogLabel": "プロジェクトの詳細",
+    "back": "戻る",
+    "backLabel": "ホームに戻る",
+    "close": "閉じる",
+    "projects": "プロジェクト",
+    "stack": "スタック",
+    "source": "ソース",
+    "live": "ライブ"
+  }
+}

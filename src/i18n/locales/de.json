@@ -1,0 +1,81 @@
+{
+  "hero": {
+    "greeting": "Hallo (｡◕‿‿◕｡)",
+    "subtitle": "Full-Stack-Entwickler, der schnelle, zugängliche und leise eigenwillige Produkte fürs Web baut",
+    "status": "Verfügbar für neue Möglichkeiten",
+    "cta": "Kontakt aufnehmen"
+  },
+  "bio": {
+    "sectionLabel": "01 / Über",
+    "title": "Ein bisschen über mich",
+    "p1": "Ich bin Full-Stack-Entwickler und mag saubere Oberflächen, schnelle Ladezeiten und Code, an dem man nach sechs Monaten gerne zurückkommt. Das meiste meiner Arbeit lebt in TypeScript, React und Node, obwohl ich für alles, was solide statt glänzend sein muss, immer wieder zum .NET-Ökosystem zurückkehre",
+    "p2": "Abseits der Tastatur lese ich meist etwas viel zu Langes, bastle an selbstgehosteten Diensten oder lerne eine weitere Sprache, in der ich nie ein Projekt fertigstellen werde",
+    "stats": {
+      "years": "Jahre Erfahrung",
+      "projects": "Gelieferte Projekte",
+      "tools": "Werkzeuge im Kasten"
+    }
+  },
+  "projects": {
+    "sectionLabel": "02 / Projekte",
+    "title": "Ausgewählte Arbeiten",
+    "view": "Ansehen",
+    "openLabel": "Projekt öffnen: {{title}}",
+    "items": {
+      "kurisu": {
+        "tagline": "KI-Agenten-Plattform mit Roslyn-generiertem TypeScript-IPC",
+        "description": "Eine Open-Source-KI-Agenten-Plattform, die in einer einzigen Desktop-App lebt. .NET 10 hostet die Agenten-Laufzeit (MCP, Tools, Sessions, Berechtigungen, Hooks) und steuert einen Electron-Renderer über eine eigene Bridge. Die IPC-Schicht wird zur Kompilierzeit von einem Roslyn-Quellgenerator erzeugt, der aus C#-Methodensignaturen typisierte TypeScript-Wrapper ausgibt. shadcn/ui und Vite auf der Renderer-Seite"
+      },
+      "react-bits-vue-bits": {
+        "tagline": "Mitwirkender einer Komponentenbibliothek mit 47k Sternen",
+        "description": "Mitwirkender an einer der größten Open-Source-React- und Vue-Komponentenbibliotheken, zusammen etwa 47k Sterne. Ich habe Kernkomponenten (Stack, FadeContent, AnimatedContent) refactored und Unterstützung für eigene Scroller, GSAP-Migration und sicherere Bereinigung hinzugefügt. Der Ferrofluid-Hintergrund dieser Seite ist eine dieser Komponenten"
+      },
+      "infiniframe": {
+        "tagline": "Plattformübergreifende native Fenster für .NET",
+        "description": "Aktiver Mitwirkender an einem plattformübergreifenden nativen Fenster-Framework für .NET. Arbeite am nativen C++-Backend: refactore die Unmanaged-Schicht, behebe Speicherlecks und Null-Guard-Probleme und schreibe umfassende Dokumentation für alle vier Bibliotheken. Außerdem habe ich KI-Assistenten-Skills und Agenten für das Projekt geliefert"
+      },
+      "mpovt": {
+        "tagline": "Mehrsprachige Unternehmenswebsite, geliefert",
+        "description": "Mehrsprachige Unternehmenswebsite für OJSC „MPOVT“, ein als beauftragter paid engagement gelieferter Custom-Build. React/Vite-SPA mit Chakra UI und Tailwind, GSAP und ogl/Three.js für Hero-Animationen, JWT-Auth über jose, TanStack Query für Daten und vollständige i18n auf Weißrussisch, Englisch, Russisch und Chinesisch. Hell-/Dunkel-Theming, Credit im Seitenfuß"
+      },
+      "hyprism": {
+        "tagline": "Hytale-Launcher, Mainline-Maintainer",
+        "description": "Einer der Maintainer eines in C# auf .NET und Electron geschriebenen Hytale-Launchers. GPU-/Instanz-Handhabung repariert, UI-Arbeiten verantwortet und Build-System-Verbesserungen in über 20 PRs geliefert"
+      },
+      "freaksite": {
+        "tagline": "Diese Seite, Spielwiese für Typografie, Bewegung und Detail",
+        "description": "Die Seite, die du gerade ansiehst. Persönliche Spielwiese für Typografie, Bewegung und kleine Interaktionsdetails. Vite/React/TypeScript, deployed auf GitHub Pages"
+      }
+    }
+  },
+  "tech": {
+    "sectionLabel": "03 / Tech",
+    "title": "Stack & Werkzeuge",
+    "groups": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Werkzeuge"
+    }
+  },
+  "contact": {
+    "sectionLabel": "04 / Kontakt",
+    "title": "Kontakt aufnehmen",
+    "intro": "Ich bin immer offen für interessante Arbeit, Gespräche über Technik oder Empfehlungen, was ich als Nächstes lesen soll. Melde dich über den Kanal, der dir liegt"
+  },
+  "footer": {
+    "copyright": "© {{year}} Daniel Freak",
+    "builtWith": "Gebaut mit Vite, React und Tailwind",
+    "auto": "Automatisch",
+    "language": "Sprache"
+  },
+  "modal": {
+    "dialogLabel": "Projektdetails",
+    "back": "Zurück",
+    "backLabel": "Zurück zur Startseite",
+    "close": "Schließen",
+    "projects": "Projekte",
+    "stack": "Stack",
+    "source": "Quellcode",
+    "live": "Live"
+  }
+}

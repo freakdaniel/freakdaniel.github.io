@@ -1,0 +1,81 @@
+{
+  "hero": {
+    "greeting": "안녕하세요 (｡◕‿‿◕｡)",
+    "subtitle": "빠르고 접근 가능하며 섬세하게 다듬어진 웹 프로덕트를 만드는 풀스택 개발자",
+    "status": "새로운 기회에 열려 있습니다",
+    "cta": "연락하기"
+  },
+  "bio": {
+    "sectionLabel": "01 / 소개",
+    "title": "저를 조금 소개하자면",
+    "p1": "깔끔한 인터페이스, 빠른 로딩 속도, 그리고 육개월 뒤에 돌아와도 기분 좋은 코드를 좋아하는 풀스택 개발자입니다. 작업의 대부분은 TypeScript, React, Node에 있지만, 화려함보다 단단함이 필요한 일에는 늘 .NET 생태계로 돌아옵니다",
+    "p2": "키보드에서 벗어나 있을 때는 보통 너무 긴 글을 읽거나, 셀프 호스팅 서비스를 만지작거리거나, 결코 프로젝트를 끝내지 못할 또 다른 언어를 배우고 있습니다",
+    "stats": {
+      "years": "개발 경력",
+      "projects": "출시한 프로젝트",
+      "tools": "도구 키트"
+    }
+  },
+  "projects": {
+    "sectionLabel": "02 / 프로젝트",
+    "title": "선택된 작업들",
+    "view": "보기",
+    "openLabel": "프로젝트 열기: {{title}}",
+    "items": {
+      "kurisu": {
+        "tagline": "Roslyn 생성 TypeScript IPC를 갖춘 AI 에이전트 플랫폼",
+        "description": "단일 데스크톱 앱에 머무는 오픈소스 AI 에이전트 플랫폼입니다. .NET 10이 에이전트 런타임(MCP, 도구, 세션, 권한, 훅)을 호스팅하고 커스텀 브리지를 통해 Electron 렌더러를 구동합니다. IPC 계층은 컴파일 시간에 Roslyn 소스 제너레이터가 생성하며, C# 메서드 시그니처에서 타입이 지정된 TypeScript 래퍼를 만들어냅니다. 렌더러 측에서는 shadcn/ui와 Vite"
+      },
+      "react-bits-vue-bits": {
+        "tagline": "47k 스타 컴포넌트 라이브러리 기여자",
+        "description": "React와 Vue를 위한 가장 큰 오픈소스 컴포넌트 라이브러리 중 하나의 기여자로, 합산 약 47k 스타입니다. 핵심 컴포넌트(Stack, FadeContent, AnimatedContent)를 리팩터링하여 커스텀 스크롤러 지원, GSAP 마이그레이션, 더 안전한 정리를 추가했습니다. 이 사이트의 페로플루이드 배경도 그 컴포넌트 중 하나입니다"
+      },
+      "infiniframe": {
+        "tagline": ".NET을 위한 크로스 플랫폼 네이티브 창",
+        "description": ".NET을 위한 크로스 플랫폼 네이티브 창 프레임워크의 활발한 기여자입니다. C++ 네이티브 백엔드 작업을 수행했습니다. 비관리 계층을 리팩터링하고, 메모리 누수와 null 가드 문제를 수정하며, 네 개 라이브러리 모두에 대한 포괄적인 문서를 작성했습니다. 또한 프로젝트를 위한 AI 어시스턴트 스킬과 에이전트를 출시했습니다"
+      },
+      "mpovt": {
+        "tagline": "다국어 기업 웹사이트, 인도됨",
+        "description": "OJSC «MPOVT»를 위한 다국어 기업 웹사이트로, 유료 작업으로 인도된 커스텀 빌드입니다. Chakra UI와 Tailwind를 갖춘 React/Vite SPA, 히어로 애니메이션을 위한 GSAP와 ogl/Three.js, jose를 통한 JWT 인증, 데이터를 위한 TanStack Query, 그리고 벨라루스어, 영어, 러시아어, 중국어에 걸친 완전한 i18n을 제공합니다. 라이트/다크 테마, 사이트 하단에 크레딧 표시"
+      },
+      "hyprism": {
+        "tagline": "Hytale 런처, 메인라인 메인테이너",
+        "description": ".NET과 Electron에서 C#으로 작성된 Hytale 런처의 메인테이너 중 한 명입니다. GPU/인스턴스 처리를 수정하고 UI 작업을 맡았으며, 20개 이상의 PR에 걸쳐 빌드 시스템 개선사항을 출시했습니다"
+      },
+      "freaksite": {
+        "tagline": "이 사이트, 타이포·모션·디테일의 놀이터",
+        "description": "지금 보고 계신 사이트입니다. 타이포그래피, 모션, 작은 인터랙션 디테일을 위한 개인 놀이터입니다. Vite/React/TypeScript, GitHub Pages에 배포"
+      }
+    }
+  },
+  "tech": {
+    "sectionLabel": "03 / 기술",
+    "title": "스택과 도구",
+    "groups": {
+      "frontend": "프론트엔드",
+      "backend": "백엔드",
+      "tools": "도구"
+    }
+  },
+  "contact": {
+    "sectionLabel": "04 / 연락처",
+    "title": "연락하기",
+    "intro": "흥미로운 일, 기술에 대한 대화, 다음 읽을 거리 추천에 항상 열려 있습니다. 편한 채널로 연락해 주세요"
+  },
+  "footer": {
+    "copyright": "© {{year}} Daniel Freak",
+    "builtWith": "Vite, React, Tailwind로 제작",
+    "auto": "자동",
+    "language": "언어"
+  },
+  "modal": {
+    "dialogLabel": "프로젝트 세부정보",
+    "back": "뒤로",
+    "backLabel": "홈으로",
+    "close": "닫기",
+    "projects": "프로젝트",
+    "stack": "스택",
+    "source": "소스",
+    "live": "라이브"
+  }
+}

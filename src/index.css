@@ -25,6 +25,9 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     font-family: var(--font-sans);
+    /* Smoothly animate in-page anchor jumps (e.g. the Hero "Get in
+       touch" link). Overridden to auto under prefers-reduced-motion. */
+    scroll-behavior: smooth;
     /* Reserve space for the vertical scrollbar even when it isn't
        visible. Prevents the layout from shifting when an overlay
        (such as the project preview) toggles body overflow between
@@ -252,6 +255,10 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
     .reveal,
     .reveal-stagger > .reveal-child {
       transition: none !important;
@@ -286,6 +293,83 @@
       opacity: 1 !important;
     }
   }
+
+  /* Language switcher dropdown: a thin, monochrome menu that opens
+     below the trigger. Mirrors the contact-list chrome
+     (bg-bg + border-line, rounded-2xl) so it reads as part of the
+     same design language. */
+  .lang-menu {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-line);
+    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.8);
+    transform-origin: bottom right;
+  }
+
+  /* Open: scale + fade in from the trigger corner. */
+  .lang-menu-enter {
+    animation: lang-menu-in 0.18s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  /* Close: reverse of the enter — scale down + fade out toward the
+     trigger. The node stays mounted for the duration of this animation
+     (handled in the component via a `closing` flag), then unmounts. */
+  .lang-menu-exit {
+    animation: lang-menu-out 0.14s cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  @keyframes lang-menu-in {
+    from {
+      opacity: 0;
+      transform: scale(0.94) translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes lang-menu-out {
+    from {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.94) translateY(6px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .lang-menu-enter,
+    .lang-menu-exit {
+      animation: none !important;
+    }
+  }
+}
+
+/* Custom scrollbar for the language menu: a thin muted thumb over a
+   transparent track, matching the overlay scrollbar aesthetic. The
+   native scrollbar is hidden everywhere except the WebKit thumb. */
+.lang-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line-strong) transparent;
+}
+
+.lang-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.lang-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.lang-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--color-line-strong);
+  border-radius: 9999px;
+}
+
+.lang-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-muted);
 }
 
 /* Custom scrollbar: hide native (Firefox + WebKit) so the overlay

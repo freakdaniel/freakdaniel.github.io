@@ -1,4 +1,5 @@
 import type { CSSProperties, ComponentType, SVGProps } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   SiReact,
   SiTypescript,
@@ -24,13 +25,14 @@ interface TechItem {
 }
 
 interface TechGroup {
-  title: string;
+  /** i18n key under `tech.groups` for this group's label. */
+  groupKey: 'frontend' | 'backend' | 'tools';
   items: TechItem[];
 }
 
 const groups: TechGroup[] = [
   {
-    title: 'Frontend',
+    groupKey: 'frontend',
     items: [
       { name: 'React', Icon: SiReact },
       { name: 'TypeScript', Icon: SiTypescript },
@@ -39,7 +41,7 @@ const groups: TechGroup[] = [
     ],
   },
   {
-    title: 'Backend',
+    groupKey: 'backend',
     items: [
       { name: 'Node.js', Icon: SiNodedotjs },
       { name: '.NET', Icon: SiDotnet },
@@ -48,7 +50,7 @@ const groups: TechGroup[] = [
     ],
   },
   {
-    title: 'Tools',
+    groupKey: 'tools',
     items: [
       { name: 'WebStorm', Icon: SiWebstorm },
       { name: 'Figma', Icon: SiFigma },
@@ -59,22 +61,26 @@ const groups: TechGroup[] = [
 ];
 
 export default function Tech() {
+  const { t } = useTranslation();
   return (
     <section id="tech" className="px-6 sm:px-10 lg:px-16 py-32">
       <div className="mx-auto w-full max-w-6xl space-y-16">
         <FadeIn revealId="tech-header">
-          <SectionHeader label="03 / Tech" title="Stack & tools" />
+          <SectionHeader
+            label={t('tech.sectionLabel')}
+            title={t('tech.title')}
+          />
         </FadeIn>
 
         <FadeIn stagger revealId="tech-grid">
           <dl className="reveal-stagger grid gap-12 sm:grid-cols-3">
             {groups.map((g, gi) => (
-              <div key={g.title} className="flex flex-col gap-4">
+              <div key={g.groupKey} className="flex flex-col gap-4">
                 <dt
                   className="reveal-child text-sm uppercase tracking-[0.2em] text-muted border-b border-line pb-3"
                   style={{ '--i': gi } as CSSProperties}
                 >
-                  {g.title}
+                  {t(`tech.groups.${g.groupKey}`)}
                 </dt>
                 <dd>
                   <ul className="flex flex-col gap-2">

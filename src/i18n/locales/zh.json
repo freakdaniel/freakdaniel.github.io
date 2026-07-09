@@ -1,0 +1,81 @@
+{
+  "hero": {
+    "greeting": "你好 (｡◕‿‿◕｡)",
+    "subtitle": "全栈开发者，致力于构建快速、易用、细节考究的网络产品",
+    "status": "接受新的工作机会",
+    "cta": "联系我"
+  },
+  "bio": {
+    "sectionLabel": "01 / 关于",
+    "title": "关于我",
+    "p1": "我是一名全栈开发者，喜欢干净的界面、快速的加载速度，以及半年后回头依然令人愉悦的代码。我的大部分工作使用 TypeScript、React 和 Node，不过凡是需要扎实而非花哨的项目，我总会回到 .NET 生态",
+    "p2": "离开键盘的时候，我通常在读一些太长的书、折腾自托管服务，或者在学习一门永远完不成项目的语言",
+    "stats": {
+      "years": "从业年限",
+      "projects": "已交付项目",
+      "tools": "工具箱"
+    }
+  },
+  "projects": {
+    "sectionLabel": "02 / 项目",
+    "title": "精选作品",
+    "view": "查看",
+    "openLabel": "打开项目：{{title}}",
+    "items": {
+      "kurisu": {
+        "tagline": "使用 Roslyn 生成 TypeScript IPC 的 AI 智能体平台",
+        "description": "一个存在于单个桌面应用中的开源 AI 智能体平台。.NET 10 承载智能体运行时（MCP、工具、会话、权限、钩子），并通过自定义桥接驱动 Electron 渲染器。IPC 层在编译时由 Roslyn 源生成器生成，从 C# 方法签名生成类型化的 TypeScript 包装器。渲染端使用 shadcn/ui 和 Vite"
+      },
+      "react-bits-vue-bits": {
+        "tagline": "4.7 万星组件库的贡献者",
+        "description": "最大的开源 React 和 Vue 组件库之一的贡献者，合计约 4.7 万星。重构了核心组件（Stack、FadeContent、AnimatedContent），添加了自定义滚动条支持、GSAP 迁移和更安全的清理逻辑。本网站的铁磁流体背景就是其中之一"
+      },
+      "infiniframe": {
+        "tagline": "面向 .NET 的跨平台原生窗口",
+        "description": "一个面向 .NET 的跨平台原生窗口框架的活跃贡献者。参与了 C++ 原生后端的工作：重构了非托管层，修复了内存泄漏和空值守卫问题，并为全部四个库编写了详尽的文档。还为项目交付了 AI 助手技能和智能体"
+      },
+      "mpovt": {
+        "tagline": "多语言企业网站，已交付",
+        "description": "为 OJSC「MPOVT」打造的多语言企业网站，作为付费项目交付。React/Vite 单页应用，使用 Chakra UI 和 Tailwind，GSAP 与 ogl/Three.js 制作首屏动画，通过 jose 实现 JWT 认证，TanStack Query 管理数据，并支持白俄罗斯语、英语、俄语和中文的完整国际化。明暗主题，版权信息见网站页脚"
+      },
+      "hyprism": {
+        "tagline": "Hytale 启动器，主线维护者",
+        "description": "一个基于 C#、.NET 和 Electron 编写的 Hytale 启动器的维护者之一。修复了 GPU/实例处理问题，负责 UI 工作，并在 20 多个 PR 中改进了构建系统"
+      },
+      "freaksite": {
+        "tagline": "本网站，字体、动效与细节的试验场",
+        "description": "你正在浏览的这个网站。用于字体、动效和微小交互细节的个人试验场。基于 Vite/React/TypeScript，部署在 GitHub Pages"
+      }
+    }
+  },
+  "tech": {
+    "sectionLabel": "03 / 技术",
+    "title": "技术栈与工具",
+    "groups": {
+      "frontend": "前端",
+      "backend": "后端",
+      "tools": "工具"
+    }
+  },
+  "contact": {
+    "sectionLabel": "04 / 联系",
+    "title": "联系我",
+    "intro": "我始终欢迎有趣的工作、技术交流，或下一本该读的书的推荐。通过任何你方便的渠道联系我吧"
+  },
+  "footer": {
+    "copyright": "© {{year}} Daniel Freak",
+    "builtWith": "使用 Vite、React 与 Tailwind 构建",
+    "auto": "自动",
+    "language": "语言"
+  },
+  "modal": {
+    "dialogLabel": "项目详情",
+    "back": "返回",
+    "backLabel": "返回首页",
+    "close": "关闭",
+    "projects": "项目",
+    "stack": "技术栈",
+    "source": "源码",
+    "live": "在线预览"
+  }
+}

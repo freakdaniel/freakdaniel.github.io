@@ -1,0 +1,81 @@
+{
+  "hero": {
+    "greeting": "Merhaba (｡◕‿‿◕｡)",
+    "subtitle": "Web üzerinde hızlı, erişilebilir ve incelikle düşünülmüş ürünler inşa eden Full-Stack Geliştirici",
+    "status": "Yeni fırsatlara açık",
+    "cta": "İletişime geç"
+  },
+  "bio": {
+    "sectionLabel": "01 / Hakkımda",
+    "title": "Hakkımda biraz",
+    "p1": "Temiz arayüzleri, hızlı yükleme sürelerini ve altı ay sonra geri dönüldüğünde keyif veren kodu seven bir full-stack geliştiriciyim. Çalışmalarımın çoğu TypeScript, React ve Node'da yaşar; ancak sağlamlığın gösterişten önemli olduğu her şeyde sürekli .NET ekosistemine geri dönerim",
+    "p2": "Klavyeden uzaktayken genellikle çok uzun bir şeyler okuyorum, kendi kendine barındırılan servislerle uğraşıyor ya da hiçbir zaman projesini bitirmeyeceğim bir dili daha öğreniyorum",
+    "stats": {
+      "years": "Yılların tecrübesi",
+      "projects": "Teslim edilen proje",
+      "tools": "Çantadaki araçlar"
+    }
+  },
+  "projects": {
+    "sectionLabel": "02 / Projeler",
+    "title": "Seçilmiş çalışmalar",
+    "view": "Görüntüle",
+    "openLabel": "Projeyi aç: {{title}}",
+    "items": {
+      "kurisu": {
+        "tagline": "Roslyn üretimi TypeScript IPC'li AI ajan platformu",
+        "description": "Tek bir masaüstü uygulamasında yaşayan açık kaynaklı bir AI ajan platformu. .NET 10, ajan çalışma zamanını (MCP, araçlar, oturumlar, izinler, kancalar) barındırır ve özel bir köprü üzerinden bir Electron renderer'ını yönlendirir. IPC katmanı, derleme zamanında C# metot imzalarından türlenmiş TypeScript sarmalayıcılar üreten bir Roslyn kaynak üreteci tarafından oluşturulur. Renderer tarafında shadcn/ui ve Vite"
+      },
+      "react-bits-vue-bits": {
+        "tagline": "47k yıldızlı bileşen kütüphanesine katkıda bulunan",
+        "description": "En büyük açık kaynak React ve Vue bileşen kütüphanelerinden birine katkıda bulunan, toplam yaklaşık 47k yıldız. Çekirdek bileşenleri (Stack, FadeContent, AnimatedContent) yeniden düzenledim; özel kaydırıcı desteği, GSAP geçişi ve daha güvenli temizlik ekledim. Bu sitenin ferrofluid arka planı o bileşenlerden biri"
+      },
+      "infiniframe": {
+        "tagline": ".NET için platformlar arası yerel pencereler",
+        "description": ".NET için platformlar arası yerel pencere çerçevesine aktif katkıda bulunan. C++ yerel arka ucunda çalıştım: yönetilmeyen katmanı yeniden düzenledim, bellek sızıntılarını ve null-guard sorunlarını düzelttim ve dört kütüphanenin tamamı için kapsamlı belgeler yazdım. Proje için AI-asistan becerileri ve ajanları da teslim ettim"
+      },
+      "mpovt": {
+        "tagline": "Çok dilli kurumsal site, teslim edildi",
+        "description": "OJSC «MPOVT» için, ücretli bir iş olarak teslim edilen özel bir yapı olan çok dilli kurumsal web sitesi. Chakra UI ve Tailwind ile React/Vite SPA, hero animasyonları için GSAP ve ogl/Three.js, jose üzerinden JWT kimlik doğrulama, veriler için TanStack Query ve Belarusça, İngilizce, Rusça ve Çince için tam i18n. Açık/koyu tema, kredi site alt bilgisinde"
+      },
+      "hyprism": {
+        "tagline": "Hytale başlatıcısı, ana hat bakımcısı",
+        "description": "C# ile .NET ve Electron üzerine yazılmış bir Hytale başlatıcısının bakımcılarından biri. GPU/örnek işleme düzelttim, UI işlerini üstlendim ve 20+ PR'de derleme sistemi iyileştirmeleri teslim ettim"
+      },
+      "freaksite": {
+        "tagline": "Bu site, tipografi, hareket ve ayrıntı için oyun alanı",
+        "description": "Şu an baktığınız site. Tipografi, hareket ve küçük etkileşim ayrıntıları için kişisel oyun alanı. Vite/React/TypeScript, GitHub Pages'a dağıtıldı"
+      }
+    }
+  },
+  "tech": {
+    "sectionLabel": "03 / Teknoloji",
+    "title": "Stack ve araçlar",
+    "groups": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Araçlar"
+    }
+  },
+  "contact": {
+    "sectionLabel": "04 / İletişim",
+    "title": "İletişime geç",
+    "intro": "İlginç işlere, teknoloji üzerine sohbetlere veya sırada ne okuyacağım önerilerine her zaman açığım. Size uygun hangi kanaldan ulaşabilirsem oradan ulaşın"
+  },
+  "footer": {
+    "copyright": "© {{year}} Daniel Freak",
+    "builtWith": "Vite, React ve Tailwind ile yapıldı",
+    "auto": "Otomatik",
+    "language": "Dil"
+  },
+  "modal": {
+    "dialogLabel": "Proje ayrıntıları",
+    "back": "Geri",
+    "backLabel": "Ana sayfaya dön",
+    "close": "Kapat",
+    "projects": "Projeler",
+    "stack": "Stack",
+    "source": "Kaynak",
+    "live": "Canlı"
+  }
+}
