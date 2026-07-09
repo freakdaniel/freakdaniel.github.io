@@ -1,12 +1,18 @@
-import {
-  SiGithub,
-  SiTelegram,
-  SiX,
-} from '@icons-pack/react-simple-icons';
+import type { ComponentType, CSSProperties, SVGProps } from 'react';
+import { SiGithub, SiTelegram, SiX } from '@icons-pack/react-simple-icons';
 import FadeIn from '../ui/FadeIn';
 import SectionHeader from '../ui/SectionHeader';
 
-const channels = [
+type IconComponent = ComponentType<SVGProps<SVGSVGElement> & { title?: string }>;
+
+interface Channel {
+  name: string;
+  handle: string;
+  href: string;
+  Icon: IconComponent;
+}
+
+const channels: Channel[] = [
   {
     name: 'GitHub',
     handle: 'github.com/freakdaniel',
@@ -43,7 +49,7 @@ export default function Contact() {
         <FadeIn stagger>
           <ul className="reveal-stagger grid gap-px bg-line border border-line rounded-2xl overflow-hidden">
             {channels.map((c, i) => (
-              <li key={c.name} className="bg-bg" style={{ '--i': i }}>
+              <li key={c.name} className="bg-bg" style={{ '--i': i } as CSSProperties}>
                 <a
                   href={c.href}
                   target="_blank"

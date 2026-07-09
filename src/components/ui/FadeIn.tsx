@@ -1,14 +1,28 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type ElementType, type ReactNode } from 'react';
+
+export interface FadeInProps {
+  children: ReactNode;
+  /** Rendered HTML tag (default: `div`). */
+  as?: ElementType;
+  className?: string;
+  /** Stagger child reveal via `.reveal-stagger` and per-child `--i` index. */
+  stagger?: boolean;
+  /** Extra delay in ms before revealing. */
+  delay?: number;
+  /** Keep the element visible after the first reveal. */
+  once?: boolean;
+  /** IntersectionObserver threshold. */
+  threshold?: number;
+  /** IntersectionObserver rootMargin. */
+  rootMargin?: string;
+  /** Any additional props (id, aria-*, data-*, etc.). */
+  [key: string]: unknown;
+}
 
 /**
  * Wraps children with a fade-up entrance that triggers when the element
  * enters the viewport. Uses IntersectionObserver and a CSS class
  * (`.is-visible`) toggled on a `.reveal` or `.reveal-stagger` element.
- *
- * `as` controls the rendered tag (default: div).
- * `stagger` enables staggered children animation.
- * `delay` (ms) is added on top of the IntersectionObserver reveal time.
- * `once` keeps the element visible after the first reveal (default true).
  */
 export default function FadeIn({
   children,
@@ -20,8 +34,8 @@ export default function FadeIn({
   threshold = 0.15,
   rootMargin = '0px 0px -10% 0px',
   ...rest
-}) {
-  const ref = useRef(null);
+}: FadeInProps) {
+  const ref = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const el = ref.current;

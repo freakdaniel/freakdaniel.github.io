@@ -1,6 +1,20 @@
+import type { ReactNode } from 'react';
+
+export interface ArrowLinkProps {
+  /** When provided, renders an `<a>`. Otherwise renders a `<button>`. */
+  href?: string;
+  children: ReactNode;
+  /** Open in new tab + rel=noopener. Defaults to `true` when `href` is set. */
+  external?: boolean;
+  className?: string;
+  type?: 'button' | 'submit' | 'reset';
+  onClick?: () => void;
+  disabled?: boolean;
+}
+
 /**
  * Inline text link with a trailing arrow that shifts on hover.
- * Renders an <a> by default; pass `as="button"` for a non-anchor variant.
+ * Renders an `<a>` when `href` is provided, otherwise a `<button>`.
  */
 export default function ArrowLink({
   href,
@@ -8,7 +22,7 @@ export default function ArrowLink({
   external = true,
   className = '',
   ...rest
-}) {
+}: ArrowLinkProps) {
   const classes = `group inline-flex items-center gap-2 text-fg underline-offset-4 transition-colors hover:text-muted ${className}`;
 
   const target = external ? '_blank' : undefined;
@@ -21,7 +35,6 @@ export default function ArrowLink({
         target={target}
         rel={rel}
         className={classes}
-        {...rest}
       >
         <span className="border-b border-transparent group-hover:border-current">
           {children}

@@ -1,7 +1,12 @@
 import FadeIn from '../ui/FadeIn';
 import SectionHeader from '../ui/SectionHeader';
 
-const stats = [
+interface Stat {
+  value: string;
+  label: string;
+}
+
+const stats: Stat[] = [
   { value: '4+', label: 'Years building' },
   { value: '15+', label: 'Projects shipped' },
   { value: '12+', label: 'Tools in the kit' },

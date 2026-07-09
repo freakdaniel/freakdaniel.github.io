@@ -2,7 +2,17 @@
  * Minimal section header: small uppercase label, large title, thin divider.
  * Renders as a heading group. Use inside a FadeIn wrapper for entrance.
  */
-export default function SectionHeader({ label, title, align = 'left' }) {
+export interface SectionHeaderProps {
+  label: string;
+  title: string;
+  align?: 'left' | 'center';
+}
+
+export default function SectionHeader({
+  label,
+  title,
+  align = 'left',
+}: SectionHeaderProps) {
   const alignment =
     align === 'center'
       ? 'items-center text-center'

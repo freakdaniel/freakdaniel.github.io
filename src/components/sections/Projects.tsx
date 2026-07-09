@@ -1,8 +1,22 @@
 import FadeIn from '../ui/FadeIn';
 import SectionHeader from '../ui/SectionHeader';
 import ArrowLink from '../ui/ArrowLink';
+import type { CSSProperties } from 'react';
 
-const projects = [
+interface Project {
+  title: string;
+  description: string;
+  stack: string[];
+  repo: string | null;
+  demo: string | null;
+}
+
+interface Contribution {
+  name: string;
+  url: string;
+}
+
+const projects: Project[] = [
   {
     title: 'MPOVT CORP',
     description:
@@ -21,7 +35,7 @@ const projects = [
   },
 ];
 
-const contributions = [
+const contributions: Contribution[] = [
   { name: 'React Bits', url: 'https://github.com/DavidHDev/react-bits' },
   { name: 'Vue Bits', url: 'https://github.com/DavidHDev/vue-bits' },
 ];
@@ -40,7 +54,7 @@ export default function Projects() {
               <li
                 key={p.title}
                 className="reveal-child bg-bg p-8 sm:p-10 transition-colors hover:bg-[#0f0f0f]"
-                style={{ '--i': i }}
+                style={{ '--i': i } as CSSProperties}
               >
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                   <div className="space-y-3">

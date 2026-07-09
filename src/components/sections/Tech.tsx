@@ -1,7 +1,13 @@
+import type { CSSProperties } from 'react';
 import FadeIn from '../ui/FadeIn';
 import SectionHeader from '../ui/SectionHeader';
 
-const groups = [
+interface TechGroup {
+  title: string;
+  items: string[];
+}
+
+const groups: TechGroup[] = [
   {
     title: 'Frontend',
     items: ['React', 'TypeScript', 'Tailwind', 'Vue'],
@@ -30,7 +36,7 @@ export default function Tech() {
               <div key={g.title} className="flex flex-col gap-4">
                 <dt
                   className="reveal-child text-sm uppercase tracking-[0.2em] text-muted border-b border-line pb-3"
-                  style={{ '--i': gi }}
+                  style={{ '--i': gi } as CSSProperties}
                 >
                   {g.title}
                 </dt>
@@ -40,7 +46,7 @@ export default function Tech() {
                       <li
                         key={item}
                         className="reveal-child text-base text-fg"
-                        style={{ '--i': gi * 4 + ii + 1 }}
+                        style={{ '--i': gi * 4 + ii + 1 } as CSSProperties}
                       >
                         {item}
                       </li>
