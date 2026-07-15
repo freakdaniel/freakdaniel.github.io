@@ -1,6 +1,7 @@
 import type { ComponentType, CSSProperties, SVGProps } from 'react';
 import { useTranslation } from 'react-i18next';
 import { SiGithub, SiTelegram, SiX } from '@icons-pack/react-simple-icons';
+import { FaLinkedin } from 'react-icons/fa';
 import FadeIn from '../ui/FadeIn';
 import SectionHeader from '../ui/SectionHeader';
 
@@ -32,6 +33,12 @@ const channels: Channel[] = [
     href: 'https://x.com/whoisfreak',
     Icon: SiX,
   },
+  {
+    name: 'LinkedIn',
+    handle: 'linkedin.com/in/freakdaniel',
+    href: 'https://linkedin.com/in/freakdaniel',
+    Icon: FaLinkedin,
+  }
 ];
 
 export default function Contact() {
