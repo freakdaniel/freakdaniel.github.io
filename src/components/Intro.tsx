@@ -99,7 +99,7 @@ export default function Intro({ onComplete }: IntroProps) {
         src="/logo_filled.svg"
         alt=""
         draggable={false}
-        className="pointer-events-none select-none w-[min(72vw,320px)] h-auto"
+        className="pointer-events-none select-none w-[min(42vw,168px)] sm:w-[min(48vw,220px)] md:w-[min(52vw,280px)] h-auto"
       />
     </div>
   );

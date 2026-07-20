@@ -20,7 +20,7 @@
     "sectionLabel": "02 / Projets",
     "title": "Sélection de travaux",
     "view": "Ouvrir",
-    "openLabel": "Ouvrir le projet : {{title}}" ,
+    "openLabel": "Ouvrir le projet : {{title}}",
     "items": {
       "kurisu": {
         "tagline": "Plateforme d'agents IA sur .NET 10 avec un moteur de rendu Electron",
@@ -34,9 +34,9 @@
         "tagline": "Bibliothèque permettant de créer des fenêtres natives multiplateformes sous .NET",
         "description": "Contributeur actif au framework multiplateforme de fenêtres natives pour .NET. J’ai travaillé sur le backend natif C++ : j’ai refactorisé la couche non gérée, corrigé les fuites de mémoire et les problèmes liés aux null-guards, et rédigé une documentation détaillée pour les quatre bibliothèques"
       },
-      "mpovt" : {
-        "tagline" : "Site web d'entreprise de présentation d'un grand fabricant d'électronique",
-        "description" : "Site web d'entreprise multilingue pour la SA «MPOVT», réalisé dans le cadre d'une commande payante. SPA React/Vite avec Chakra UI et Tailwind, GSAP pour les animations, TanStack Query pour les données et une internationalisation complète (i18n) en biélorusse, anglais, russe et chinois. Système de thèmes clair/foncé implémenté"
+      "mpovt": {
+        "tagline": "Site web d'entreprise de présentation d'un grand fabricant d'électronique",
+        "description": "Site web d'entreprise multilingue pour la SA «MPOVT», réalisé dans le cadre d'une commande payante. SPA React/Vite avec Chakra UI et Tailwind, GSAP pour les animations, TanStack Query pour les données et une internationalisation complète (i18n) en biélorusse, anglais, russe et chinois. Système de thèmes clair/foncé implémenté"
       },
       "hyprism": {
         "tagline": "Lanceur personnalisé pour Hytale avec gestionnaire de mods et contrôle des versions",
@@ -50,14 +50,44 @@
   },
   "tech": {
     "sectionLabel": "03 / Technologies",
-    "title" : "Stack et outils",
-    "groups" : {
-      "frontend" : "Front-end",
-      "backend" : "Back-end",
-      "tools" : "Outils"
+    "title": "Stack et outils",
+    "groups": {
+      "frontend": "Front-end",
+      "backend": "Back-end",
+      "tools": "Outils"
+    },
+    "back": "Toutes les stacks",
+    "facts": {
+      "react": "Mon défaut pour l’UI produit : modèle de composants, écosystème et un code encore lisible des mois plus tard",
+      "typescript": "J’y vais dès que le code est partagé : refactors plus sûrs et contrats plus clairs entre couches",
+      "vite": "Toolchain front du quotidien : feedback rapide en dev et builds de production légers",
+      "tailwind": "Quand il faut layout et finition vite, sans inventer une archi CSS au milieu du sprint",
+      "vue": "Quand l’équipe ou la surface est native Vue, ou qu’un modèle de composants plus léger convient mieux que React",
+      "electron": "Shells desktop quand je veux une UI web avec hôte natif et une vraie intégration OS",
+      "gsap": "Motion quand le timing et la séquence comptent plus qu’un hover CSS rapide",
+      "ogl": "Petites scènes WebGL et fonds quand Three serait overkill",
+      "three": "3D plus lourde et post-traitement quand la scène a vraiment besoin de la stack complète",
+      "chakra": "Primitives UI accessibles quand je veux de la vitesse sans designer chaque contrôle from scratch",
+      "framer": "Motion déclarative qui reste dans l’arbre React et se compose avec le layout",
+      "i18next": "Copy produit multilingue sans hardcoder les chaînes dans les composants",
+      "dotnet": "Backends fiables et services longue durée quand la correction bat la vitesse de prototype",
+      "csharp": "Langage principal côté .NET : runtimes, libs et hôtes desktop",
+      "cplusplus": "Couches natives quand j’ai besoin de contrôler mémoire, interop et fenêtres OS",
+      "nodejs": "Tooling, BFF/API et ponts hôte JS à côté d’un frontend TypeScript",
+      "roslyn": "Codegen à la compilation pour que les contrats C# restent alignés avec les consommateurs TypeScript",
+      "sqlite": "Données locales sur l’appareil quand une base serveur complète est inutile",
+      "mysql": "Données relationnelles quand structure, jointures et prévisibilité comptent",
+      "mongodb": "Stockage documentaire quand la forme des données bouge encore en début de produit",
+      "docker": "Isolation et packaging pour services et environnements de build à reproduire",
+      "webstorm": "IDE du quotidien : navigation multi-packages, refactors et debug",
+      "figma": "Design d’interfaces, review et handoff avant et pendant l’implémentation",
+      "git": "Historique, branches et collaboration sous toute codebase sérieuse",
+      "linux": "Serveurs, shells, agents CI et tooling self-hosted que j’utilise vraiment",
+      "cmake": "Builds natifs multiplateformes quand le côté C/C++ doit compiler partout",
+      "githubactions": "CI de confiance pour build, test et release sans baby-sitter les machines"
     }
   },
-  "contact" : {
+  "contact": {
     "sectionLabel": "04 / Contact",
     "title": "Me contacter",
     "intro": "Je suis toujours ouvert aux projets intéressants, aux questions sur les technologies ou aux recommandations sur ce qu'il serait intéressant d'étudier. Vous pouvez me contacter via l'un des services ci-dessous"
@@ -70,11 +100,11 @@
   "modal": {
     "dialogLabel": "Détails du projet",
     "back": "Retour",
-    "backLabel" : "Retour à la page d'accueil",
-    "close" : "Fermer",
-    "projects" : "Projets",
-    "stack" : "Stack",
-    "source" : "Code source",
-    "live" : "Démo"
+    "backLabel": "Retour à la page d'accueil",
+    "close": "Fermer",
+    "projects": "Projets",
+    "stack": "Stack",
+    "source": "Code source",
+    "live": "Démo"
   }
 }

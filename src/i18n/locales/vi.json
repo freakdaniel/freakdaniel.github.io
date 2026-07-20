@@ -20,7 +20,7 @@
     "sectionLabel": "02 / Dự án",
     "title": "Các tác phẩm tiêu biểu",
     "view": "Mở",
-    "openLabel": "Mở dự án: {{title}}" ,
+    "openLabel": "Mở dự án: {{title}}",
     "items": {
       "kurisu": {
         "tagline": "Nền tảng các tác nhân AI trên .NET 10 với trình hiển thị Electron",
@@ -55,6 +55,36 @@
       "frontend": "Frontend",
       "backend": "Backend",
       "tools": "Công cụ"
+    },
+    "back": "Tất cả stack",
+    "facts": {
+      "react": "Lựa chọn mặc định cho UI sản phẩm: mô hình component, hệ sinh thái và codebase đọc lại sau nhiều tháng vẫn ổn",
+      "typescript": "Dùng khi code được chia sẻ: refactor an toàn hơn và hợp đồng rõ hơn giữa các lớp",
+      "vite": "Toolchain frontend hàng ngày: phản hồi nhanh khi dev và build production gọn",
+      "tailwind": "Khi cần layout và hoàn thiện nhanh mà không phải nghĩ kiến trúc CSS giữa sprint",
+      "vue": "Khi team hoặc bề mặt thuần Vue, hoặc mô hình component nhẹ hơn React hợp hơn",
+      "electron": "Shell desktop khi muốn UI web với host native và tích hợp OS thật",
+      "gsap": "Motion khi timing và trình tự quan trọng hơn hover CSS nhanh",
+      "ogl": "Cảnh WebGL nhỏ và nền khi Three là quá mức",
+      "three": "3D nặng và postprocessing khi cảnh thực sự cần full stack",
+      "chakra": "UI primitive dễ tiếp cận khi muốn tốc độ mà không thiết kế từng control từ đầu",
+      "framer": "Motion khai báo nằm trong cây React và ghép với layout",
+      "i18next": "Copy sản phẩm đa ngôn ngữ không hard-code chuỗi trong component",
+      "dotnet": "Backend tin cậy và dịch vụ lâu dài khi đúng đắn quan trọng hơn tốc độ prototype",
+      "csharp": "Ngôn ngữ chính phía .NET: runtime, thư viện và host desktop",
+      "cplusplus": "Lớp native khi cần kiểm soát bộ nhớ, interop và cửa sổ OS",
+      "nodejs": "Tooling, BFF/API và cầu host JS cạnh frontend TypeScript",
+      "roslyn": "Codegen lúc biên dịch để hợp đồng C# khớp với consumer TypeScript",
+      "sqlite": "Dữ liệu cục bộ trên thiết bị khi không cần database server đầy đủ",
+      "mysql": "Dữ liệu quan hệ khi cấu trúc, join và sự dự đoán nhàm chán quan trọng",
+      "mongodb": "Lưu document khi hình dạng dữ liệu vẫn còn thay đổi lúc đầu",
+      "docker": "Cô lập và đóng gói dịch vụ cùng môi trường build cần tái tạo được",
+      "webstorm": "IDE hàng ngày cho điều hướng multi-package, refactor và debug",
+      "figma": "Thiết kế giao diện, review và handoff trước và trong lúc triển khai",
+      "git": "Lịch sử, nhánh và cộng tác dưới mọi codebase nghiêm túc",
+      "linux": "Server, shell, agent CI và tooling self-hosted mà tôi thực sự chạy",
+      "cmake": "Build native đa nền tảng khi phía C/C++ phải biên dịch ở mọi nơi",
+      "githubactions": "CI tôi tin cho build, test và release mà không phải trông máy thủ công"
     }
   },
   "contact": {

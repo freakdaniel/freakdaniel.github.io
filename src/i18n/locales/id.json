@@ -20,7 +20,7 @@
     "sectionLabel": "02 / Proyek",
     "title": "Karya Terpilih",
     "view": "Buka",
-    "openLabel": "Buka proyek: {{title}}" ,
+    "openLabel": "Buka proyek: {{title}}",
     "items": {
       "kurisu": {
         "tagline": "Platform agen AI berbasis .NET 10 dengan renderer Electron",
@@ -55,6 +55,36 @@
       "frontend": "Frontend",
       "backend": "Backend",
       "tools": "Alat"
+    },
+    "back": "Semua stack",
+    "facts": {
+      "react": "Default saya untuk UI produk: model komponen, ekosistem, dan kode yang masih bisa dibaca berbulan-bulan kemudian",
+      "typescript": "Saya pakai saat kode dibagikan: refactor lebih aman dan kontrak lebih jelas antar lapisan",
+      "vite": "Toolchain frontend sehari-hari: umpan balik cepat di dev dan build produksi yang ramping",
+      "tailwind": "Saat butuh layout dan polesan cepat tanpa menciptakan arsitektur CSS di tengah sprint",
+      "vue": "Saat tim atau permukaan native Vue, atau model komponen lebih ringan lebih cocok daripada React",
+      "electron": "Shell desktop saat saya ingin UI web dengan host native dan integrasi OS yang nyata",
+      "gsap": "Motion saat timing dan urutan lebih penting daripada hover CSS cepat",
+      "ogl": "Adegan WebGL kecil dan backdrop saat Three berlebihan",
+      "three": "3D lebih berat dan postprocessing saat adegan benar-benar butuh stack penuh",
+      "chakra": "Primitif UI aksesibel saat ingin kecepatan tanpa mendesain setiap kontrol dari nol",
+      "framer": "Motion deklaratif yang tetap di pohon React dan menyatu dengan layout",
+      "i18next": "Copy produk multi bahasa tanpa hardcode string di komponen",
+      "dotnet": "Backend andal dan layanan jangka panjang saat kebenaran mengalahkan kecepatan prototipe",
+      "csharp": "Bahasa utama di sisi .NET: runtime, pustaka, dan host desktop",
+      "cplusplus": "Lapisan native saat perlu kontrol memori, interop, dan jendela OS",
+      "nodejs": "Tooling, BFF/API, dan jembatan host JS di samping frontend TypeScript",
+      "roslyn": "Codegen compile-time agar kontrak C# tetap sinkron dengan konsumen TypeScript",
+      "sqlite": "Data lokal di perangkat saat database server penuh tidak diperlukan",
+      "mysql": "Data relasional saat struktur, join, dan prediktabilitas membosankan penting",
+      "mongodb": "Penyimpanan dokumen saat bentuk data masih bergerak di awal",
+      "docker": "Isolasi dan pengemasan layanan serta lingkungan build yang harus bisa direproduksi",
+      "webstorm": "IDE harian untuk navigasi multi-paket, refactor, dan debug",
+      "figma": "Desain antarmuka, review, dan handoff sebelum dan selama implementasi",
+      "git": "Riwayat, cabang, dan kolaborasi di bawah setiap codebase serius",
+      "linux": "Server, shell, agen CI, dan tooling self-hosted yang benar-benar saya jalankan",
+      "cmake": "Build native multiplatform saat sisi C/C++ harus dikompilasi di mana saja",
+      "githubactions": "CI yang saya percaya untuk build, test, dan release tanpa merawat mesin manual"
     }
   },
   "contact": {

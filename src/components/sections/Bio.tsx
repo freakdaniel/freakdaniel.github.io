@@ -43,8 +43,8 @@ export default function Bio() {
   }, []);
 
   return (
-    <section id="about" className="px-6 sm:px-10 lg:px-16 py-14 sm:py-16">
-      <div className="mx-auto w-full max-w-6xl space-y-10 sm:space-y-12">
+    <section id="about" className="px-6 sm:px-10 lg:px-16 py-10 sm:py-14 md:py-16">
+      <div className="mx-auto w-full max-w-6xl space-y-6 sm:space-y-10">
         <FadeIn revealId="bio-header">
           <SectionHeader
             label={t('bio.sectionLabel')}

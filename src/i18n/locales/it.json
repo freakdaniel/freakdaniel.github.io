@@ -20,7 +20,7 @@
     "sectionLabel": "02 / Progetti",
     "title": "Lavori selezionati",
     "view": "Apri",
-    "openLabel": "Apri il progetto: {{title}}" ,
+    "openLabel": "Apri il progetto: {{title}}",
     "items": {
       "kurisu": {
         "tagline": "Piattaforma di agenti AI su .NET 10 con renderer Electron",
@@ -55,6 +55,36 @@
       "frontend": "Frontend",
       "backend": "Backend",
       "tools": "Strumenti"
+    },
+    "back": "Tutti gli stack",
+    "facts": {
+      "react": "Il mio default per UI di prodotto: modello a componenti, ecosistema e codice che leggo ancora mesi dopo",
+      "typescript": "Lo uso quando il codice è condiviso: refactor più sicuri e contratti più chiari tra i layer",
+      "vite": "Toolchain frontend di tutti i giorni: feedback veloce in dev e build di produzione snelle",
+      "tailwind": "Quando mi serve layout e polish in fretta senza inventare un’architettura CSS a metà sprint",
+      "vue": "Quando il team o la superficie è nativa Vue, o un modello a componenti più leggero sta meglio di React",
+      "electron": "Shell desktop quando voglio una UI web con host nativo e vera integrazione OS",
+      "gsap": "Motion quando timing e sequenza contano più di un hover CSS veloce",
+      "ogl": "Piccole scene WebGL e backdrop quando Three sarebbe overkill",
+      "three": "3D più pesante e postprocessing quando la scena ha davvero bisogno dello stack completo",
+      "chakra": "Primitive UI accessibili quando voglio velocità senza disegnare ogni controllo da zero",
+      "framer": "Motion dichiarativa che resta nell’albero React e si compone con il layout",
+      "i18next": "Copy di prodotto in più lingue senza hardcodare le stringhe nei componenti",
+      "dotnet": "Backend affidabili e servizi di lunga durata quando la correttezza batte la velocità del prototipo",
+      "csharp": "Linguaggio principale lato .NET: runtime, librerie e host desktop",
+      "cplusplus": "Layer nativi quando mi serve controllo su memoria, interop e finestre OS",
+      "nodejs": "Tooling, BFF/API e bridge host JS accanto a un frontend TypeScript",
+      "roslyn": "Codegen a compile-time così i contratti C# restano allineati ai consumer TypeScript",
+      "sqlite": "Dati locali sul dispositivo quando un database server completo non serve",
+      "mysql": "Dati relazionali quando contano struttura, join e prevedibilità noiosa",
+      "mongodb": "Storage documentale quando la forma dei dati si muove ancora all’inizio",
+      "docker": "Isolamento e packaging per servizi e ambienti di build che devo riprodurre",
+      "webstorm": "IDE quotidiano per navigazione multi-package, refactor e debug",
+      "figma": "Design interfacce, review e handoff prima e durante l’implementazione",
+      "git": "Cronologia, branch e collaborazione sotto ogni codebase seria",
+      "linux": "Server, shell, agenti CI e tooling self-hosted che uso davvero",
+      "cmake": "Build native multipiattaforma quando il lato C/C++ deve compilare ovunque",
+      "githubactions": "CI di cui mi fido per build, test e release senza babysitting delle macchine"
     }
   },
   "contact": {
