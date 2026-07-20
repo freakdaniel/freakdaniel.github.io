@@ -11,6 +11,8 @@
 
   --font-sans: "Google Sans", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
 }
 
 @layer base {
@@ -224,6 +226,63 @@
     to { opacity: 0; transform: scale(0.94) translateY(6px); }
   }
 
+  /* ---------- Bio / FaultyTerminal (text is inside WebGL) ---------- */
+  .bio-card {
+    position: relative;
+    width: 100%;
+    /*
+      Mobile needs more vertical room: narrow width wraps about text into
+      many more lines. Desktop stays compact (top-aligned session log).
+    */
+    min-height: min(78vh, 640px);
+    height: min(78vh, 640px);
+    overflow: hidden;
+    /* Match page --color-bg so the CRT doesn't read as a separate slab */
+    background: var(--color-bg);
+    isolation: isolate;
+  }
+
+  @media (min-width: 480px) {
+    .bio-card {
+      min-height: min(68vh, 560px);
+      height: min(68vh, 560px);
+    }
+  }
+
+  @media (min-width: 640px) {
+    .bio-card {
+      min-height: min(52vh, 460px);
+      height: min(52vh, 460px);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .bio-card {
+      min-height: 360px;
+      height: 380px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .bio-card {
+      min-height: 380px;
+      height: 400px;
+    }
+  }
+
+  .bio-card-faulty {
+    position: absolute !important;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    background: var(--color-bg) !important;
+  }
+
+  .bio-card-faulty canvas {
+    background: var(--color-bg) !important;
+    display: block;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
 
@@ -247,6 +306,8 @@
       opacity: 1 !important;
       transform: none !important;
     }
+
+
 
     .project-card-fill,
     .project-card-reveal {

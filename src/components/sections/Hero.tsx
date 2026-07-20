@@ -3,7 +3,11 @@ import { useTranslation } from 'react-i18next';
 import FadeIn from '../ui/FadeIn';
 import HeroBackdrop from '../background/HeroBackdrop';
 
-export default function Hero() {
+export interface HeroProps {
+  introReady?: boolean;
+}
+
+export default function Hero({ introReady = true }: HeroProps) {
   const { t } = useTranslation();
   return (
     <section
@@ -20,7 +24,7 @@ export default function Hero() {
       />
 
       <div className="relative z-20 mx-auto w-full max-w-6xl">
-        <FadeIn stagger revealId="hero">
+        <FadeIn stagger revealId="hero" ready={introReady}>
           <span
             className="reveal-child text-xs uppercase tracking-[0.25em] text-muted"
             style={{ '--i': 0 } as CSSProperties}
