@@ -3,8 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="canonical" href="https://freaksite.link/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0a0a0a" />
+    <meta name="author" content="Daniel Freak" />
     <meta
       name="description"
       content="Daniel Freak — Full-Stack Developer building fast, accessible, and quietly opinionated products on the web."
@@ -59,6 +61,168 @@
     />
     <meta name="twitter:image" content="https://freaksite.link/og-image.png" />
     <meta name="twitter:image:alt" content="Daniel Freak — Full-Stack Developer" />
+
+    <!-- Structured data for search engines and LLM scrapers -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://freaksite.link/#website",
+            "url": "https://freaksite.link/",
+            "name": "freaksite",
+            "description": "Personal site of Daniel Freak — Full-Stack Developer. Portfolio, bio, projects, stack, and contact.",
+            "inLanguage": [
+              "en",
+              "ru",
+              "zh",
+              "es",
+              "hi",
+              "ar",
+              "pt",
+              "ja",
+              "de",
+              "fr",
+              "ko",
+              "id",
+              "tr",
+              "it",
+              "vi",
+              "th"
+            ],
+            "author": { "@id": "https://freaksite.link/#person" }
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://freaksite.link/#profilepage",
+            "url": "https://freaksite.link/",
+            "name": "Daniel Freak — Full-Stack Developer",
+            "isPartOf": { "@id": "https://freaksite.link/#website" },
+            "mainEntity": { "@id": "https://freaksite.link/#person" },
+            "about": { "@id": "https://freaksite.link/#person" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://freaksite.link/#person",
+            "name": "Daniel Freak",
+            "url": "https://freaksite.link/",
+            "image": "https://freaksite.link/imgs/pfp.jpg",
+            "jobTitle": "Full-Stack Developer",
+            "description": "A full-stack developer who creates fast, accessible, and meticulously designed digital products. Works primarily with TypeScript, React, and Node; uses the .NET ecosystem when reliability matters most. Open to new projects.",
+            "knowsAbout": [
+              "React",
+              "TypeScript",
+              "Tailwind CSS",
+              "Vue",
+              "Node.js",
+              ".NET",
+              "C#",
+              "MySQL",
+              "MongoDB",
+              "WebStorm",
+              "Figma",
+              "Linux",
+              "Git",
+              "Electron",
+              "Vite",
+              "GSAP"
+            ],
+            "sameAs": [
+              "https://github.com/freakdaniel",
+              "https://t.me/freakgroup",
+              "https://x.com/whoisfreak",
+              "https://linkedin.com/in/freakdaniel",
+              "https://instagram.com/_freakdaniel"
+            ]
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://freaksite.link/#projects",
+            "name": "Selected works",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@type": "SoftwareSourceCode",
+                  "name": "Kurisu",
+                  "description": "AI agent platform on .NET 10 with an Electron renderer. Open-source agent runtime (MCP, tools, sessions, permissions, hooks) with Roslyn-generated typed TypeScript IPC and a shadcn/ui + Vite renderer.",
+                  "codeRepository": "https://github.com/freakdaniel/Kurisu",
+                  "url": "https://github.com/freakdaniel/Kurisu",
+                  "programmingLanguage": ["C#", "TypeScript"],
+                  "author": { "@id": "https://freaksite.link/#person" }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@type": "SoftwareSourceCode",
+                  "name": "react-bits / vue-bits",
+                  "description": "Contributor to popular open-source component libraries for React and Vue. Refactored Stack, FadeContent, and AnimatedContent: custom scrollers, GSAP migration, safer cleanup. The ferrofluid background on freaksite is one such component.",
+                  "codeRepository": "https://github.com/DavidHDev/react-bits/pulls?q=author%3Afreakdaniel",
+                  "url": "https://reactbits.dev",
+                  "programmingLanguage": ["TypeScript", "React", "Vue"],
+                  "author": { "@id": "https://freaksite.link/#person" }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                  "@type": "SoftwareSourceCode",
+                  "name": "InfiniFrame",
+                  "description": "Active contributor to a cross-platform native window framework for .NET. C++ native backend work: unmanaged layer refactors, memory leaks and null-guard fixes, documentation for the libraries.",
+                  "codeRepository": "https://github.com/InfiniLore/InfiniFrame",
+                  "url": "https://github.com/InfiniLore/InfiniFrame",
+                  "programmingLanguage": ["C++", "C#"],
+                  "author": { "@id": "https://freaksite.link/#person" }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                  "@type": "WebSite",
+                  "name": "MPOVT",
+                  "description": "Corporate multilingual showcase website for OJSC MPOVT, delivered as a paid commission. React/Vite SPA with Chakra UI and Tailwind, GSAP animations, TanStack Query, i18n for Belarusian, English, Russian, and Chinese, light/dark theme.",
+                  "url": "https://mpovt.by",
+                  "author": { "@id": "https://freaksite.link/#person" }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "item": {
+                  "@type": "SoftwareSourceCode",
+                  "name": "HyPrism",
+                  "description": "Maintainer of a popular Hytale launcher written in C# for .NET and Electron. GPU and game instance handling, versioning, design and logger work, official authentication support.",
+                  "codeRepository": "https://github.com/hyprismteam/HyPrism",
+                  "url": "https://github.com/hyprismteam/HyPrism",
+                  "programmingLanguage": ["C#"],
+                  "author": { "@id": "https://freaksite.link/#person" }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 6,
+                "item": {
+                  "@type": "WebSite",
+                  "name": "freaksite",
+                  "description": "This personal site — a platform for typography, motion, and interaction detail. Vite, React, TypeScript; hosted on GitHub Pages. Source: https://github.com/freakdaniel/freakdaniel.github.io",
+                  "url": "https://freaksite.link/",
+                  "author": { "@id": "https://freaksite.link/#person" },
+                  "sameAs": [
+                    "https://github.com/freakdaniel/freakdaniel.github.io"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

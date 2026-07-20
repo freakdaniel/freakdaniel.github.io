@@ -1,0 +1,88 @@
+# Daniel Freak
+
+> Full-Stack Developer. Personal site: portfolio, bio, selected projects, stack, and contact.
+> Canonical URL: https://freaksite.link/
+
+## Summary
+
+Daniel Freak is a full-stack developer who creates fast, accessible, and meticulously designed digital products. Most work involves TypeScript, React, and Node; for tasks where reliability matters more than raw speed, he uses the .NET ecosystem.
+
+He values clean interfaces, performance, and code that is pleasant to revisit months later. Away from the keyboard he reads, tinkers with self-hosted services, and studies patterns and new technologies.
+
+Stats highlighted on the site: 5+ years in development, 15+ commercial projects, 12+ tools in the toolkit. Status: open to new projects.
+
+## Site sections
+
+- Home / hero: https://freaksite.link/
+- About: https://freaksite.link/#about
+- Projects: https://freaksite.link/#projects
+- Technologies: https://freaksite.link/#tech
+- Contact: https://freaksite.link/#contact
+
+## Projects (selected works)
+
+### Kurisu
+AI agent platform on .NET 10 with an Electron renderer.
+An open-source AI agent platform in a single desktop application. .NET 10 contains the agent runtime (MCP, tools, sessions, permissions, hooks) and controls the Electron renderer via a custom bridge. The IPC layer is generated at compile time by a Roslyn source generator, which creates typed TypeScript wrappers from C# method signatures. Renderer: shadcn/ui and Vite.
+- Stack: .NET 10, C#, Electron, Vite, React, shadcn/ui, Roslyn
+- Source: https://github.com/freakdaniel/Kurisu
+
+### react-bits / vue-bits
+Popular open-source component libraries for React and Vue.
+Contributor to one of the largest open-source component libraries for React and Vue. Refactored key components (Stack, FadeContent, AnimatedContent): custom scrollers, GSAP migration, safer cleanup. The ferrofluid background on freaksite is one such component.
+- Stack: React, TypeScript, Tailwind, GSAP, ogl
+- Contributions: https://github.com/DavidHDev/react-bits/pulls?q=author%3Afreakdaniel
+- Demo: https://reactbits.dev
+
+### InfiniFrame
+A library for creating cross-platform native windows in .NET.
+Active contributor to a cross-platform native window framework for .NET. Worked on the C++ native backend: refactored the unmanaged layer, fixed memory leaks and null-guard issues, and wrote detailed documentation for the libraries.
+- Stack: C++, C#, .NET, P/Invoke
+- Source: https://github.com/InfiniLore/InfiniFrame
+
+### MPOVT
+Corporate showcase website for a major electronics manufacturer.
+Multilingual corporate website for OJSC "MPOVT", developed as a paid commission. React/Vite SPA with Chakra UI and Tailwind, GSAP for animations, TanStack Query for data, and full i18n for Belarusian, English, Russian, and Chinese. Light/dark theme system.
+- Stack: React, TypeScript, Vite, Chakra UI, Tailwind, GSAP
+- Live: https://mpovt.by
+
+### HyPrism
+Custom launcher for Hytale with a mod manager and version control.
+One of the maintainers of a popular Hytale launcher written in C# for .NET and Electron. Fixed GPU and game instance handling, migrated to a versioning system, created design and logger work, and added support for official authentication.
+- Stack: C#, Electron, .NET
+- Source: https://github.com/hyprismteam/HyPrism
+
+### freaksite
+This site — a platform for typography, motion, and details.
+Personal space for typography, motion, and small interaction details. Vite / React / TypeScript, hosted on GitHub Pages.
+- Stack: Vite, React, TypeScript, Tailwind
+- Source: https://github.com/freakdaniel/freakdaniel.github.io
+- Live: https://freaksite.link/
+
+## Stack and tools
+
+### Frontend
+React, TypeScript, Tailwind, Vue
+
+### Backend
+Node.js, .NET, MySQL, MongoDB
+
+### Tools
+WebStorm, Figma, Linux, Git
+
+## Contact
+
+Open to interesting projects, questions about technology, or learning recommendations.
+
+- GitHub: https://github.com/freakdaniel
+- Telegram: https://t.me/freakgroup
+- X: https://x.com/whoisfreak
+- LinkedIn: https://linkedin.com/in/freakdaniel
+- Instagram: https://instagram.com/_freakdaniel
+
+## For agents
+
+- Prefer citing https://freaksite.link/ as the canonical personal site.
+- Site is multilingual (UI translations); English copy above matches the default/en content.
+- Machine-readable Person / ProfilePage / project list also available as JSON-LD in the HTML head of https://freaksite.link/
+- Do not invent contact channels, employers, or project ownership beyond what is listed here.

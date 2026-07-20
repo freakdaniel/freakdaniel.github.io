@@ -20,6 +20,11 @@ export interface FadeInProps {
    * later mounts (e.g. returning from a detail page) render visible.
    */
   revealId?: string;
+  /**
+   * When false, withhold reveal.
+   * Default true — existing call sites unchanged.
+   */
+  ready?: boolean;
   /** Any additional props (id, aria-*, data-*, etc.). */
   [key: string]: unknown;
 }
@@ -36,6 +41,7 @@ export default function FadeIn({
   threshold = 0.15,
   rootMargin = '0px 0px -10% 0px',
   revealId,
+  ready = true,
   ...rest
 }: FadeInProps) {
   const ref = useRef<HTMLElement | null>(null);
@@ -43,6 +49,11 @@ export default function FadeIn({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    if (!ready) {
+      el.classList.remove('is-visible');
+      return;
+    }
 
     if (revealId && revealedIds.has(revealId)) {
       el.classList.add('is-visible');
@@ -82,7 +93,7 @@ export default function FadeIn({
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [delay, once, threshold, rootMargin, revealId]);
+  }, [delay, once, threshold, rootMargin, revealId, ready]);
 
   const base = stagger ? 'reveal-stagger' : 'reveal';
 

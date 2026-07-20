@@ -11,6 +11,8 @@
 
   --font-sans: "Google Sans", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
 }
 
 @layer base {
@@ -224,6 +226,540 @@
     to { opacity: 0; transform: scale(0.94) translateY(6px); }
   }
 
+  /* ---------- Bio / FaultyTerminal (text is inside WebGL) ---------- */
+  .bio-card {
+    position: relative;
+    width: 100%;
+    /*
+      Height tracks content density, not a near-full viewport slab.
+      Mobile still needs a bit more room for wrapped about text; avoid
+      huge empty CRT below the session log.
+    */
+    min-height: min(48vh, 380px);
+    height: min(48vh, 380px);
+    overflow: hidden;
+    /* Match page --color-bg so the CRT doesn't read as a separate slab */
+    background: var(--color-bg);
+    isolation: isolate;
+  }
+
+  @media (min-width: 480px) {
+    .bio-card {
+      min-height: min(44vh, 400px);
+      height: min(44vh, 400px);
+    }
+  }
+
+  @media (min-width: 640px) {
+    .bio-card {
+      min-height: min(40vh, 380px);
+      height: min(40vh, 380px);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .bio-card {
+      min-height: 340px;
+      height: 360px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .bio-card {
+      min-height: 360px;
+      height: 380px;
+    }
+  }
+
+  .bio-card-faulty {
+    position: absolute !important;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    background: var(--color-bg) !important;
+  }
+
+  .bio-card-faulty canvas {
+    background: var(--color-bg) !important;
+    display: block;
+  }
+
+  /* ---------- Tech decks (3 columns → expand fan) ---------- */
+  /*
+    Stage height MUST be identical in overview and expanded.
+    Expand flight targets FAN_CENTER_Y (40%) of this box; if height
+    jumps on expand, the lead card teleports and the section reflows.
+    Use rem (not vh) so mobile browser chrome doesn't reflow mid-gesture.
+  */
+  .tech-decks {
+    position: relative;
+    min-height: 19.5rem;
+  }
+
+  /* Always 3 columns so mobile matches the desktop mental model */
+  .tech-decks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+    align-items: start;
+  }
+
+  @media (min-width: 480px) {
+    .tech-decks {
+      min-height: 20.5rem;
+    }
+
+    .tech-decks-grid {
+      gap: 0.85rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .tech-decks {
+      min-height: 22.5rem;
+    }
+
+    .tech-decks-grid {
+      gap: 1.5rem;
+      align-items: end;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .tech-decks {
+      min-height: 24rem;
+    }
+  }
+
+  .tech-decks--expanded .tech-decks-grid {
+    /* Kept in DOM until layout handoff; visibility driven by GSAP autoAlpha */
+    pointer-events: none;
+  }
+
+  .tech-deck-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.65rem 0.15rem 1rem;
+    min-width: 0;
+    border: none;
+    background: transparent;
+    color: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+
+  @media (min-width: 768px) {
+    .tech-deck-col {
+      gap: 1.15rem;
+      padding: 1.25rem 1rem 1.75rem;
+    }
+  }
+
+  .tech-deck-col:hover,
+  .tech-deck-col:focus-visible {
+    background: transparent;
+    outline: none;
+  }
+
+  .tech-deck-col:disabled {
+    cursor: default;
+  }
+
+  /* Label centered on the main (front) card width */
+  .tech-deck-col-label {
+    order: 0;
+    width: 100%;
+    max-width: 4.25rem;
+    text-align: center;
+    font-size: 0.55rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    transition: color 0.2s ease;
+    line-height: 1.25;
+  }
+
+  @media (min-width: 480px) {
+    .tech-deck-col-label {
+      max-width: 5rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .tech-deck-col-label {
+      max-width: none;
+      width: 6.25rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+    }
+  }
+
+  .tech-deck-col:hover .tech-deck-col-label,
+  .tech-deck-col:focus-visible .tech-deck-col-label {
+    color: var(--color-fg);
+  }
+
+  /*
+    Overview pile: main card on top, then up to 3 trail cards *below* it
+    (document flow — no absolute layering). Trail fades into page bg via mask.
+  */
+  .tech-deck-pile {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    width: 4.1rem;
+  }
+
+  @media (min-width: 480px) {
+    .tech-deck-pile {
+      width: 4.75rem;
+      gap: 0.35rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .tech-deck-pile {
+      width: 6.25rem;
+      gap: 0.5rem;
+    }
+  }
+
+  .tech-deck-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 0.75rem;
+    border: none;
+    will-change: transform, opacity;
+  }
+
+  @media (min-width: 768px) {
+    .tech-deck-card {
+      border-radius: 1rem;
+    }
+  }
+
+  .tech-deck-card--front {
+    width: 4.1rem;
+    height: 4.1rem;
+    background: var(--color-fg);
+    color: var(--color-bg);
+    box-shadow: 0 10px 28px -12px rgba(0, 0, 0, 0.7);
+  }
+
+  @media (min-width: 480px) {
+    .tech-deck-card--front {
+      width: 4.75rem;
+      height: 4.75rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .tech-deck-card--front {
+      width: 6.25rem;
+      height: 6.25rem;
+      box-shadow: 0 14px 44px -16px rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  .tech-deck-trail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.28rem;
+    width: 100%;
+    /* Fade the lowest trail card into the page background */
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 48%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 48%,
+      transparent 100%
+    );
+  }
+
+  @media (min-width: 768px) {
+    .tech-deck-trail {
+      gap: 0.4rem;
+      -webkit-mask-image: linear-gradient(
+        to bottom,
+        #000 0%,
+        #000 52%,
+        transparent 100%
+      );
+      mask-image: linear-gradient(
+        to bottom,
+        #000 0%,
+        #000 52%,
+        transparent 100%
+      );
+    }
+  }
+
+  /*
+    Trail sizes step down from the main card.
+    --trail-i: 0 → ~78%, 1 → ~64%, 2 → ~52% of main.
+    On mobile pile width drives calc via 100% of pile.
+  */
+  .tech-deck-card--trail {
+    width: calc(4.1rem * (0.78 - var(--trail-i, 0) * 0.13));
+    height: calc(4.1rem * (0.78 - var(--trail-i, 0) * 0.13));
+    background: #161616;
+    color: #c4c4c4;
+  }
+
+  @media (min-width: 480px) {
+    .tech-deck-card--trail {
+      width: calc(4.75rem * (0.78 - var(--trail-i, 0) * 0.13));
+      height: calc(4.75rem * (0.78 - var(--trail-i, 0) * 0.13));
+    }
+  }
+
+  @media (min-width: 768px) {
+    .tech-deck-card--trail {
+      width: calc(6.25rem * (0.78 - var(--trail-i, 0) * 0.13));
+      height: calc(6.25rem * (0.78 - var(--trail-i, 0) * 0.13));
+    }
+  }
+
+  .tech-deck-card-icon {
+    width: 42%;
+    height: 42%;
+  }
+
+  .tech-deck-card--front .tech-deck-card-icon {
+    color: var(--color-bg);
+  }
+
+  .tech-deck-card--trail .tech-deck-card-icon {
+    color: #c4c4c4;
+  }
+
+  /*
+    Expanded stage uses absolute slots so fan center never reflows when
+    detail text mounts (that was the downward “jerk” after the flight).
+  */
+  .tech-decks-focus {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .tech-decks-focus > * {
+    pointer-events: auto;
+  }
+
+  /*
+    Group title = back control. Text is truly centered; arrow sits outside
+    the text box so it does not shift horizontal alignment.
+  */
+  .tech-decks-focus-group {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    margin: 0;
+    padding: 0.35rem 0;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    color: var(--color-muted);
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  .tech-decks-focus-group-text {
+    display: block;
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 768px) {
+    .tech-decks-focus-group-text {
+      font-size: 0.95rem;
+      letter-spacing: 0.2em;
+    }
+  }
+
+  .tech-decks-focus-group:hover,
+  .tech-decks-focus-group:focus-visible {
+    color: var(--color-fg);
+    outline: none;
+  }
+
+  .tech-decks-focus-group:disabled {
+    cursor: default;
+    opacity: 0.6;
+  }
+
+  .tech-decks-focus-group-arrow {
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    margin-right: 0.5rem;
+    transform: translateY(-50%);
+    font-size: 1.05em;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  @media (min-width: 768px) {
+    .tech-decks-focus-group-arrow {
+      margin-right: 0.65rem;
+    }
+  }
+
+  /* Must match JS FAN_CENTER_Y (0.4) — flight target = fan midpoint */
+  .tech-fan {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40%;
+    transform: translateY(-50%);
+    height: clamp(9rem, 22vw, 11.5rem);
+    margin: 0;
+    /* Soft edge: outer cards dissolve into page bg */
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 14%,
+      #000 86%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 14%,
+      #000 86%,
+      transparent 100%
+    );
+    touch-action: pan-y;
+  }
+
+  @media (min-width: 768px) {
+    .tech-fan {
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        #000 8%,
+        #000 92%,
+        transparent 100%
+      );
+      mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        #000 8%,
+        #000 92%,
+        transparent 100%
+      );
+    }
+  }
+
+  .tech-deck-detail {
+    position: absolute;
+    left: 50%;
+    top: calc(40% + 5.1rem);
+    transform: translateX(-50%);
+    width: min(32rem, 100%);
+    max-width: 32rem;
+    text-align: center;
+    padding: 0 0.5rem;
+    z-index: 4;
+  }
+
+  /*
+    Fan card size MUST match overview front at each breakpoint
+    (4.1 → 4.75 → 6.25) so expand/collapse has no size pop.
+  */
+  .tech-fan-card {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 4.1rem;
+    height: 4.1rem;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    border: none;
+    background: #111;
+    color: var(--color-muted);
+    font-family: inherit;
+    cursor: pointer;
+    will-change: transform, opacity;
+    touch-action: none;
+  }
+
+  @media (min-width: 480px) {
+    .tech-fan-card {
+      width: 4.75rem;
+      height: 4.75rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .tech-fan-card {
+      width: 6.25rem;
+      height: 6.25rem;
+      border-radius: 1rem;
+      touch-action: auto;
+    }
+  }
+
+  .tech-fan-card--active {
+    background: var(--color-fg);
+    color: var(--color-bg);
+    box-shadow: 0 18px 48px -18px rgba(0, 0, 0, 0.75);
+  }
+
+  .tech-fan-card:focus-visible {
+    outline: 2px solid var(--color-fg);
+    outline-offset: 3px;
+  }
+
+  .tech-fan-card-icon {
+    width: 42%;
+    height: 42%;
+  }
+
+  .tech-fan-card--active .tech-fan-card-icon {
+    color: var(--color-bg);
+  }
+
+  .tech-deck-detail-name {
+    margin: 0;
+    font-size: clamp(1.35rem, 3.5vw, 1.85rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--color-fg);
+  }
+
+  .tech-deck-detail-fact {
+    margin: 0.65rem 0 0;
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
+    line-height: 1.55;
+    color: var(--color-muted);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
 
@@ -247,6 +783,8 @@
       opacity: 1 !important;
       transform: none !important;
     }
+
+
 
     .project-card-fill,
     .project-card-reveal {

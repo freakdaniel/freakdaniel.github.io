@@ -20,7 +20,7 @@
     "sectionLabel": "02 / Projeler",
     "title": "Seçilmiş çalışmalar",
     "view": "Aç",
-    "openLabel": "Projeyi aç: {{title}}" ,
+    "openLabel": "Projeyi aç: {{title}}",
     "items": {
       "kurisu": {
         "tagline": "Electron renderer kullanan .NET 10 tabanlı AI ajan platformu",
@@ -52,9 +52,39 @@
     "sectionLabel": "03 / Teknolojiler",
     "title": "Teknoloji Yığını ve Araçlar",
     "groups": {
-      "frontend": "Ön Uç",
-      "backend": "Arka Uç",
+      "frontend": "Ön uç",
+      "backend": "Arka uç",
       "tools": "Araçlar"
+    },
+    "back": "Tüm yığınlar",
+    "facts": {
+      "react": "Ürün UI için varsayılanım: bileşen modeli, ekosistem ve aylar sonra hâlâ okuyabildiğim kod",
+      "typescript": "Kod paylaşıldığında buna giderim: daha güvenli refaktör ve katmanlar arası net sözleşmeler",
+      "vite": "Günlük frontend araç zinciri: devde hızlı geri bildirim ve yalın üretim derlemeleri",
+      "tailwind": "Sprint ortasında CSS mimarisi icat etmeden layout ve cila hızlı gerektiğinde",
+      "vue": "Ekip veya yüzey Vue-native olduğunda, ya da React’ten daha hafif bileşen modeli daha iyi oturduğunda",
+      "electron": "Web UI’yi yerel host ve gerçek OS entegrasyonuyla istediğim masaüstü kabukları",
+      "gsap": "Zamanlama ve sıra hızlı bir CSS hover’dan daha önemli olduğunda motion",
+      "ogl": "Three fazla kaçtığında küçük WebGL sahneleri ve arka planlar",
+      "three": "Sahne gerçekten tam yığını istediğinde daha ağır 3D ve son işlem",
+      "chakra": "Her kontrolü sıfırdan tasarlamadan hız istediğimde erişilebilir UI primitifleri",
+      "framer": "React ağacında kalan ve layout ile birleşen bildirimsel motion",
+      "i18next": "Dizeleri bileşenlere gömmeden çok dilli ürün metni",
+      "dotnet": "Doğruluk prototip hızını yendiğinde güvenilir backend ve uzun ömürlü servisler",
+      "csharp": ".NET tarafının ana dili: runtime’lar, kütüphaneler ve masaüstü hostlar",
+      "cplusplus": "Bellek, interop ve OS pencereleri üzerinde kontrol istediğimde yerel katmanlar",
+      "nodejs": "TypeScript frontend yanında tooling, BFF/API ve JS host köprüleri",
+      "roslyn": "C# sözleşmelerinin TypeScript tüketicileriyle senkron kalması için derleme zamanı kod üretimi",
+      "sqlite": "Tam sunucu veritabanı gerekmediğinde cihaz içi yerel veri",
+      "mysql": "Yapı, join ve sıkıcı öngörülebilirlik önemli olduğunda ilişkisel veri",
+      "mongodb": "Veri şekli henüz erken dönemde hareketliyken belge depolama",
+      "docker": "Yeniden üretebilmem gereken servis ve derleme ortamları için yalıtım ve paketleme",
+      "webstorm": "Çok paketli gezinme, refaktör ve hata ayıklama için günlük IDE",
+      "figma": "Uygulama öncesi ve sırasında arayüz tasarımı, inceleme ve devir",
+      "git": "Her ciddi kod tabanının altındaki geçmiş, dallar ve işbirliği",
+      "linux": "Gerçekten çalıştırdığım sunucular, kabuklar, CI ajanları ve self-hosted araçlar",
+      "cmake": "C/C++ tarafının her yerde derlenmesi gerektiğinde yerel çok platformlu derlemeler",
+      "githubactions": "Makineleri elle bakmadan build, test ve release için güvendiğim CI"
     }
   },
   "contact": {

@@ -20,7 +20,7 @@
     "sectionLabel": "02 / Proyectos",
     "title": "Trabajos destacados",
     "view": "Abrir",
-    "openLabel": "Abrir proyecto: {{title}}" ,
+    "openLabel": "Abrir proyecto: {{title}}",
     "items": {
       "kurisu": {
         "tagline": "Plataforma de agentes de IA en .NET 10 con renderizador Electron",
@@ -55,6 +55,36 @@
       "frontend": "Frontend",
       "backend": "Backend",
       "tools": "Herramientas"
+    },
+    "back": "Todos los stacks",
+    "facts": {
+      "react": "Mi opción por defecto para UI de producto: modelo de componentes, ecosistema y código que sigo leyendo meses después",
+      "typescript": "Lo uso cuando el código se comparte: refactors más seguros y contratos más claros entre capas",
+      "vite": "Toolchain de frontend del día a día: feedback rápido en dev y builds de producción ligeros",
+      "tailwind": "Cuando necesito layout y acabado rápido sin inventar una arquitectura CSS a mitad del sprint",
+      "vue": "Cuando el equipo o la superficie son nativos de Vue, o un modelo de componentes más ligero encaja mejor que React",
+      "electron": "Shells de escritorio cuando quiero una UI web con host nativo e integración real con el SO",
+      "gsap": "Motion cuando importan el timing y la secuencia más que un hover CSS rápido",
+      "ogl": "Escenas WebGL pequeñas y fondos cuando Three sería excesivo",
+      "three": "3D más pesado y postprocesado cuando la escena realmente necesita el stack completo",
+      "chakra": "Primitivas UI accesibles cuando quiero velocidad sin diseñar cada control desde cero",
+      "framer": "Motion declarativa que vive en el árbol de React y se compone con el layout",
+      "i18next": "Copy de producto en varios idiomas sin hardcodear strings en componentes",
+      "dotnet": "Backends fiables y servicios de larga vida cuando la corrección importa más que prototipar rápido",
+      "csharp": "Lenguaje principal del lado .NET: runtimes, librerías y hosts de escritorio",
+      "cplusplus": "Capas nativas cuando necesito control de memoria, interop y ventanas del SO",
+      "nodejs": "Tooling, BFF/API y puentes JS junto a un frontend TypeScript",
+      "roslyn": "Codegen en compile-time para que los contratos C# no se desalineen de los consumidores TypeScript",
+      "sqlite": "Datos locales en el dispositivo cuando no hace falta una base de datos de servidor completa",
+      "mysql": "Datos relacionales cuando importan la estructura, los joins y la predictibilidad aburrida",
+      "mongodb": "Almacenamiento de documentos cuando la forma de los datos aún se mueve al principio",
+      "docker": "Aislamiento y empaquetado de servicios y entornos de build que debo poder reproducir",
+      "webstorm": "IDE diario para navegación multi-paquete, refactors y depuración",
+      "figma": "Diseño de interfaces, revisión y handoff antes y durante la implementación",
+      "git": "Historial, ramas y colaboración bajo cualquier codebase seria",
+      "linux": "Servidores, shells, agentes de CI y tooling self-hosted que realmente ejecuto",
+      "cmake": "Builds nativos multiplataforma cuando el lado C/C++ tiene que compilar en todas partes",
+      "githubactions": "CI en el que confío para build, test y release sin cuidar máquinas a mano"
     }
   },
   "contact": {
